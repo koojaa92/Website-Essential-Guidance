@@ -996,3 +996,8 @@ section{padding:clamp(2.4rem,5vw,4rem) 0}
 section.pull-up{padding-top:clamp(1.2rem,2.6vw,2rem)}
 section:has(+ .pull-up){padding-bottom:clamp(1.2rem,2.6vw,2rem)}
 section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.6rem)}
+
+/* Wie ich arbeite: sechs Boxen, drei pro Reihe */
+.trio6{grid-template-columns:repeat(3,1fr); gap:2.6rem 2.2rem}
+@media (max-width:900px){ .trio6{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:600px){ .trio6{grid-template-columns:1fr} }
