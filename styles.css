@@ -1007,3 +1007,7 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 #ez-tag > .sect-tint{background:linear-gradient(180deg, rgba(20,36,63,.72) 0%, rgba(20,36,63,.55) 50%, rgba(20,36,63,.75) 100%)}
 #ez-tag .ez-ablauf{max-width:46rem}
 #ez-tag .cta-row .btn{min-width:16rem; justify-content:center; text-align:center}
+
+/* Anmelde-Button direkt unter der Infobox */
+.factbox-wrap{display:flex; flex-direction:column; gap:1rem}
+.factbox-wrap .btn{width:100%; justify-content:center; text-align:center}
