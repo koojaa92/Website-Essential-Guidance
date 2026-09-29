@@ -1109,3 +1109,6 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 /* Was meine Räume ausmacht: Regenbogen-Bild dunkel im blauen Hintergrund */
 #raeume .sect-bg{opacity:1; object-position:center 40%}
 #raeume > .sect-tint{background:rgba(20,36,63,.8)}
+.vision-text{max-width:30rem}
+#vision .sect-bg{object-position:65% 42%}
+@media (max-width:700px){ .vision-text{max-width:none} }
