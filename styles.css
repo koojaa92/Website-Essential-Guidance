@@ -1011,3 +1011,15 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 /* Anmelde-Button direkt unter der Infobox */
 .factbox-wrap{display:flex; flex-direction:column; gap:1rem}
 .factbox-wrap .btn{width:100%; justify-content:center; text-align:center}
+
+/* Essenzraum: Ablauf links, "Worauf du dich einlässt" rechts im blauen Block */
+#ez-tag .ez-ablauf{max-width:none}
+#ez-tag .sect-bg{opacity:.3}
+#ez-tag > .sect-tint{background:linear-gradient(180deg, rgba(20,36,63,.86) 0%, rgba(20,36,63,.78) 50%, rgba(20,36,63,.88) 100%)}
+.ez-rahmen h2{margin-bottom:1.4rem}
+.rahmen-item{display:grid; grid-template-columns:5.5rem 1fr; gap:1.1rem; padding:1.2rem 0; border-top:1px solid rgba(255,255,255,.16)}
+.rahmen-item:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.rahmen-img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:10px}
+.rahmen-item h3{font-size:1.15rem; margin-bottom:.3rem; color:#F6F3EC}
+.rahmen-item p{margin:0; font-size:.92rem; line-height:1.55; color:#E8EDF5}
+@media (max-width:820px){ .rahmen-item{grid-template-columns:4.2rem 1fr} }
