@@ -1037,3 +1037,7 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 /* Einzelbegleitung: Berge dezent im blauen Hintergrund */
 #formen .sect-bg{opacity:.7; object-position:center 45%}
 #formen > .sect-tint{background:linear-gradient(180deg, rgba(20,36,63,.66) 0%, rgba(20,36,63,.5) 50%, rgba(20,36,63,.72) 100%)}
+
+/* Button in den Details der Begleitungen */
+.panel-cta{margin-top:1.6rem}
+.deep .panel-cta .btn{background:var(--gold); border-color:var(--gold); color:var(--ink)}
