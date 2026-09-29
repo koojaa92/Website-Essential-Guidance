@@ -937,3 +937,8 @@ html,body{overflow-x:hidden}
 
 /* Weniger Abstand zwischen Einleitung und Galerie */
 section:has(+ .pull-up){padding-bottom:clamp(1.2rem,2.6vw,2rem)}
+
+/* Ablauf Essential Dance: Bild im Hintergrund, kompakter Abstand */
+#ablauf{padding-top:clamp(2.4rem,5vw,3.6rem)}
+#ablauf .sect-bg{opacity:.55; object-position:center 40%}
+#ablauf > .sect-tint{background:linear-gradient(180deg, rgba(15,31,56,.88) 0%, rgba(15,31,56,.66) 45%, rgba(15,31,56,.9) 100%)}
