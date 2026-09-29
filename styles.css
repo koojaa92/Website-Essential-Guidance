@@ -934,3 +934,6 @@ html,body{overflow-x:hidden}
 /* Lesbarkeit auf dunklem Grund */
 .deep .step p{color:#D3DBE8}
 .deep .step h3{color:#F6F3EC}
+
+/* Weniger Abstand zwischen Einleitung und Galerie */
+section:has(+ .pull-up){padding-bottom:clamp(1.2rem,2.6vw,2rem)}
