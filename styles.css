@@ -1003,7 +1003,7 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 @media (max-width:600px){ .trio6{grid-template-columns:1fr} }
 
 /* Essenzraum "Der Tag": Altar-Foto ganz dezent im blauen Hintergrund */
-#ez-tag .sect-bg{opacity:.42; object-position:center 55%}
-#ez-tag > .sect-tint{background:linear-gradient(180deg, rgba(20,36,63,.8) 0%, rgba(20,36,63,.68) 50%, rgba(20,36,63,.82) 100%)}
+#ez-tag .sect-bg{opacity:.62; object-position:center 55%}
+#ez-tag > .sect-tint{background:linear-gradient(180deg, rgba(20,36,63,.72) 0%, rgba(20,36,63,.55) 50%, rgba(20,36,63,.75) 100%)}
 #ez-tag .ez-ablauf{max-width:46rem}
 #ez-tag .cta-row .btn{min-width:16rem; justify-content:center; text-align:center}
