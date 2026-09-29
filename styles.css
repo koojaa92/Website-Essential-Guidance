@@ -942,3 +942,15 @@ section:has(+ .pull-up){padding-bottom:clamp(1.2rem,2.6vw,2rem)}
 #ablauf{padding-top:clamp(2.4rem,5vw,3.6rem)}
 #ablauf .sect-bg{opacity:.55; object-position:center 40%}
 #ablauf > .sect-tint{background:linear-gradient(180deg, rgba(15,31,56,.88) 0%, rgba(15,31,56,.66) 45%, rgba(15,31,56,.9) 100%)}
+
+/* Kompaktere Terminkacheln auf Essential Dance */
+@media (min-width:621px){
+  #dates-ed{gap:.9rem; margin-top:1.8rem}
+  #dates-ed .dcard-img{aspect-ratio:16/7}
+  #dates-ed .dcard-body{padding:.85rem 1rem .95rem}
+  #dates-ed .dcard-date{font-size:.66rem; margin-bottom:.3rem}
+  #dates-ed .dcard h3{font-size:1.05rem; margin-bottom:.15rem}
+  #dates-ed .dcard p{font-size:.84rem}
+  #dates-ed .dcard-body .dcard-foot{padding-top:.65rem}
+  #dates-ed .dcard-link{padding:.3rem .8rem; font-size:.78rem}
+}
