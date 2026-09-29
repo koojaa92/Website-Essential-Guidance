@@ -1041,3 +1041,22 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 /* Button in den Details der Begleitungen */
 .panel-cta{margin-top:1.6rem}
 .deep .panel-cta .btn{background:var(--gold); border-color:var(--gold); color:var(--ink)}
+
+/* Über mich: klare Anordnung */
+.arbeit-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem,5vw,4.5rem); align-items:start}
+.arbeit-intro h2{margin-bottom:1.2rem}
+.arbeit-lead{font-size:1.25rem; line-height:1.6; color:var(--gold-soft); margin:0; max-width:26rem}
+.arbeit-cards{display:grid; grid-template-columns:1fr 1fr; gap:1.1rem}
+.karte{padding:1.5rem 1.5rem 1.6rem; border:1px solid rgba(255,255,255,.16); border-radius:14px; background:rgba(255,255,255,.04)}
+.karte h3{font-size:1.2rem; margin:0 0 .6rem; color:#F6F3EC}
+.karte p{margin:0; font-size:.96rem; line-height:1.6; color:#E8EDF5}
+.karte.hell{border-color:var(--line); background:#fff}
+.karte.hell h3{color:var(--ink)}
+.karte.hell p{color:var(--slate)}
+.passen-kopf{max-width:40rem; margin-bottom:2rem}
+.passen-kopf p{margin:.8rem 0 0; font-size:1.05rem}
+.passen-karten{display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem}
+.passen-fuss{display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; margin-top:2rem}
+.passen-fuss p{margin:0; font-size:1.02rem}
+@media (max-width:900px){ .arbeit-grid{grid-template-columns:1fr} .passen-karten{grid-template-columns:1fr} }
+@media (max-width:560px){ .arbeit-cards{grid-template-columns:1fr} }
