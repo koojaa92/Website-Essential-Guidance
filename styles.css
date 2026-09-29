@@ -1174,3 +1174,6 @@ footer .fgrid nav a{white-space:nowrap}
 #kontakt .weg-fuss{display:block}
 #kontakt .weg-fuss .btn{display:flex; width:100%; justify-content:center; text-align:center; box-sizing:border-box}
 .ueber-intro .tight p,.ueber-intro .tight p:first-child{font-size:1.08rem; line-height:1.7}
+
+.dcard .dcard-preis{margin-top:.35rem; font-size:.84rem; font-weight:600; color:var(--gold)}
+@media (max-width:620px){ .dcard .dcard-preis{font-size:.78rem} }
