@@ -56,7 +56,7 @@
     if(maxCount){
       var lim = parseInt(maxCount,10);
       toShow = upcoming.slice(0, lim);
-      // Sicherstellen, dass der naechste Essenzraum-Termin sichtbar ist (nur relevant ohne Kategorie-Filter)
+      // Sicherstellen, dass der naechste Essenz Raum-Termin sichtbar ist (nur relevant ohne Kategorie-Filter)
       if(!category){
         var hasRaum = toShow.some(function(c){ return c.classList.contains('raum'); });
         if(!hasRaum){
