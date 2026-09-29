@@ -1169,3 +1169,7 @@ footer .fgrid nav a{white-space:nowrap}
 @media (max-width:620px){
   .dcard-big i,.dcard.raum .dcard-big i{font-size:.78rem; letter-spacing:.1em; margin-top:.2rem}
 }
+
+/* Bleib in Verbindung: beide Buttons so breit wie die Textspalte, links und rechts bündig */
+#kontakt .weg-fuss{display:block}
+#kontakt .weg-fuss .btn{display:flex; width:100%; justify-content:center; text-align:center; box-sizing:border-box}
