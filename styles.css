@@ -1063,3 +1063,6 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 
 .passen-fuss .btn{white-space:nowrap}
 @media (max-width:640px){ .passen-fuss .btn{flex:1 1 100%; text-align:center} }
+
+.arbeit-bild{display:block; width:100%; max-width:26rem; aspect-ratio:4/5; object-fit:cover; object-position:50% 55%; border-radius:14px; margin-top:2rem}
+@media (max-width:900px){ .arbeit-bild{max-width:none; aspect-ratio:4/3} }
