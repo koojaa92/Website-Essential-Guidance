@@ -165,7 +165,7 @@
     f.setAttribute('frameborder','no');
     f.setAttribute('allow','autoplay');
     f.setAttribute('title','J Kobi auf SoundCloud \u2014 aktuelle Sets');
-    f.src = box.getAttribute('data-src');
+    f.src = box.getAttribute('data-src').replace('auto_play=false','auto_play=true');
     box.replaceWith(f);
   });
 })();
