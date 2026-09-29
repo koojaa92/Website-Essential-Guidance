@@ -1148,3 +1148,9 @@ header.top nav a{white-space:nowrap; font-size:.98rem}
 
 .dates-empty{margin:0; padding:1.6rem 1.8rem; border:1px solid var(--line); border-radius:14px; color:var(--slate)}
 footer .fgrid nav a{white-space:nowrap}
+
+/* Über mich Intro: Bild immer so hoch wie der Text */
+@media (min-width:821px){
+  .ueber-intro{align-items:stretch}
+  .ueber-intro .fillpic{height:100%; aspect-ratio:auto; min-height:32rem}
+}
