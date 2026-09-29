@@ -66,6 +66,13 @@
       }
     }
     toShow.forEach(function(card){ card.style.display = ''; });
+    if(!toShow.length){
+      var note = document.createElement('p');
+      note.className = 'dates-empty';
+      note.textContent = 'Aktuell sind keine Termine eingetragen. Neue Termine gibt es im Telegram-Kanal und im Newsletter.';
+      container.appendChild(note);
+      container.style.display = 'block';
+    }
   });
 })();
 

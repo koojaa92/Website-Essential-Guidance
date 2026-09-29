@@ -1145,3 +1145,6 @@ header.top nav a{white-space:nowrap; font-size:.98rem}
 .sc-consent{border:1px solid var(--line); border-radius:14px; padding:1.6rem 1.6rem 1.8rem; background:var(--paper)}
 .sc-consent p{margin:0 0 1.2rem; max-width:40rem}
 .sc-consent p a{text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:3px}
+
+.dates-empty{margin:0; padding:1.6rem 1.8rem; border:1px solid var(--line); border-radius:14px; color:var(--slate)}
+footer .fgrid nav a{white-space:nowrap}

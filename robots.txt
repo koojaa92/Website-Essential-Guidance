@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /schriftvorschau.html
+
+Sitemap: https://essential-guidance.space/sitemap.xml
