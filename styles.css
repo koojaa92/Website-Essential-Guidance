@@ -1120,3 +1120,8 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 
 /* Datum auf Terminbildern: etwas dicker, transparenter */
 .dcard-big{color:#fff; opacity:.72; -webkit-text-stroke:.045em #fff; text-shadow:0 2px 14px rgba(40,10,40,.28)}
+
+/* Essenzraum-Karten: Datum zweizeilig links, kollidiert nicht mit dem Schriftzug im Bild */
+.dcard.raum .dcard-big{flex-direction:column; align-items:flex-start; justify-content:center; gap:.15em; line-height:1.05; padding-left:1.3rem; font-size:clamp(.8rem,1.1vw,1rem)}
+.dcard.raum .dcard-big b{font-size:2.1em}
+@media (max-width:620px){ .dcard.raum .dcard-big{align-items:center; padding:0} .dcard.raum .dcard-big i{display:none} .dcard.raum .dcard-big b{font-size:1.5rem} }
