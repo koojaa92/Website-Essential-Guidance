@@ -25,7 +25,8 @@ TZ = ('BEGIN:VTIMEZONE\r\nTZID:Europe/Berlin\r\nBEGIN:DAYLIGHT\r\nTZOFFSETFROM:+
 def cal(name, events):
     stamp = dt.datetime.utcnow().strftime('%Y%m%dT%H%M%SZ')
     L = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Essential Guidance//Termine//DE','CALSCALE:GREGORIAN',
-         'METHOD:PUBLISH','X-WR-CALNAME:'+esc(name),'X-WR-TIMEZONE:Europe/Berlin']
+         'METHOD:PUBLISH','X-WR-CALNAME:'+esc(name),'X-WR-TIMEZONE:Europe/Berlin',
+         'REFRESH-INTERVAL;VALUE=DURATION:PT12H','X-PUBLISHED-TTL:PT12H']
     body = '\r\n'.join(fold(l) for l in L) + '\r\n' + TZ
     for uid, day, start, end, summary, desc in events:
         d = day.replace('-','')
