@@ -144,3 +144,21 @@
   // Sicherheitsnetz: nach spaetestens 1.5s alles zeigen, falls der Observer nicht (rechtzeitig) greift
   setTimeout(function(){ els.forEach(function(el){ el.classList.add('is-in'); }); }, 1500);
 })();
+
+// SoundCloud-Player erst nach Klick laden (Datenschutz)
+(function(){
+  var box = document.getElementById('sc-consent');
+  if(!box) return;
+  var btn = box.querySelector('button');
+  btn.addEventListener('click', function(){
+    var f = document.createElement('iframe');
+    f.className = 'sc-solo';
+    f.style.height = '20rem';
+    f.setAttribute('scrolling','no');
+    f.setAttribute('frameborder','no');
+    f.setAttribute('allow','autoplay');
+    f.setAttribute('title','J Kobi auf SoundCloud \u2014 aktuelle Sets');
+    f.src = box.getAttribute('data-src');
+    box.replaceWith(f);
+  });
+})();
