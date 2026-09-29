@@ -1156,3 +1156,16 @@ footer .fgrid nav a{white-space:nowrap}
 }
 
 .mwst-note{margin:1.4rem 0 0; font-size:.9rem; color:#D3DBE8}
+
+/* Monat auf den Terminbildern: Handy mit 3-Buchstaben-Kürzel */
+.dcard-big .m-kurz{display:none}
+@media (max-width:620px){
+  .dcard-big,.dcard.raum .dcard-big{flex-direction:column; align-items:center; justify-content:center; gap:.05em; line-height:1}
+  .dcard-big i,.dcard.raum .dcard-big i{display:block; font-size:.42em; letter-spacing:.06em}
+  .dcard-big .m-voll{display:none}
+  .dcard-big .m-kurz{display:inline}
+  .dcard-big b,.dcard.raum .dcard-big b{font-size:1.5rem}
+}
+@media (max-width:620px){
+  .dcard-big i,.dcard.raum .dcard-big i{font-size:.78rem; letter-spacing:.1em; margin-top:.2rem}
+}
