@@ -46,7 +46,7 @@ section{padding:clamp(4rem,9vw,7.5rem) 0}
 .deep h1,.deep h2,.deep h3{color:#F6F3EC}
 .deep .dnum{color:#F6F3EC}
 .deep .dnum small{color:var(--gold-soft)}
-.deep .dwhat p,.deep .dprice,.deep .rhythm{color:#A8B4CA}
+.deep .dwhat p,.deep .dprice,.deep .rhythm{color:#D3DBE8}
 .deep .date-row{border-top-color:rgba(255,255,255,.16)}
 .deep .date-row:last-of-type{border-bottom-color:rgba(255,255,255,.16)}
 .deep .btn{background:var(--gold); border-color:var(--gold); color:var(--ink)}
@@ -58,7 +58,7 @@ section{padding:clamp(4rem,9vw,7.5rem) 0}
 .deep summary{color:#F6F3EC}
 .deep details{border-top-color:rgba(255,255,255,.16)}
 .deep details:last-of-type{border-bottom-color:rgba(255,255,255,.16)}
-.deep details p{color:#A8B4CA}
+.deep details p{color:#D3DBE8}
 .deep input[type=email]{background:transparent; border-color:rgba(255,255,255,.3); color:#F6F3EC}
 .deep .contact-list li{border-top-color:rgba(255,255,255,.16)}
 .deep .contact-list b{color:#F6F3EC}
@@ -212,7 +212,7 @@ footer a{color:#C2CADA}
 .stance h3{font-size:1.3rem;margin-bottom:.6rem;color:var(--ink)}
 .stance p{font-size:.98rem;color:var(--slate);margin:0}
 .stance .lead{font-family:var(--display);font-weight:500;font-size:1.72rem;line-height:1.4;color:var(--gold);grid-column:1/-1;max-width:34rem;margin:0 0 .5rem}
-.deep .stance p{color:#A8B4CA}
+.deep .stance p{color:#D3DBE8}
 
 /* Zitate als Boxen */
 .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.2rem;margin-top:2.6rem}
@@ -260,7 +260,7 @@ h3{font-weight:700}
 .deepgrid img.pic{width:100%}
 @media (max-width:820px){ .deepgrid{grid-template-columns:1fr} }
 .disclaimer{margin-top:2.4rem; padding:1.4rem 1.5rem; background:var(--mist); border-radius:8px; font-size:.9rem; color:var(--slate)}
-.deep .disclaimer{background:rgba(255,255,255,.06); color:#A8B4CA}
+.deep .disclaimer{background:rgba(255,255,255,.06); color:#D3DBE8}
 .factbox{border:1px solid var(--line); border-radius:8px; padding:1.5rem 1.6rem}
 .factbox h3{font-size:1.05rem; margin-bottom:.9rem}
 .factbox dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:.5rem 1rem; font-size:.92rem}
@@ -334,7 +334,7 @@ h3{font-weight:700}
 .sc-block svg{width:1.5rem; height:1.5rem; flex:0 0 auto; color:var(--gold)}
 .sc-block h3{margin-bottom:.1rem; font-size:.98rem}
 .sc-block p{margin:0; font-size:.82rem; color:var(--slate)}
-.deep .sc-block p{color:#A8B4CA}
+.deep .sc-block p{color:#D3DBE8}
 .sc-block .sc-arrow{font-size:.78rem; letter-spacing:.06em; color:var(--gold); flex:0 0 auto}
 .sc-block[open] .sc-arrow::after{content:" ▲"}
 .sc-block:not([open]) .sc-arrow::after{content:" ▾"}
@@ -646,15 +646,15 @@ footer .fgrid nav a{padding:0; border:0; display:block; margin-bottom:.5rem; fon
 .deep .paket{background:rgba(255,255,255,.055); border-color:rgba(255,255,255,.16); color:#C9D3E4}
 .deep .paket h3{color:#F6F3EC}
 .deep .paket .preis{color:#F6F3EC}
-.deep .paket .preis small{color:#A8B4CA}
-.deep .paket p{color:#A8B4CA}
+.deep .paket .preis small{color:#D3DBE8}
+.deep .paket p{color:#D3DBE8}
 .deep .paket.hebt{border-color:var(--gold); background:rgba(168,125,58,.14)}
 .deep .paket:hover{box-shadow:0 20px 38px -26px rgba(0,0,0,.7)}
 .deep .paket-panel{background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.2)}
 .deep .paket-panel h3{color:#F6F3EC}
-.deep .panel-grid p{color:#A8B4CA}
+.deep .panel-grid p{color:#D3DBE8}
 .deep .lead{color:#C9D3E4}
-.deep .rhythm{color:#A8B4CA}
+.deep .rhythm{color:#D3DBE8}
 
 /* Sektion mit Bild als Hintergrund und dunklem Overlay */
 .bgsect{position:relative; overflow:hidden; background:var(--ink)}
@@ -930,3 +930,7 @@ html,body{overflow-x:hidden}
 /* ---------- Runde 13: Anmelden+Details Buttons in Terminkarten sauber bündig ---------- */
 .dcard-foot .dcard-link{margin-top:0; align-self:center}
 .dcard-foot{align-items:center}
+
+/* Lesbarkeit auf dunklem Grund */
+.deep .step p{color:#D3DBE8}
+.deep .step h3{color:#F6F3EC}
