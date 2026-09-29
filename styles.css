@@ -1177,3 +1177,9 @@ footer .fgrid nav a{white-space:nowrap}
 
 .dcard .dcard-preis{margin-top:.35rem; font-size:.84rem; font-weight:600; color:var(--gold)}
 @media (max-width:620px){ .dcard .dcard-preis{font-size:.78rem} }
+
+/* Kalender-Export auf der Termine-Seite */
+.cal-export{margin-top:clamp(2rem,4vw,3rem); padding-top:clamp(1.6rem,3vw,2.2rem); border-top:1px solid var(--line)}
+.cal-export-title{font-size:1.6rem; margin:0 0 .5rem}
+.cal-export p{margin:0 0 1.2rem; max-width:40rem; color:var(--slate)}
+@media (max-width:620px){ .cal-export .cta-row{flex-direction:column} .cal-export .btn{width:100%; justify-content:center; text-align:center} }
