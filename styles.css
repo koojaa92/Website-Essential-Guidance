@@ -1112,3 +1112,8 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 .vision-text{max-width:30rem}
 #vision .sect-bg{object-position:65% 42%}
 @media (max-width:700px){ .vision-text{max-width:none} }
+
+/* Über mich Intro: Portrait grösser im Format 4:5 */
+.ueber-intro{grid-template-columns:.95fr 1.05fr; align-items:center}
+.ueber-intro .fillpic{height:auto; aspect-ratio:4/5; min-height:0; object-position:50% 25%}
+@media (max-width:820px){ .ueber-intro{grid-template-columns:1fr} .ueber-intro .fillpic{aspect-ratio:4/5} }
