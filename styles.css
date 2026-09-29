@@ -1086,3 +1086,14 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 .ueber-intro .fillpic{min-height:0; height:100%; max-height:none; object-position:50% 22%}
 .ueber-intro .tight{display:flex; flex-direction:column; justify-content:center}
 @media (max-width:820px){ .ueber-intro .fillpic{height:auto; aspect-ratio:3/4} }
+
+/* Essenzraum-Karten: Datum links, damit es nicht über dem Schriftzug im Bild liegt */
+.dcard.raum .dcard-big{justify-content:flex-start; padding-left:1.4rem; font-size:clamp(1.05rem,2vw,1.5rem)}
+.dcard.raum .dcard-big{flex-wrap:wrap; align-content:center; max-width:55%}
+@media (max-width:620px){ .dcard.raum .dcard-big{max-width:100%; padding-left:0; justify-content:center} }
+.dcard.raum .dcard-big{flex-wrap:nowrap; max-width:none; white-space:nowrap; font-size:clamp(.85rem,1.45vw,1.15rem); padding-left:1.2rem}
+@media (max-width:620px){
+  .dcard-media{align-self:stretch; width:6rem; display:flex}
+  .dcard-media .dcard-img{width:100%; height:100%; aspect-ratio:auto; object-fit:cover}
+  .dcard.raum .dcard-big{padding:0; justify-content:center; font-size:1.5rem}
+}
