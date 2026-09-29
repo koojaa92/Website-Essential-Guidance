@@ -954,3 +954,18 @@ section:has(+ .pull-up){padding-bottom:clamp(1.2rem,2.6vw,2rem)}
   #dates-ed .dcard-body .dcard-foot{padding-top:.65rem}
   #dates-ed .dcard-link{padding:.3rem .8rem; font-size:.78rem}
 }
+
+/* Grosses, transparentes Datum auf den Terminbildern (wie im Flyer) */
+.dcard-media{position:relative; display:block}
+.dcard-media .dcard-img{display:block}
+.dcard-big{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:.4em;
+  padding:.5rem; text-align:center; text-transform:uppercase; white-space:nowrap;
+  font-family:'Syncopate','Karla',sans-serif; font-weight:700; letter-spacing:.04em;
+  font-size:clamp(1rem,1.9vw,1.45rem); color:rgba(255,255,255,.88);
+  text-shadow:0 2px 16px rgba(60,20,40,.35); pointer-events:none}
+.dcard-big b,.dcard-big i{font-weight:700; font-style:normal}
+@media (max-width:620px){
+  .dcard-media{flex:0 0 auto}
+  .dcard-big{font-size:1.5rem; letter-spacing:0}
+  .dcard-big i{display:none}
+}
