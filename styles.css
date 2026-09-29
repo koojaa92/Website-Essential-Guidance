@@ -1183,3 +1183,11 @@ footer .fgrid nav a{white-space:nowrap}
 .cal-export-title{font-size:1.6rem; margin:0 0 .5rem}
 .cal-export p{margin:0 0 1.2rem; max-width:40rem; color:var(--slate)}
 @media (max-width:620px){ .cal-export .cta-row{flex-direction:column} .cal-export .btn{width:100%; justify-content:center; text-align:center} }
+
+/* DJ Bookings: Text über die volle Breite, zwei Spalten */
+#dj-booking .dj-text{max-width:none; display:grid; grid-template-columns:1fr 1fr; column-gap:clamp(2rem,5vw,4.5rem); row-gap:0; align-items:start}
+#dj-booking .dj-text > .eyebrow,#dj-booking .dj-text > h2,#dj-booking .dj-text > .cta-row{grid-column:1 / -1}
+#dj-booking .dj-text > p{margin:0 0 1rem}
+#dj-booking .dj-text > h2{margin-bottom:1.4rem}
+#dj-booking .dj-text > .cta-row{margin-top:1.4rem}
+@media (max-width:820px){ #dj-booking .dj-text{grid-template-columns:1fr} }
