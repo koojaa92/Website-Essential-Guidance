@@ -973,3 +973,7 @@ section:has(+ .pull-up){padding-bottom:clamp(1.2rem,2.6vw,2rem)}
 /* DJ Bookings: Bild ganz leicht hinter dem Blau */
 #dj-booking .sect-bg{opacity:.32; object-position:center 55%}
 #dj-booking > .sect-tint{background:linear-gradient(180deg, rgba(20,36,63,.86) 0%, rgba(20,36,63,.78) 50%, rgba(20,36,63,.88) 100%)}
+
+/* Weniger Abstand unter dem Kalender */
+section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.6rem)}
+section:has(> .wrap > .termine-head){padding-bottom:clamp(2rem,4vw,3rem)}
