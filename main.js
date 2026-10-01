@@ -167,3 +167,14 @@
     box.replaceWith(f);
   });
 })();
+
+// Handy: lange Textbloecke erst nach "Weiterlesen" zeigen
+(function(){
+  document.querySelectorAll('.mehr-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var box = b.previousElementSibling;
+      if(box) box.classList.add('offen');
+      b.remove();
+    });
+  });
+})();

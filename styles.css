@@ -1189,7 +1189,7 @@ footer .fgrid nav a{white-space:nowrap}
 @media (max-width:620px){ .cal-export .cta-row{flex-direction:column} .cal-export .btn{width:100%; justify-content:center; text-align:center} }
 
 /* DJ Bookings: Text über die volle Breite, zwei Spalten */
-#dj-booking .dj-text{max-width:none; display:grid; grid-template-columns:1fr 1fr; column-gap:clamp(2rem,5vw,4.5rem); row-gap:0; align-items:start}
+#dj-booking .dj-text{max-width:46rem; display:grid; grid-template-columns:1fr; column-gap:clamp(2rem,5vw,4.5rem); row-gap:0; align-items:start}
 #dj-booking .dj-text > .eyebrow,#dj-booking .dj-text > h2,#dj-booking .dj-text > .cta-row{grid-column:1 / -1}
 #dj-booking .dj-text > p{margin:0 0 1rem}
 #dj-booking .dj-text > h2{margin-bottom:1.4rem}
@@ -1205,3 +1205,28 @@ footer .fgrid nav a{white-space:nowrap}
 /* ---------- Texte Fassung Oktober 2026: Absatzabstaende in neuen Bloecken ---------- */
 .rahmen-item p + p{margin-top:.6rem}
 #genekeys h2,[data-e="ub-g0"],[data-e="ed-60"]{margin-bottom:1.1rem}
+
+/* ---------- Goldener Button (z. B. "Alle Termine") ---------- */
+.btn.gold{background:var(--gold); border-color:var(--gold); color:var(--ink)}
+.btn.gold:hover,.btn.gold:focus-visible{background:transparent; border-color:var(--gold); color:var(--gold)}
+.termine-btns{display:flex; flex-wrap:wrap; gap:.6rem}
+.btn-icon{display:inline-flex; align-items:center; gap:.5rem}
+.btn-icon svg{width:1.05rem; height:1.05rem; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linejoin:round; stroke-linecap:round}
+
+/* ---------- Termine: Pausen-Platzhalter und Hinweise ---------- */
+.dcard.pause{background:#EEEDEA; border-color:#E2E0DA}
+.dcard.pause:hover{transform:none; box-shadow:none}
+.dcard.pause .pause-fill{background:linear-gradient(135deg,#D9D6CF,#C9C6BF)}
+.dcard.pause h3{color:var(--slate)}
+.dcard.pause .dcard-date{color:var(--slate)}
+.termine-info{margin-top:0; margin-bottom:2.2rem}
+.termine-info h3{font-size:1.2rem; margin-bottom:.4rem}
+.termine-info p{margin:0; font-size:.95rem}
+
+/* ---------- Handy: "Weiterlesen" ---------- */
+.mehr-btn{display:none; margin-top:.4rem}
+@media (max-width:700px){
+  .mehr-mobil:not(.offen){display:none}
+  .mehr-btn{display:inline-flex}
+}
+@media (max-width:560px){ .termine-head{flex-direction:column; align-items:flex-start; gap:.8rem} }
