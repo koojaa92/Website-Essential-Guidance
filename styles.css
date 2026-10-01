@@ -913,6 +913,10 @@ html,body{overflow-x:hidden}
   .dcard .dcard-body .dcard-foot{flex-wrap:nowrap; align-items:center}
   .dcard .dcard-flag{flex:0 1 auto; min-width:0; overflow:hidden; text-overflow:ellipsis}
   .dcard .dcard-foot .dcard-link{flex:0 0 auto; margin-left:auto}
+  /* Kombi-Tage (Anmeldung + Tickets + Details): umbrechen statt abschneiden */
+  .dcard .dcard-body .dcard-foot:has(.dcard-flag + .dcard-flag){flex-wrap:wrap; justify-content:flex-start}
+  .dcard .dcard-foot:has(.dcard-flag + .dcard-flag) .dcard-flag{flex:0 0 auto; overflow:visible}
+  .dcard .dcard-foot:has(.dcard-flag + .dcard-flag) .dcard-link{margin-left:0}
 }
 @media (max-width:340px){
   .dcard .dcard-flag{font-size:.72rem; padding:.22rem .48rem; letter-spacing:.04em}
