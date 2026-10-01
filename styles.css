@@ -1239,7 +1239,10 @@ footer .fgrid nav a{white-space:nowrap}
 .gk-links li{margin:.35rem 0}
 .gk-links a{color:var(--gold-soft)}
 .gk-hinweis{margin-top:1rem; font-size:.82rem; opacity:.75}
-#genekeys .gk-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(2rem,5vw,4.5rem); align-items:start}
+#genekeys .gk-grid{display:grid; grid-template-columns:1.15fr .85fr; column-gap:clamp(2rem,5vw,4.5rem); row-gap:0; align-items:stretch}
+#genekeys .gk-title{grid-column:1 / -1; max-width:none; margin-bottom:1.4rem}
+#genekeys .gk-aside .gk-card{height:100%; display:flex; flex-direction:column}
+#genekeys .gk-aside .gk-sub{margin-top:auto}
 #genekeys .gk-text p + p{margin-top:.8rem}
 #genekeys .gk-text .cta-row{margin-top:1.6rem}
 .gk-aside{display:flex; flex-direction:column; gap:1.1rem}
@@ -1249,7 +1252,7 @@ footer .fgrid nav a{white-space:nowrap}
 .gk-card .cta-row{margin-top:1.2rem}
 .gk-card h3{font-size:1.2rem; margin:0 0 .5rem}
 .gk-sub{margin-top:1.5rem; padding-top:1.4rem; border-top:1px solid rgba(233,201,160,.22)}
-@media (max-width:900px){ #genekeys .gk-grid{grid-template-columns:1fr} }
+@media (max-width:900px){ #genekeys .gk-grid{grid-template-columns:1fr; row-gap:2rem} #genekeys .gk-title{margin-bottom:-.6rem} #genekeys .gk-aside .gk-card{height:auto} #genekeys .gk-aside .gk-sub{margin-top:1.5rem} }
 #genekeys .sect-bg{opacity:.22; object-position:70% 40%}
 #genekeys > .sect-tint{background:linear-gradient(90deg, rgba(20,36,63,.92) 0%, rgba(20,36,63,.75) 55%, rgba(20,36,63,.6) 100%)}
 
