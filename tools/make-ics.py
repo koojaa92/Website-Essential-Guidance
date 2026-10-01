@@ -38,11 +38,13 @@ def cal(name, events):
     return body + 'END:VCALENDAR\r\n'
 
 ed, er = [], []
+raumtage = {day for raum, day in cards if raum}
 for raum, day in cards:
-    ed.append(('ed-'+day, day, '1700', '2000', 'Essential Dance',
-      'Ecstatic Dance in Freiburg, 17-20 Uhr. 15 / 20 / 25 € bar (PayPal möglich), du wählst. Keine Anmeldung nötig.'
-      + (' Am selben Tag findet von 11 bis 16 Uhr der Essenz Raum statt.' if raum else '')))
-    if raum:
+    if not raum:
+        ed.append(('ed-'+day, day, '1700', '2000', 'Essential Dance',
+          'Ecstatic Dance in Freiburg, 17-20 Uhr. 15 € VVK über Eventfrog, 20 € Abendkasse. Keine Anmeldung nötig.'
+          + (' Am selben Tag findet von 11 bis 16 Uhr der Essenz Raum statt.' if day in raumtage else '')))
+    else:
         er.append(('er-'+day, day, '1100', '1600', 'Essenz Raum',
           'Ein Tag in kleiner Gruppe, 11-16 Uhr. Im Anschluss Tanzen (Essential Dance) 17-20 Uhr. '
           '75 / 90 / 110 € inkl. 7 % MwSt., du wählst. Anmeldung per E-Mail an jakob.kohlbrenner@posteo.de.'))
