@@ -1248,6 +1248,7 @@ footer .fgrid nav a{white-space:nowrap}
 .gk-card p{margin:0}
 .gk-card .cta-row{margin-top:1.2rem}
 .gk-card h3{font-size:1.2rem; margin:0 0 .5rem}
+.gk-sub{margin-top:1.5rem; padding-top:1.4rem; border-top:1px solid rgba(233,201,160,.22)}
 @media (max-width:900px){ #genekeys .gk-grid{grid-template-columns:1fr} }
 #genekeys .sect-bg{opacity:.22; object-position:70% 40%}
 #genekeys > .sect-tint{background:linear-gradient(90deg, rgba(20,36,63,.92) 0%, rgba(20,36,63,.75) 55%, rgba(20,36,63,.6) 100%)}
