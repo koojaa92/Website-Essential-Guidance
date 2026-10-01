@@ -1063,7 +1063,7 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 .passen-fuss{display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; margin-top:2rem}
 .passen-fuss p{margin:0; font-size:1.02rem}
 @media (max-width:900px){ .arbeit-grid{grid-template-columns:1fr} .passen-karten{grid-template-columns:1fr} }
-@media (max-width:560px){ .arbeit-cards{grid-template-columns:1fr; grid-template-rows:auto} }
+@media (max-width:560px){ .arbeit-cards{grid-template-rows:auto} }
 
 .passen-fuss .btn{white-space:nowrap}
 @media (max-width:640px){ .passen-fuss .btn{flex:1 1 100%; text-align:center} }
