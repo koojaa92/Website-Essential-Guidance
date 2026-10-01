@@ -1255,3 +1255,9 @@ footer .fgrid nav a{white-space:nowrap}
 
 /* ---------- Einzelbegleitung "Wie ich arbeite": Bilder farblich angleichen ---------- */
 .trio6 .trio-img{filter:saturate(.72) sepia(.18) contrast(.97) brightness(1.03)}
+.gk-guide{display:flex; align-items:center; gap:1rem; margin:2rem 0 1.1rem}
+.gk-guide img{width:84px; height:84px; flex:none}
+.gk-guide span{font-size:.78rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); font-weight:600}
+.gk-card-head{display:flex; align-items:center; gap:1rem; margin-bottom:.9rem}
+.gk-card-head img{width:64px; height:64px; flex:none}
+.gk-card-head .sage-title{margin:0}
