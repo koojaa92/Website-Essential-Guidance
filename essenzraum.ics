@@ -26,38 +26,38 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:er-2026-10-18@essential-guidance.space
-DTSTAMP:20261001T114310Z
+DTSTAMP:20261001T182340Z
 DTSTART;TZID=Europe/Berlin:20261018T110000
 DTEND;TZID=Europe/Berlin:20261018T160000
 SUMMARY:Essenz Raum
 LOCATION:Studio Pro Arte\, Freiburg
 DESCRIPTION:Ein Tag in kleiner Gruppe\, 11-16 Uhr. Im Anschluss Tanzen (Ess
  ential Dance) 17-20 Uhr. 75 / 90 / 110 € inkl. 7 % MwSt.\, du wählst. A
- nmeldung per E-Mail an jakob.kohlbrenner@posteo.de.
+ nmeldung per E-Mail an essential-guidance@posteo.de.
 URL:https://essential-guidance.space/termine.html
 END:VEVENT
 BEGIN:VEVENT
 UID:er-2026-11-15@essential-guidance.space
-DTSTAMP:20261001T114310Z
+DTSTAMP:20261001T182340Z
 DTSTART;TZID=Europe/Berlin:20261115T110000
 DTEND;TZID=Europe/Berlin:20261115T160000
 SUMMARY:Essenz Raum
 LOCATION:Studio Pro Arte\, Freiburg
 DESCRIPTION:Ein Tag in kleiner Gruppe\, 11-16 Uhr. Im Anschluss Tanzen (Ess
  ential Dance) 17-20 Uhr. 75 / 90 / 110 € inkl. 7 % MwSt.\, du wählst. A
- nmeldung per E-Mail an jakob.kohlbrenner@posteo.de.
+ nmeldung per E-Mail an essential-guidance@posteo.de.
 URL:https://essential-guidance.space/termine.html
 END:VEVENT
 BEGIN:VEVENT
 UID:er-2026-12-13@essential-guidance.space
-DTSTAMP:20261001T114310Z
+DTSTAMP:20261001T182340Z
 DTSTART;TZID=Europe/Berlin:20261213T110000
 DTEND;TZID=Europe/Berlin:20261213T160000
 SUMMARY:Essenz Raum
 LOCATION:Studio Pro Arte\, Freiburg
 DESCRIPTION:Ein Tag in kleiner Gruppe\, 11-16 Uhr. Im Anschluss Tanzen (Ess
  ential Dance) 17-20 Uhr. 75 / 90 / 110 € inkl. 7 % MwSt.\, du wählst. A
- nmeldung per E-Mail an jakob.kohlbrenner@posteo.de.
+ nmeldung per E-Mail an essential-guidance@posteo.de.
 URL:https://essential-guidance.space/termine.html
 END:VEVENT
 END:VCALENDAR

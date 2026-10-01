@@ -47,7 +47,7 @@ for raum, day in cards:
     else:
         er.append(('er-'+day, day, '1100', '1600', 'Essenz Raum',
           'Ein Tag in kleiner Gruppe, 11-16 Uhr. Im Anschluss Tanzen (Essential Dance) 17-20 Uhr. '
-          '75 / 90 / 110 € inkl. 7 % MwSt., du wählst. Anmeldung per E-Mail an jakob.kohlbrenner@posteo.de.'))
+          '75 / 90 / 110 € inkl. 7 % MwSt., du wählst. Anmeldung per E-Mail an essential-guidance@posteo.de.'))
 for fn, name, ev in (('essential-dance.ics','Essential Dance Freiburg',ed),('essenzraum.ics','Essenz Raum Freiburg',er)):
     open(fn,'w',encoding='utf-8',newline='').write(cal(name, sorted(ev, key=lambda e:e[1])))
     print(fn, len(ev), 'Termine')
