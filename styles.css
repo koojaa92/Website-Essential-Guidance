@@ -1251,3 +1251,6 @@ footer .fgrid nav a{white-space:nowrap}
 @media (max-width:900px){ #genekeys .gk-grid{grid-template-columns:1fr} }
 #genekeys .sect-bg{opacity:.22; object-position:70% 40%}
 #genekeys > .sect-tint{background:linear-gradient(90deg, rgba(20,36,63,.92) 0%, rgba(20,36,63,.75) 55%, rgba(20,36,63,.6) 100%)}
+
+/* ---------- Einzelbegleitung "Wie ich arbeite": Bilder farblich angleichen ---------- */
+.trio6 .trio-img{filter:saturate(.72) sepia(.18) contrast(.97) brightness(1.03)}
