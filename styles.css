@@ -1261,3 +1261,7 @@ footer .fgrid nav a{white-space:nowrap}
 .gk-card-head{display:flex; align-items:center; gap:1rem; margin-bottom:.9rem}
 .gk-card-head img{width:64px; height:64px; flex:none}
 .gk-card-head .sage-title{margin:0}
+#kontakt.hell{background:var(--paper)}
+#kontakt.hell .zweiwege .weg{background:var(--mist); border-color:var(--line)}
+#kontakt.hell .zweiwege .weg h3{color:var(--ink)}
+#kontakt.hell .zweiwege .weg p{color:var(--slate)}
