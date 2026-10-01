@@ -1230,3 +1230,12 @@ footer .fgrid nav a{white-space:nowrap}
   .mehr-btn{display:inline-flex}
 }
 @media (max-width:560px){ .termine-head{flex-direction:column; align-items:flex-start; gap:.8rem} }
+
+/* ---------- Gene Keys: Golden-Path-Schriftzug und Ressourcen ---------- */
+.sage-title{margin:2.4rem 0 .9rem; font-family:var(--display); text-transform:uppercase; letter-spacing:.12em; line-height:1.15;
+  font-size:clamp(1.35rem,3.4vw,1.9rem); background:linear-gradient(180deg,#E9C9A0 0%,#C59A6A 55%,#A87C4F 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent}
+.gk-links{margin:.6rem 0 0; padding-left:1.1rem}
+.gk-links li{margin:.35rem 0}
+.gk-links a{color:var(--gold-soft)}
+.gk-hinweis{margin-top:1rem; font-size:.82rem; opacity:.75}
