@@ -1060,6 +1060,7 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
 .passen-kopf{max-width:40rem; margin-bottom:2rem}
 .passen-kopf p{margin:.8rem 0 0; font-size:1.05rem}
 .passen-karten{display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem}
+.passen-karten .karte{flex-direction:column; gap:.6rem}
 .passen-fuss{display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; margin-top:2rem}
 .passen-fuss p{margin:0; font-size:1.02rem}
 @media (max-width:900px){ .arbeit-grid{grid-template-columns:1fr} .passen-karten{grid-template-columns:1fr} }
