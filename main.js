@@ -56,13 +56,11 @@
     if(maxCount){
       var lim = parseInt(maxCount,10);
       toShow = upcoming.slice(0, lim);
-      // Sicherstellen, dass der naechste Essenz Raum-Termin sichtbar ist (nur relevant ohne Kategorie-Filter)
+      // Ohne Kategorie-Filter: mindestens die naechsten 2 Essenz Raum-Termine zeigen
       if(!category){
-        var hasRaum = toShow.some(function(c){ return c.classList.contains('raum'); });
-        if(!hasRaum){
-          var nextRaum = upcoming.find(function(c){ return c.classList.contains('raum'); });
-          if(nextRaum){ toShow = toShow.slice(0, lim-1).concat([nextRaum]); }
-        }
+        var raum = upcoming.filter(function(c){ return c.classList.contains('raum'); }).slice(0, 2);
+        var rest = upcoming.filter(function(c){ return raum.indexOf(c) === -1; }).slice(0, lim - raum.length);
+        toShow = upcoming.filter(function(c){ return raum.indexOf(c) !== -1 || rest.indexOf(c) !== -1; });
       }
     }
     toShow.forEach(function(card){ card.style.display = ''; });
