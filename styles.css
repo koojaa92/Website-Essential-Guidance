@@ -1280,3 +1280,5 @@ footer .fgrid nav a{white-space:nowrap}
 
 /* Startseite: goldene Zeilen der Angebote am Handy einzeilig */
 @media (max-width:480px){ #formate .sect-eyebrow{font-size:.71rem; letter-spacing:.05em} }
+#genekeys .gk-grid > .sect-eyebrow{grid-column:1 / -1}
+@media (max-width:900px){ #genekeys .gk-grid > .sect-eyebrow{margin-bottom:-1.2rem} }
