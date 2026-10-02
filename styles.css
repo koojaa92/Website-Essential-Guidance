@@ -1282,3 +1282,6 @@ footer .fgrid nav a{white-space:nowrap}
 @media (max-width:480px){ #formate .sect-eyebrow{font-size:.71rem; letter-spacing:.05em} }
 #genekeys .gk-grid > .sect-eyebrow{grid-column:1 / -1}
 @media (max-width:900px){ #genekeys .gk-grid > .sect-eyebrow{margin-bottom:-1.2rem} }
+
+/* Über mich: kleiner weißer Abstand zwischen den zwei dunklen Bereichen */
+#raeume + #vision{margin-top:clamp(.9rem,2vw,1.4rem)}
