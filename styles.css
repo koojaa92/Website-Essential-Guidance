@@ -1277,3 +1277,6 @@ footer .fgrid nav a{white-space:nowrap}
 #kontakt.hell .zweiwege .weg{background:var(--mist); border-color:var(--line)}
 #kontakt.hell .zweiwege .weg h3{color:var(--ink)}
 #kontakt.hell .zweiwege .weg p{color:var(--slate)}
+
+/* Startseite: goldene Zeilen der Angebote am Handy einzeilig */
+@media (max-width:480px){ #formate .sect-eyebrow{font-size:.71rem; letter-spacing:.05em} }
