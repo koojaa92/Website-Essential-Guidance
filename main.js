@@ -178,3 +178,14 @@
     });
   });
 })();
+
+// Besucherstatistik ohne Cookies (GoatCounter). Wird erst aktiv, wenn GC einen Kontonamen enthaelt.
+(function(){
+  var GC = '';
+  if(!GC || location.protocol === 'file:') return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://gc.zgo.at/count.js';
+  s.setAttribute('data-goatcounter', 'https://' + GC + '.goatcounter.com/count');
+  document.head.appendChild(s);
+})();

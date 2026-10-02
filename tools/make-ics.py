@@ -35,7 +35,7 @@ def cal(name, events):
         d = day.replace('-','')
         ev = ['BEGIN:VEVENT','UID:'+uid+'@essential-guidance.space','DTSTAMP:'+stamp,
               f'DTSTART;TZID=Europe/Berlin:{d}T{start}00', f'DTEND;TZID=Europe/Berlin:{d}T{end}00',
-              'SUMMARY:'+esc(summary),'LOCATION:'+esc('Studio Pro Arte, Freiburg'),
+              'SUMMARY:'+esc(summary),'LOCATION:'+esc('Studio Pro Arte, Am Rohrgraben 4a, 79249 Merzhausen bei Freiburg'),
               'DESCRIPTION:'+esc(desc),'URL:'+SITE+'/termine.html','END:VEVENT']
         body += '\r\n'.join(fold(l) for l in ev) + '\r\n'
     return body + 'END:VCALENDAR\r\n'
@@ -45,12 +45,12 @@ raumtage = {day for raum, day in cards if raum}
 for raum, day in cards:
     if not raum:
         ed.append(('ed-'+day, day, '1700', '2000', 'Essential Dance',
-          'Ecstatic Dance in Freiburg, 17-20 Uhr. 15 € VVK über Eventfrog, 20 € Abendkasse. Keine Anmeldung nötig.'
+          'Freies Tanzen in Freiburg, 17-20 Uhr. 15 € VVK über Eventfrog, 20 € Abendkasse. Keine Anmeldung nötig.'
           + (' Am selben Tag findet von 11 bis 16 Uhr der Essenz Raum statt.' if day in raumtage else '')))
     else:
         er.append(('er-'+day, day, '1100', '1600', 'Essenz Raum',
           'Ein Tag in kleiner Gruppe, 11-16 Uhr. Im Anschluss Tanzen (Essential Dance) 17-20 Uhr. '
-          '75 / 90 / 110 € inkl. 7 % MwSt., du wählst. Anmeldung per E-Mail an essential-guidance@posteo.de.'))
+          '90 €, Mittagessen und Essential Dance am Abend inklusive. Anmeldung per E-Mail an essential-guidance@posteo.de.'))
 for fn, name, ev in (('essential-dance.ics','Essential Dance Freiburg',ed),('essenzraum.ics','Essenz Raum Freiburg',er)):
     open(fn,'w',encoding='utf-8',newline='').write(cal(name, sorted(ev, key=lambda e:e[1])))
     print(fn, len(ev), 'Termine')
@@ -64,12 +64,12 @@ PLACE = {'@type': 'Place', 'name': 'Studio Pro Arte',
 ORG = {'@type': 'Organization', 'name': 'Essential Guidance', 'url': SITE + '/'}
 def ev_ld(day, kind):
     if kind == 'ed':
-        return {'@type': 'DanceEvent', 'name': 'Essential Dance – Ecstatic Dance Freiburg',
-                'description': 'Freies Tanzen (Ecstatic Dance) mit kuratierter Musikreise: Einstimmung im Kreis, zwei Tanzwellen, stiller Ausklang. Ohne Anmeldung.',
+        return {'@type': 'DanceEvent', 'name': 'Essential Dance – freies Tanzen am Sonntag in Freiburg',
+                'description': 'Freies Tanzen ohne Schritte, verwandt mit Ecstatic Dance, mit DJ-Musikreise: Einstimmung im Kreis, zwei Tanzwellen, stiller Ausklang. Ohne Anmeldung.',
                 'startDate': day + 'T17:00:00+' + tz(day), 'endDate': day + 'T20:00:00+' + tz(day),
                 'eventStatus': 'https://schema.org/EventScheduled', 'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
                 'location': PLACE, 'image': SITE + '/images/img-7089e9983714.jpg', 'organizer': ORG,
-                'performer': {'@type': 'Person', 'name': 'Jakob Kohlbrenner'},
+                'performer': {'@type': 'Person', 'name': 'Jakob Kohlbrenner', 'url': SITE + '/ueber.html'},
                 'offers': {'@type': 'Offer', 'price': '15', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock',
                            'url': links.get(day, SITE + '/termine.html')}}
     return {'@type': 'Event', 'name': 'Essenz Raum – ein Tag in kleiner Gruppe',
@@ -77,7 +77,7 @@ def ev_ld(day, kind):
             'startDate': day + 'T11:00:00+' + tz(day), 'endDate': day + 'T16:00:00+' + tz(day),
             'eventStatus': 'https://schema.org/EventScheduled', 'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
             'location': PLACE, 'image': SITE + '/images/img-262a22e84b99.jpg', 'organizer': ORG,
-            'offers': {'@type': 'Offer', 'price': '75', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock',
+            'offers': {'@type': 'Offer', 'price': '90', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock',
                        'url': SITE + '/essenzraum.html'}}
 def tz(day):  # Sommerzeit bis letzter Sonntag im Oktober
     d = dt.date.fromisoformat(day)
