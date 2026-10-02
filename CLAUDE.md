@@ -12,9 +12,9 @@
 
 ## Marke und SEO (verbindlich)
 - Essential Guidance = Dachmarke. Darunter drei eigenständige Bereiche: Essential Dance (Tanzmarke), Essenz Raum (Tagesformat), Einzelbegleitung.
-- "Ecstatic Dance" nur als beschreibender Begriff ("verwandt mit Ecstatic Dance"), nie als Markenname. "Ecstatic Dance Freiburg" ist der Name eines anderen Anbieters (freitags) und darf nicht in Titeln oder Event-Namen stehen.
+- "Ecstatic Dance" nur als beschreibender Begriff ("inspiriert von Ecstatic Dance"), nie als Markenname. "Ecstatic Dance Freiburg" ist der Name eines anderen Anbieters (freitags) und darf nicht in Titeln oder Event-Namen stehen.
 - Alleinstellung im Freiburger Umfeld: Essential Dance ist sonntags (Ecstatic Dance Freiburg und 5Rhythmen freitags, Holy Wild/Take5 samstags).
 - Ort immer gleich schreiben: Studio Pro Arte, Am Rohrgraben 4a, 79249 Merzhausen bei Freiburg.
 - llms.txt ist die Kurzbeschreibung für KI-Systeme; bei Preis-, Zeit- oder Angebotsänderungen mitpflegen.
 - Domain: Ziel ist essential-guidance.de (Strato). Umstellung erst, wenn der DNS-Eintrag bei Strato auf GitHub Pages zeigt; dann in allen Dateien (HTML, sitemap.xml, robots.txt, llms.txt, tools/make-ics.py, CNAME) essential-guidance.space durch essential-guidance.de ersetzen, Datenschutz-Abschnitt "Domain" anpassen und .space bei Cloudflare per 301 auf .de umleiten.
-- Statistik: GoatCounter (cookielos) in main.js, aktiv sobald `GC` einen Kontonamen enthält. Beim Aktivieren in datenschutz.html den Abschnitt "Keine Cookies, keine Analyse" durch einen GoatCounter-Abschnitt ersetzen.
+- Statistik: GoatCounter (cookielos), Konto `essentialgoat`, eingebunden in main.js und in datenschutz.html beschrieben. Auswertung: https://essentialgoat.goatcounter.com

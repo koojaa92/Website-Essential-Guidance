@@ -181,7 +181,7 @@
 
 // Besucherstatistik ohne Cookies (GoatCounter). Wird erst aktiv, wenn GC einen Kontonamen enthaelt.
 (function(){
-  var GC = '';
+  var GC = 'essentialgoat';
   if(!GC || location.protocol === 'file:') return;
   var s = document.createElement('script');
   s.async = true;
