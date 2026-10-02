@@ -1074,6 +1074,12 @@ section:has(> .wrap > .termine-head) + section{padding-top:clamp(1.6rem,3.5vw,2.
   .arbeit-cards.kurz .karte h3{font-size:1.2rem; line-height:1.2; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word}
   .arbeit-cards.kurz .karte-sub{font-size:.84rem; margin-top:.1rem}
 }
+@media (max-width:560px){
+  .arbeit-grid.kompakt{gap:.9rem}
+  .arbeit-grid.kompakt .arbeit-intro h2{margin-bottom:.5rem}
+  .arbeit-grid.kompakt .arbeit-lead{font-size:1.05rem}
+  .arbeit-grid.kompakt .arbeit-intro .arbeit-bild{aspect-ratio:2/1; margin-top:.9rem}
+}
 
 .passen-fuss .btn{white-space:nowrap}
 @media (max-width:640px){ .passen-fuss .btn{flex:1 1 100%; text-align:center} }
