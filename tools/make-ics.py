@@ -70,14 +70,14 @@ def ev_ld(day, kind):
                 'eventStatus': 'https://schema.org/EventScheduled', 'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
                 'location': PLACE, 'image': SITE + '/images/img-7089e9983714.jpg', 'organizer': ORG,
                 'performer': {'@type': 'Person', 'name': 'Jakob Kohlbrenner', 'url': SITE + '/ueber.html'},
-                'offers': {'@type': 'Offer', 'price': '15', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock',
+                'offers': {'@type': 'Offer', 'price': '15', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock', 'validFrom': '2026-10-01T00:00:00+02:00',
                            'url': links.get(day, SITE + '/termine.html')}}
     return {'@type': 'Event', 'name': 'Essenz Raum – ein Tag in kleiner Gruppe',
             'description': 'Ein Tag in kleiner Gruppe mit Bewegung, Kontemplation, Teilen und Malen. Mittagessen und Essential Dance am Abend inklusive. Anmeldung per E-Mail.',
             'startDate': day + 'T11:00:00+' + tz(day), 'endDate': day + 'T16:00:00+' + tz(day),
             'eventStatus': 'https://schema.org/EventScheduled', 'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
             'location': PLACE, 'image': SITE + '/images/img-262a22e84b99.jpg', 'organizer': ORG,
-            'offers': {'@type': 'Offer', 'price': '90', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock',
+            'offers': {'@type': 'Offer', 'price': '90', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock', 'validFrom': '2026-10-01T00:00:00+02:00',
                        'url': SITE + '/essenzraum.html'}}
 def tz(day):  # Sommerzeit bis letzter Sonntag im Oktober
     d = dt.date.fromisoformat(day)
