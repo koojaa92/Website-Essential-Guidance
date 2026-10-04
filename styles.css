@@ -1303,7 +1303,7 @@ footer .fgrid nav a{white-space:nowrap}
 /* Startseite: Sonnenfoto dezent hinter "Bleib in Verbindung" und Footer, durchgehend */
 .verbindung-bg{background:linear-gradient(rgba(20,36,63,.86),rgba(20,36,63,.9)), url(images/verbindung-sonne.jpg) center 40% / cover no-repeat; background-color:var(--ink)}
 .verbindung-bg > section.deep, .verbindung-bg > footer{background:transparent}
-.was-ist{padding-top:clamp(3rem,6vw,4.5rem); padding-bottom:clamp(1.4rem,3vw,2.2rem)}
+section.was-ist{padding-top:clamp(3rem,6vw,4.5rem); padding-bottom:clamp(1.4rem,3vw,2.2rem)}
 
 @media (max-width:480px){ h1{hyphens:manual} }
 
@@ -1339,5 +1339,5 @@ h3 + p{margin-top:.45rem}
 /* Handy: Startbild reicht bis unter die Browserleiste, Abschnittsueberschrift erst nach dem Scrollen */
 @media (max-width:700px){
   .hero:not(.hero-sub){min-height:calc(100lvh - var(--kopf,73px))}
-  .was-ist{padding-top:4.5rem}
+  section.was-ist{padding-top:4.5rem}
 }
