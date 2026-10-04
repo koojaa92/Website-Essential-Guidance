@@ -8,7 +8,7 @@
   --mist:#F4F6F9;
   --line:#E3E8F0;
   --measure:38rem;
-  --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --display:"Crimson Pro",Georgia,"Times New Roman",serif;
   --body:"Karla","Helvetica Neue",Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){
@@ -1310,3 +1310,4 @@ footer .fgrid nav a{white-space:nowrap}
 /* Keine einzelnen Woerter in der letzten Zeile */
 h1,h2,h3{text-wrap:balance}
 p,li,dd,summary{text-wrap:pretty}
+@media (max-width:380px){ .hero-content h1{font-size:2.1rem} }
