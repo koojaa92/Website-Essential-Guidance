@@ -45,7 +45,7 @@ raumtage = {day for raum, day in cards if raum}
 for raum, day in cards:
     if not raum:
         ed.append(('ed-'+day, day, '1700', '2000', 'Essential Dance',
-          'Freies Tanzen in Freiburg, 17-20 Uhr. 15 € VVK über Eventfrog, 20 € Abendkasse. Keine Anmeldung nötig.'
+          'Freies Tanzen in Freiburg, 17-20 Uhr. ab 15 € VVK über Eventfrog, ab 20 € Abendkasse. Keine Anmeldung nötig.'
           + (' Am selben Tag findet von 11 bis 16 Uhr der Essenz Raum statt.' if day in raumtage else '')))
     else:
         er.append(('er-'+day, day, '1100', '1600', 'Essenz Raum',

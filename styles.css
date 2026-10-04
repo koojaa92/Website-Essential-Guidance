@@ -1284,7 +1284,8 @@ footer .fgrid nav a{white-space:nowrap}
 @media (max-width:900px){ #genekeys .gk-grid > .sect-eyebrow{margin-bottom:-1.2rem} }
 
 /* Über mich: kleiner weißer Abstand zwischen den zwei dunklen Bereichen */
-#raeume + #vision{margin-top:clamp(.9rem,2vw,1.4rem)}
+#raeume + #vision{margin-top:clamp(2rem,4vw,3rem)}
+#vision + footer{margin-top:clamp(2rem,4vw,3rem)}
 
 /* Terminseite: Jahres-Trennzeile in der Terminliste */
 .dates-jahr{grid-column:1 / -1; font-family:var(--display); font-size:clamp(1.6rem,3vw,2rem); font-weight:600; color:var(--ink); margin-top:clamp(1rem,3vw,1.8rem); padding-top:clamp(1rem,2.5vw,1.4rem); border-top:1px solid var(--line)}
