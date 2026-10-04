@@ -1378,3 +1378,5 @@ h3 + p{margin-top:.45rem}
   #formate .format{min-height:100lvh; padding:1.5rem 0 5.5rem; box-sizing:border-box}
 }
 @media (max-width:999px){ .zweiwege > .weg:nth-child(3){display:none} }
+
+.termine-hinweis{font-size:.92rem; color:var(--slate); margin-top:1.4rem}
