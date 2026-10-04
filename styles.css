@@ -1358,3 +1358,9 @@ h3 + p{margin-top:.45rem}
   .hero:not(.hero-sub) .hero-content{padding-bottom:6rem}
   .hero:not(.hero-sub) .hero-content .lead{margin-bottom:1.6rem}
 }
+
+/* Startseite Handy: jedes Angebot moeglichst komplett auf einem Bildschirm */
+@media (max-width:700px){
+  #formate .format .pic{aspect-ratio:3/2; height:auto}
+  #formate .format .close{display:none}
+}
