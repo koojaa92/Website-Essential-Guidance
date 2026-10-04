@@ -1213,7 +1213,7 @@ footer .fgrid nav a{white-space:nowrap}
 #genekeys h2,[data-e="ub-g0"],[data-e="ed-60"]{margin-bottom:1.1rem}
 
 /* ---------- Goldener Button (z. B. "Alle Termine") ---------- */
-.btn.gold{background:var(--gold); border-color:var(--gold); color:var(--ink)}
+.btn.gold{background:#BC9455; border-color:#BC9455; color:var(--ink)}
 .btn.gold:hover,.btn.gold:focus-visible{background:transparent; border-color:var(--gold); color:var(--gold)}
 .termine-btns{display:flex; flex-wrap:wrap; gap:.6rem}
 .btn-icon{display:inline-flex; align-items:center; gap:.5rem}
