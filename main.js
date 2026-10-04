@@ -203,3 +203,11 @@
     if(i > 0 && t.length - j - 1 <= max) last.data = t.slice(0, i) + ' ' + t.slice(i + 1) + last.data.slice(t.length);
   });
 })();
+
+// Hoehe der Kopfzeile messen, damit das Startbild genau den ersten Bildschirm fuellt
+(function(){
+  var k = document.querySelector('header.top');
+  if(!k) return;
+  function set(){ document.documentElement.style.setProperty('--kopf', Math.ceil(k.getBoundingClientRect().height) + 'px'); }
+  set(); window.addEventListener('resize', set);
+})();
