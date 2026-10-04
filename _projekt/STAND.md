@@ -19,6 +19,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - Einzelbegleitung: „Ein Gespräch, ein Bild, ein nächster Schritt.“ mit Beschreibung des Live-Zeichnens.
 - „Höre meinen Sound“ führt zu SoundCloud. Sonnenfoto dezent hinter „Bleib in Verbindung“ und Footer.
 - „Nächster Termin“ springt ab 21 Uhr auf den folgenden Termin.
+- Die drei Angebote füllen am Handy und am Desktop je einen Bildschirm, mit sanftem Einrasten beim Scrollen. Am Desktop mit größerer Schrift (6.10., auf Probe; zurück über die letzte Regel in styles.css).
 
 **Unterseiten**
 - Essenz Raum: Reihenfolge Intro, Der Tag, „Wie ich den Raum halte“, Was ihn ausmacht, Termine (nur die nächsten drei), FAQ. Preis-Hinweis steht unter den Terminen. Im Hero „Workshop in kleiner Gruppe“, Ort mit Kartenlink.

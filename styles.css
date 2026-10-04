@@ -1380,3 +1380,13 @@ h3 + p{margin-top:.45rem}
 @media (max-width:999px){ .zweiwege > .weg:nth-child(3){display:none} }
 
 .termine-hinweis{font-size:.92rem; color:var(--slate); margin-top:1.4rem}
+/* Desktop: jedes Angebot ein Bildschirm, Bild an Bildschirmhöhe gebunden, größere Schrift, sanftes Einrasten */
+@media (min-width:900px){
+  html:has(#formate){scroll-snap-type:y proximity}
+  .hero:not(.hero-sub){scroll-snap-align:start}
+  #formate .format{min-height:100vh; margin:0; padding:2rem 0; box-sizing:border-box; scroll-snap-align:start}
+  #formate .format .pic{aspect-ratio:auto; height:min(70vh, calc((min(100vw,72rem) - 4rem) / 2 * 1.25)); max-height:44rem}
+  #formate .format h2{font-size:clamp(2.6rem,3.6vw,3.4rem)}
+  #formate .format .claim{font-size:1.8rem}
+  #formate .format p:not(.claim){font-size:1.15rem}
+}
