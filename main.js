@@ -31,8 +31,8 @@
 (function(){
   var containers = document.querySelectorAll('.dates');
   if(!containers.length) return;
-  var today = new Date();
-  today.setHours(0,0,0,0);
+  // Ein Termin gilt bis 21 Uhr seines Tages als anstehend, danach zeigt die Seite den naechsten
+  var now = new Date();
 
   containers.forEach(function(container){
     var maxCount = container.getAttribute('data-max-count');
@@ -47,7 +47,7 @@
     }
 
     var upcoming = cards.filter(function(card){
-      return new Date(card.getAttribute('data-date') + 'T00:00:00') >= today;
+      return new Date(card.getAttribute('data-date') + 'T21:00:00') > now;
     }).sort(function(a,b){
       return new Date(a.getAttribute('data-date')) - new Date(b.getAttribute('data-date'));
     });
@@ -93,11 +93,11 @@
   if(!badge) return;
   var cards = document.querySelectorAll('#dates-home .dcard[data-date]');
   if(!cards.length) return;
-  var today = new Date(); today.setHours(0,0,0,0);
+  var now = new Date();
   var months = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
   var upcoming = Array.prototype.map.call(cards, function(card){
     return { date: new Date(card.getAttribute('data-date') + 'T00:00:00'), title: (card.querySelector('h3')||{}).textContent || '' };
-  }).filter(function(e){ return e.date >= today; })
+  }).filter(function(e){ return new Date(e.date.getTime() + 21*3600*1000) > now; })
     .sort(function(a,b){ return a.date - b.date; });
   if(upcoming.length){
     var next = upcoming[0];

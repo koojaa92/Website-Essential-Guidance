@@ -146,7 +146,7 @@ def ev_ld(day, kind):
                 'performer': {'@type': 'Person', 'name': 'Jakob Kohlbrenner', 'url': SITE + '/ueber.html'},
                 'offers': {'@type': 'Offer', 'price': '15', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock', 'validFrom': '2026-10-01T00:00:00+02:00',
                            'url': TICKETS.get(day) or SITE + '/termine.html'}}
-    return {'@type': 'Event', 'name': 'Essenz Raum – ein Tag in kleiner Gruppe',
+    return {'@type': 'Event', 'name': 'Essenz Raum – Workshop in kleiner Gruppe',
             'description': 'Ein Tag in kleiner Gruppe mit Bewegung, Kontemplation, Teilen und Malen. Mittagessen und Essential Dance am Abend inklusive. Anmeldung per E-Mail.',
             'startDate': day + 'T11:00:00+' + tz(day), 'endDate': day + 'T16:00:00+' + tz(day),
             'eventStatus': 'https://schema.org/EventScheduled', 'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
