@@ -1,0 +1,86 @@
+# Essential Guidance – Projektstand und offene Punkte
+
+Stand: 4. Oktober 2026. Live: https://essential-guidance.space (Branch `main`, GitHub Pages).
+Technische Regeln für Änderungen stehen in `CLAUDE.md`.
+
+
+## Was steht (Kurzfassung)
+
+**Marke und Positionierung**
+- Essential Guidance = Dach. Darunter Essential Dance (Tanz, Hauptangebot), Essenz Raum (Workshop), Einzelbegleitung.
+- Essential Dance ist „inspiriert von Ecstatic Dance“, nie „Ecstatic Dance Freiburg“ (das ist ein anderer Anbieter, freitags).
+- Alleinstellung: sonntags. Ort: Studio Pro Arte, Am Rohrgraben 4a, 79249 Merzhausen bei Freiburg.
+- „Coaching“ wird nicht als Selbstbezeichnung verwendet (KSK). Nur verneinend in FAQs.
+
+**Startseite**
+- Slogan „Raum für deine Essenz.“, darunter „Tanz · Workshops · Einzelbegleitung in Freiburg“.
+- Neue Sektion „Was ist Essential Guidance?“ vor den Terminen.
+- Goldzeilen beginnen mit der Art: Tanz / Workshop / 1:1.
+- Einzelbegleitung: „Ein Gespräch, ein Bild, ein nächster Schritt.“ mit Beschreibung des Live-Zeichnens.
+- „Höre meinen Sound“ führt zu SoundCloud. Sonnenfoto dezent hinter „Bleib in Verbindung“ und Footer.
+- „Nächster Termin“ springt ab 21 Uhr auf den folgenden Termin.
+
+**Unterseiten**
+- Essenz Raum: Abschnitt „Wie ich den Raum halte“, im Hero „Workshop in kleiner Gruppe“, Ort mit Kartenlink.
+- Essential Dance: Preise „ab 15 € VVK · ab 20 € Abendkasse“, FAQs mit Suchbegriffen, „DJ Bookings“ als goldene Überzeile.
+- Einzelbegleitung: „Mit was ich arbeite“, Gene Keys als goldene Überzeile.
+- Über mich: ohne Kontaktblock, weißer Abstand vor „Meine Vision“.
+
+**Termine**
+- Alle Termine in `tools/termine.json`. Danach `python3 tools/make-ics.py` ausführen: Das baut Karten, Kalenderdateien und Google-Daten.
+- 2026: bis 20.12. mit Eventfrog-Links. 2027: Essential Dance 17.1.–21.3. (ohne 28.3.), Essenz Raum 31.1. Dort steht „Tickets folgen“.
+
+**Technik und SEO**
+- Google Search Console eingerichtet, Sitemap eingereicht, Seite ist bei Google indexiert (2.10.).
+- Event-Daten für Google mit validFrom ergänzt. Die Prüfung in der Search Console läuft seit 4.10.
+- Strukturierte Daten: Organisation, Person, Essential Dance, Events, FAQs. llms.txt für KI-Systeme.
+- Statistik: GoatCounter (cookielos), https://essentialgoat.goatcounter.com
+- jakob-kohlbrenner.de verlinkt auf die neue Seite.
+
+## Offene Punkte
+
+### Bald
+- [ ] **Domain .de**: Bei Strato A-Einträge `185.199.108.153` (bis .111.153) und CNAME `www` → `koojaa92.github.io` setzen, dann Claude Bescheid geben. Danach: .space in Cloudflare per 301 auf .de umleiten, .de in der Search Console anlegen und dort „Adressänderung“ ausführen. Links bei Instagram, Eventfrog und jakob-kohlbrenner.de anpassen.
+- [ ] **Eventfrog-Beschreibung** mit dem neuen Text (Suchbegriffe, Website-Link) bei allen Events einsetzen. Website auch im Veranstalterprofil eintragen.
+- [ ] **Eventfrog Newsletter-Häkchen**: Nur bei Events ohne bisherige Verkäufe auf Plus umstellen (Gebühr an Käufer weitergeben), Ja/Nein-Feld freiwillig.
+- [ ] **Instagram-Bio** mit den drei Angeboten und Website-Link.
+- [ ] **Cloudflare prüfen**: DNS von essential-guidance.space, orange oder graue Wolke? Bei grau den Cloudflare-Satz in der Datenschutzerklärung streichen.
+- [ ] **Search Console**: Prüfung „validFrom“ abwarten. Bei Fehler einen Screenshot an Claude.
+
+### Inhalte
+- [ ] **Einzelbegleitung-Seite**: Einstieg schärfen, das Live-Zeichnen an den Anfang. Claude schickt einen Textvorschlag.
+- [ ] **Essenz Raum, Ablauf „Der Tag“**: noch unverändert. Prüfen, ob er zum neuen Abschnitt „Wie ich den Raum halte“ passt.
+- [ ] **Texte selbst durchlesen** und einigen Menschen für ein tiefes Feedback geben.
+- [ ] **Impressum**: Umsatzsteuer-Angabe liefern (Steuernummer oder USt-IdNr.). Der Platzhalter liegt im Code.
+
+### Termine 2027
+- [ ] Eventfrog-Events für 2027 anlegen und die Links in `tools/termine.json` eintragen lassen (Feld `tickets`).
+- [ ] Pausentage 2027 festlegen.
+- [ ] Weitere Essenz-Raum-Termine 2027 festlegen.
+- [ ] Ggf. Essenz Raum über Eventfrog verkaufen. Ab 50 € braucht das Plus. Danach die Website von Mail-Anmeldung auf Eventfrog umstellen.
+
+### Später
+- [ ] **Newsletter über Brevo** (erst nach Freigabe): Anmeldeformular mit Bestätigungsmail (Double-Opt-in), Abmeldelink in jeder Mail, Datenschutzerklärung anpassen.
+- [ ] **Fotoshooting Einzelbegleitung**: sechs Motive in einem Licht und einem Format (Präsenz, Zeichnen, Innere Anteile, Gene Keys, Tempo, Raum). Eine befreundete Person als Klient, schriftliche Einwilligung.
+- [ ] **Echtes Foto vom Essenz-Raum-Kreis**, damit sich das Bild klar vom Essential-Dance-Bild unterscheidet.
+- [ ] **Printflyer Essenz Raum**.
+- [ ] **Logo**.
+
+## Gefunden werden: was außerhalb der Website hilft
+
+Nach Wirkung sortiert. Wenige gute Einträge sind besser als viele Verzeichnisse.
+
+1. **Google-Unternehmensprofil** (business.google.com): stärkstes Signal für Google Maps und Suchen wie „Tanzen Freiburg“. Geht auch ohne öffentliche Adresse, als Anbieter mit Einzugsgebiet.
+2. **Bing Webmaster Tools** (bing.com/webmasters): Import aus der Google Search Console mit einem Klick. Wichtig, weil ChatGPT, Copilot und andere KI-Suchen auf den Bing-Index zugreifen.
+3. **ecstaticdance.org**: Eintrag im internationalen Verzeichnis. Google zeigt es schon bei „Ecstatic Dance Freiburg“.
+4. **visit.freiburg.de**: Seite „Tanzen in Freiburg“, bei der FWTM nach einer Aufnahme fragen.
+5. **Studio Pro Arte**: Eintrag im Kursplan mit Link.
+6. **Kooperationen**: Andrea Gruner, Embodiment (Movement Medicine). Bei gemeinsamen Events um eine Nennung mit Link bitten.
+7. **Regionale Veranstaltungskalender**: zum Beispiel Badische Zeitung, fudder.
+8. **Apple Business Connect** (optional): wie das Google-Profil, für Apple Karten und Siri.
+
+Was gerade im Stillen weiterwirkt: Die Seite ist indexiert, die Search Console zeigt nach ein paar Wochen unter „Leistung“, mit welchen Suchbegriffen du gefunden wirst. GoatCounter zeigt unter „Top referrers“, woher Besucher kommen.
+
+---
+
+Die Seite ist lebendig und muss nicht perfekt sein. Sie lebt von den Angeboten.

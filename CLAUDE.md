@@ -9,6 +9,7 @@
 - Termine ändern: nur `tools/termine.json` bearbeiten (Eintrag pro Termin: datum, art dance/raum/pause, optional tickets = Eventfrog-Link, optional hinweis bei Pause), danach `python3 tools/make-ics.py` ausführen. Das Tool baut die Terminkarten in termine/index/essential-dance/essenzraum.html, die Kalenderdateien und die Event-Daten für Google. Karten nie direkt im HTML ändern. Ohne Ticketlink zeigt die Karte „Tickets folgen“.
 - FAQ-Abschnitte haben immer grauen Hintergrund (`<section class="tint">`).
 - Live ist der Branch `main` (GitHub Pages).
+- Projektstand und offene To-dos: `_projekt/STAND.md` (wird wegen des Unterstrichs nicht öffentlich ausgeliefert). Bei neuen Entscheidungen mitpflegen.
 
 ## Marke und SEO (verbindlich)
 - Essential Guidance = Dachmarke. Darunter drei eigenständige Bereiche: Essential Dance (Tanzmarke), Essenz Raum (Tagesformat), Einzelbegleitung.
