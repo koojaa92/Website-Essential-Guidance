@@ -1373,3 +1373,7 @@ h3 + p{margin-top:.45rem}
   .hero:not(.hero-sub){scroll-snap-align:start}
 }
 @media (max-width:700px) and (max-height:760px){ #formate .format .pic{aspect-ratio:16/9} #formate .format{gap:1.1rem} }
+/* Handy: Angebot so hoch wie der ganze Bildschirm inkl. Bereich hinter der Safari-Leiste, Inhalt darueber zentriert */
+@media (max-width:700px){
+  #formate .format{min-height:100lvh; padding:1.5rem 0 5.5rem; box-sizing:border-box}
+}
