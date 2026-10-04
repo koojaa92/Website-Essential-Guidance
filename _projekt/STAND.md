@@ -1,6 +1,6 @@
 # Essential Guidance – Projektstand und offene Punkte
 
-Stand: 4. Oktober 2026. Live: https://essential-guidance.space (Branch `main`, GitHub Pages).
+Stand: 6. Oktober 2026. Live: https://essential-guidance.space (Branch `main`, GitHub Pages).
 Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 
@@ -49,15 +49,23 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 ### Inhalte
 - [ ] **Einzelbegleitung-Seite**: Einstieg schärfen, das Live-Zeichnen an den Anfang. Claude schickt einen Textvorschlag.
-- [ ] **Essenz Raum, Ablauf „Der Tag“**: noch unverändert. Prüfen, ob er zum neuen Abschnitt „Wie ich den Raum halte“ passt.
+- [ ] **„Was ist Essential Guidance?“ (Startseite)**: Text ausbauen, gern doppelt so lang, als Essenz der ganzen Website. Claudes Vorschlag liegt vor, Feintuning offen.
+- [ ] **Bild für „Was ist Essential Guidance?“** auswählen (Vorschläge: Keimling, Feldweg, Porträt). Abschnitt soll am Handy auf einen Bildschirm passen.
+- [ ] **Startseite Termine**: am Handy nur die nächsten drei zeigen, damit der Block auf einen Bildschirm passt (Vorschlag, noch nicht umgesetzt).
 - [ ] **Texte selbst durchlesen** und einigen Menschen für ein tiefes Feedback geben.
 - [ ] **Impressum**: Umsatzsteuer-Angabe liefern (Steuernummer oder USt-IdNr.). Der Platzhalter liegt im Code.
 
 ### Termine 2027
+- [ ] Termine im Kalender aktuell halten (`tools/termine.json`).
 - [ ] Eventfrog-Events für 2027 anlegen und die Links in `tools/termine.json` eintragen lassen (Feld `tickets`).
 - [ ] Pausentage 2027 festlegen.
 - [ ] Weitere Essenz-Raum-Termine 2027 festlegen.
-- [ ] Ggf. Essenz Raum über Eventfrog verkaufen. Ab 50 € braucht das Plus. Danach die Website von Mail-Anmeldung auf Eventfrog umstellen.
+- [ ] Essenz Raum über Eventfrog verkaufen. Ab 50 € braucht das Plus. Danach die Website von Mail-Anmeldung auf Eventfrog umstellen.
+
+### SEO und Auffindbarkeit
+- [ ] Search Console alle paar Wochen anschauen: „Seiten“ (indexiert?) und „Leistung“ (Suchbegriffe).
+- [ ] Bing Webmaster Tools anlegen (Import aus der Search Console), wichtig für ChatGPT und Copilot.
+- [ ] Google-Unternehmensprofil, Eintrag bei ecstaticdance.org, Studio Pro Arte, visit.freiburg.de (siehe unten).
 
 ### Später
 - [ ] **Newsletter über Brevo** (erst nach Freigabe): Anmeldeformular mit Bestätigungsmail (Double-Opt-in), Abmeldelink in jeder Mail, Datenschutzerklärung anpassen.
