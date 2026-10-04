@@ -1303,7 +1303,7 @@ footer .fgrid nav a{white-space:nowrap}
 /* Startseite: Sonnenfoto dezent hinter "Bleib in Verbindung" und Footer, durchgehend */
 .verbindung-bg{background:linear-gradient(rgba(20,36,63,.86),rgba(20,36,63,.9)), url(images/verbindung-sonne.jpg) center 40% / cover no-repeat; background-color:var(--ink)}
 .verbindung-bg > section.deep, .verbindung-bg > footer{background:transparent}
-.was-ist{padding-top:clamp(1.6rem,3vw,2.4rem); padding-bottom:0}
+.was-ist{padding-top:clamp(3rem,6vw,4.5rem); padding-bottom:clamp(1.4rem,3vw,2.2rem)}
 
 @media (max-width:480px){ h1{hyphens:manual} }
 
@@ -1326,3 +1326,10 @@ p,li,dd,summary{text-wrap:pretty}
 
 /* Startseite Handy: Bild zeigt Kerze und Jakob, Orientierungszeile ohne Freiburg */
 @media (max-width:700px){ .hero:not(.hero-sub){min-height:calc(100svh - 72px)} .hero:not(.hero-sub) .hero-media .hero-img{object-position:52% center} .nur-gross{display:none} }
+
+/* Mehr Luft zwischen Ueberschrift und Text */
+h2 + p, h2 + .tight, h2 + div > p:first-child{margin-top:.9rem}
+.format h2{margin-bottom:.5rem}
+.format .claim{margin-bottom:1rem}
+.format .sect-eyebrow{margin-bottom:1rem}
+h3 + p{margin-top:.45rem}
