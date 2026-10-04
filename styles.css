@@ -1336,3 +1336,8 @@ h3 + p{margin-top:.45rem}
 
 /* Startseite: Hero fuellt genau den ersten Bildschirm, darunter beginnt der naechste Abschnitt erst nach dem Scrollen */
 .hero:not(.hero-sub){min-height:calc(100vh - var(--kopf,73px)); min-height:calc(100svh - var(--kopf,73px))}
+/* Handy: Startbild reicht bis unter die Browserleiste, Abschnittsueberschrift erst nach dem Scrollen */
+@media (max-width:700px){
+  .hero:not(.hero-sub){min-height:calc(100lvh - var(--kopf,73px))}
+  .was-ist{padding-top:4.5rem}
+}
