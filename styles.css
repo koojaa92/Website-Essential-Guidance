@@ -1348,3 +1348,7 @@ h3 + p{margin-top:.45rem}
   .verbindung-bg > #kontakt{flex:1; display:flex; align-items:center}
   .verbindung-bg > #kontakt > .wrap{width:100%}
 }
+
+/* Bleib in Verbindung: drei Karten nebeneinander am Desktop */
+@media (min-width:1000px){ .zweiwege:has(> .weg:nth-child(3)){grid-template-columns:repeat(3,1fr); max-width:68rem; margin-inline:auto} }
+@media (min-width:761px) and (max-width:999px){ .zweiwege:has(> .weg:nth-child(3)) > .weg:nth-child(3){grid-column:1 / -1} }
