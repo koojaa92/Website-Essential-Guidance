@@ -64,7 +64,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - [ ] **Fotoshooting Einzelbegleitung**: sechs Motive in einem Licht und einem Format (Präsenz, Zeichnen, Innere Anteile, Gene Keys, Tempo, Raum). Eine befreundete Person als Klient, schriftliche Einwilligung.
 - [ ] **Echtes Foto vom Essenz-Raum-Kreis**, damit sich das Bild klar vom Essential-Dance-Bild unterscheidet.
 - [ ] **Printflyer Essenz Raum**.
-- [ ] **Logo**.
+- [ ] **Logo**: eigenes Zeichen entwickeln. Der Schriftzug oben links nutzt bis dahin die Überschriften-Schrift Crimson Pro.
 
 ## Gefunden werden: was außerhalb der Website hilft
 
