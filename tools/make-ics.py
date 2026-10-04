@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-"""Erzeugt essential-dance.ics und essenzraum.ics aus den Terminkarten in termine.html
-und schreibt die passenden Event-Daten (schema.org) in termine/essential-dance/essenzraum.html.
-Aufruf im Projektordner: python3 tools/make-ics.py"""
-import re, datetime as dt
+"""Baut alle Termine aus tools/termine.json:
+- Terminkarten in termine.html, index.html, essential-dance.html, essenzraum.html
+- Kalenderdateien essential-dance.ics und essenzraum.ics
+- Event-Daten fuer Google (schema.org JSON-LD)
+Termine aendern: nur tools/termine.json bearbeiten, dann im Projektordner: python3 tools/make-ics.py
+Eintrag: {"datum": "JJJJ-MM-TT", "art": "dance" | "raum" | "pause", "tickets": "Eventfrog-Link" (optional),
+          "hinweis": {"text": "...", "url": "..."} (optional, nur bei Pause)}"""
+import re, json, datetime as dt
 
 SITE = 'https://essential-guidance.space'
-
-html = open('termine.html', encoding='utf-8').read()
-cards = re.findall(r'<div class="dcard( raum)?" data-date="([\d-]+)"', html)
+TERMINE = sorted(json.load(open('tools/termine.json', encoding='utf-8')),
+                 key=lambda e: (e['datum'], {'pause': 0, 'raum': 1, 'dance': 2}[e['art']]))
+TICKETS = {e['datum']: e.get('tickets') for e in TERMINE if e['art'] == 'dance'}
 
 def esc(t): return t.replace('\\','\\\\').replace(';','\;').replace(',','\\,').replace('\n','\\n')
 def fold(line):
@@ -40,24 +44,94 @@ def cal(name, events):
         body += '\r\n'.join(fold(l) for l in ev) + '\r\n'
     return body + 'END:VCALENDAR\r\n'
 
-ed, er = [], []
-raumtage = {day for raum, day in cards if raum}
-for raum, day in cards:
-    if not raum:
-        ed.append(('ed-'+day, day, '1700', '2000', 'Essential Dance',
-          'Freies Tanzen in Freiburg, 17-20 Uhr. ab 15 € VVK über Eventfrog, ab 20 € Abendkasse. Keine Anmeldung nötig.'
-          + (' Am selben Tag findet von 11 bis 16 Uhr der Essenz Raum statt.' if day in raumtage else '')))
+
+# ---------- Terminkarten ----------
+MONATE = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']
+KURZ = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez']
+TAGE = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag']
+IMG = {'dance': ('images/img-7089e9983714.jpg', 'Essential Dance in Freiburg'), 'raum': ('images/img-262a22e84b99.jpg', 'Essenz Raum in Freiburg')}
+MAIL_M = {'März': 'M%C3%A4rz'}
+
+def media(e):
+    d = dt.date.fromisoformat(e['datum'])
+    big = f'<span class="dcard-big"><b>{d.day}</b> <i><span class="m-voll">{MONATE[d.month-1]}</span><span class="m-kurz">{KURZ[d.month-1]}</span></i></span>'
+    if e['art'] == 'pause':
+        return f'<div class="dcard-media"><div class="dcard-img pause-fill"></div>{big}</div>'
+    src, alt = IMG[e['art']]
+    return f'<div class="dcard-media"><img loading="lazy" decoding="async" class="dcard-img" src="{src}" alt="{alt}">{big}</div>'
+
+def datum(e):
+    d = dt.date.fromisoformat(e['datum'])
+    return f'{TAGE[d.weekday()]}, {d.day}. {MONATE[d.month-1]}'
+
+def anmeldung(e):
+    d = dt.date.fromisoformat(e['datum']); m = MONATE[d.month-1]
+    return ('<a class="dcard-flag" href="mailto:essential-guidance@posteo.de?subject=Anmeldung%20Essenz%20Raum&amp;body='
+            'Hallo%20Jakob%2C%0A%0Aich%20m%C3%B6chte%20mich%20gerne%20f%C3%BCr%20den%20Essenz%20Raum%20am%20'
+            f'{d.day}.%20{MAIL_M.get(m, m)}%20anmelden.%0A%0AHerzliche%20Gr%C3%BC%C3%9Fe%0A%28Name%29">Anmeldung</a>')
+
+def tickets(e):
+    if e.get('tickets'):
+        return f'<a class="dcard-flag" href="{e["tickets"]}" target="_blank" rel="noopener">Tickets</a>'
+    return '<span class="dcard-folgt">Tickets folgen</span>'
+
+def karte(e, seite):
+    art, cls = e['art'], {'dance': 'dcard', 'raum': 'dcard raum', 'pause': 'dcard pause'}[e['art']]
+    if art == 'pause':
+        h = e.get('hinweis')
+        text = 'An diesem Sonntag findet kein Essential Dance statt.' + (' Du findest mich hier:' if h else '')
+        foot = f'<div class="dcard-foot"><a class="dcard-link" href="{h["url"]}" target="_blank" rel="noopener">{h["text"]} &rarr;</a></div>' if h else ''
+        body = f'<div class="dcard-date">{datum(e)}</div><h3>Pause</h3><p>{text}</p>{foot}'
+    elif art == 'dance':
+        preis = '<p class="dcard-preis">ab 15 &euro; VVK &middot; ab 20 &euro; Abendkasse</p>' if seite == 'ed' else ''
+        details = 'termine.html' if seite == 'ed' else 'essential-dance.html'
+        body = (f'<div class="dcard-date">{datum(e)}</div><h3>Essential Dance</h3><p>17&ndash;20 Uhr</p>{preis}'
+                f'<div class="dcard-foot">{tickets(e)}<a class="dcard-link" href="{details}">Details</a></div>')
     else:
+        if seite == 'ez':
+            body = (f'<div class="dcard-date">{datum(e)}</div><h3>Essenz Raum</h3><p>11&ndash;16 Uhr &middot; danach Tanzen 17&ndash;20 Uhr</p>'
+                    f'<p class="dcard-preis">90 &euro;</p><div class="dcard-foot">{anmeldung(e)}</div>')
+        else:
+            body = (f'<div class="dcard-date">{datum(e)}</div><h3>Essenz Raum</h3><p>11&ndash;16 Uhr</p>'
+                    f'<div class="dcard-foot">{anmeldung(e)}<a class="dcard-link" href="essenzraum.html">Details</a></div>')
+    return f'<div class="{cls}" data-date="{e["datum"]}">{media(e)}<div class="dcard-body">{body}</div></div>'
+
+SEITEN = [('termine.html', 'dates-all', 'termine', {'dance', 'raum', 'pause'}, True),
+          ('index.html', 'dates-home', 'home', {'dance', 'raum'}, False),
+          ('essential-dance.html', 'dates-ed', 'ed', {'dance'}, False),
+          ('essenzraum.html', 'dates-ez', 'ez', {'raum'}, False)]
+for fn, cid, seite, arten, jahre in SEITEN:
+    out, jahr = [], TERMINE[0]['datum'][:4]
+    for e in TERMINE:
+        if e['art'] not in arten: continue
+        if jahre and e['datum'][:4] != jahr:
+            jahr = e['datum'][:4]; out.append(f'<div class="dates-jahr">{jahr}</div>')
+        out.append(karte(e, seite))
+    s = open(fn, encoding='utf-8').read()
+    m = re.search(r'(<div class="dates" id="' + cid + r'"[^>]*>\n)(.*?)(\n    </div>\n)', s, re.S)
+    assert m, fn
+    s = s[:m.start(2)] + '\n'.join('      ' + c for c in out) + s[m.end(2):]
+    open(fn, 'w', encoding='utf-8').write(s)
+print('Terminkarten in termine, index, essential-dance, essenzraum aktualisiert')
+
+# ---------- Kalenderdateien ----------
+ed, er = [], []
+raumtage = {e['datum'] for e in TERMINE if e['art'] == 'raum'}
+for e in TERMINE:
+    day = e['datum']
+    if e['art'] == 'dance':
+        ed.append(('ed-'+day, day, '1700', '2000', 'Essential Dance',
+          'Freies Tanzen in Freiburg, 17-20 Uhr. Ab 15 € VVK über Eventfrog, ab 20 € Abendkasse. Keine Anmeldung nötig.'
+          + (' Am selben Tag findet von 11 bis 16 Uhr der Essenz Raum statt.' if day in raumtage else '')))
+    elif e['art'] == 'raum':
         er.append(('er-'+day, day, '1100', '1600', 'Essenz Raum',
           'Ein Tag in kleiner Gruppe, 11-16 Uhr. Im Anschluss Tanzen (Essential Dance) 17-20 Uhr. '
           '90 €, Mittagessen und Essential Dance am Abend inklusive. Anmeldung per E-Mail an essential-guidance@posteo.de.'))
 for fn, name, ev in (('essential-dance.ics','Essential Dance Freiburg',ed),('essenzraum.ics','Essenz Raum Freiburg',er)):
-    open(fn,'w',encoding='utf-8',newline='').write(cal(name, sorted(ev, key=lambda e:e[1])))
+    open(fn,'w',encoding='utf-8',newline='').write(cal(name, ev))
     print(fn, len(ev), 'Termine')
 
-# Strukturierte Daten (schema.org Event) für Google und KI-Suchen, aus denselben Karten
-import json
-links = dict(re.findall(r'data-date="([\d-]+)">.*?<a class="dcard-flag" href="(https://eventfrog[^"]+)"', html))
+# ---------- Event-Daten fuer Google ----------
 PLACE = {'@type': 'Place', 'name': 'Studio Pro Arte',
          'address': {'@type': 'PostalAddress', 'streetAddress': 'Am Rohrgraben 4a', 'postalCode': '79249',
                      'addressLocality': 'Merzhausen bei Freiburg', 'addressRegion': 'Baden-Württemberg', 'addressCountry': 'DE'}}
@@ -65,13 +139,13 @@ ORG = {'@type': 'Organization', 'name': 'Essential Guidance', 'url': SITE + '/'}
 def ev_ld(day, kind):
     if kind == 'ed':
         return {'@type': 'DanceEvent', 'name': 'Essential Dance – freies Tanzen am Sonntag in Freiburg',
-                'description': 'Freies Tanzen ohne Schritte, verwandt mit Ecstatic Dance, mit DJ-Musikreise: Einstimmung im Kreis, zwei Tanzwellen, stiller Ausklang. Ohne Anmeldung.',
+                'description': 'Freies Tanzen ohne Schritte, inspiriert von Ecstatic Dance, mit DJ-Musikreise: Einstimmung im Kreis, zwei Tanzwellen, stiller Ausklang. Ohne Anmeldung.',
                 'startDate': day + 'T17:00:00+' + tz(day), 'endDate': day + 'T20:00:00+' + tz(day),
                 'eventStatus': 'https://schema.org/EventScheduled', 'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
                 'location': PLACE, 'image': SITE + '/images/img-7089e9983714.jpg', 'organizer': ORG,
                 'performer': {'@type': 'Person', 'name': 'Jakob Kohlbrenner', 'url': SITE + '/ueber.html'},
                 'offers': {'@type': 'Offer', 'price': '15', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock', 'validFrom': '2026-10-01T00:00:00+02:00',
-                           'url': links.get(day, SITE + '/termine.html')}}
+                           'url': TICKETS.get(day) or SITE + '/termine.html'}}
     return {'@type': 'Event', 'name': 'Essenz Raum – ein Tag in kleiner Gruppe',
             'description': 'Ein Tag in kleiner Gruppe mit Bewegung, Kontemplation, Teilen und Malen. Mittagessen und Essential Dance am Abend inklusive. Anmeldung per E-Mail.',
             'startDate': day + 'T11:00:00+' + tz(day), 'endDate': day + 'T16:00:00+' + tz(day),

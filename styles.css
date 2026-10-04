@@ -1288,3 +1288,9 @@ footer .fgrid nav a{white-space:nowrap}
 
 /* Terminseite: Jahres-Trennzeile in der Terminliste */
 .dates-jahr{grid-column:1 / -1; font-family:var(--display); font-size:clamp(1.6rem,3vw,2rem); font-weight:600; color:var(--ink); margin-top:clamp(1rem,3vw,1.8rem); padding-top:clamp(1rem,2.5vw,1.4rem); border-top:1px solid var(--line)}
+
+/* Ortsangabe in Infoboxen als dezenter Kartenlink */
+.factbox dd a.ort-link{color:inherit; text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:3px}
+
+/* Termine ohne Ticketlink: dezenter Hinweis statt Ticket-Button */
+.dcard-folgt{font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--slate); font-weight:600}
