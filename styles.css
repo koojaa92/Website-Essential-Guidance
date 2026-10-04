@@ -1352,3 +1352,9 @@ h3 + p{margin-top:.45rem}
 /* Bleib in Verbindung: drei Karten nebeneinander am Desktop */
 @media (min-width:1000px){ .zweiwege:has(> .weg:nth-child(3)){grid-template-columns:repeat(3,1fr); max-width:68rem; margin-inline:auto} }
 @media (min-width:761px) and (max-width:999px){ .zweiwege:has(> .weg:nth-child(3)) > .weg:nth-child(3){grid-column:1 / -1} }
+/* Handy: Startbild reicht sicher unter die schwebende Browserleiste, Buttons bleiben darueber */
+@media (max-width:700px){
+  .hero:not(.hero-sub){min-height:calc(100lvh - var(--kopf,73px) + 5rem)}
+  .hero:not(.hero-sub) .hero-content{padding-bottom:6rem}
+  .hero:not(.hero-sub) .hero-content .lead{margin-bottom:1.6rem}
+}
