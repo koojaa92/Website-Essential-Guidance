@@ -1,6 +1,6 @@
 # Essential Guidance – Projektstand und offene Punkte
 
-Stand: 5. Oktober 2026. Live: https://essential-guidance.space (Branch `main`, GitHub Pages).
+Stand: 6. Oktober 2026. Live: https://essential-guidance.space (Branch `main`, GitHub Pages).
 Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 
@@ -21,10 +21,10 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - „Nächster Termin“ springt ab 21 Uhr auf den folgenden Termin.
 
 **Unterseiten**
-- Essenz Raum: Abschnitt „Wie ich den Raum halte“, im Hero „Workshop in kleiner Gruppe“, Ort mit Kartenlink.
+- Essenz Raum: Reihenfolge Intro, Der Tag, „Wie ich den Raum halte“, Was ihn ausmacht, Termine (nur die nächsten drei), FAQ. Preis-Hinweis steht unter den Terminen. Im Hero „Workshop in kleiner Gruppe“, Ort mit Kartenlink.
 - Essential Dance: Preise „ab 15 € VVK · ab 20 € Abendkasse“, FAQs mit Suchbegriffen, „DJ Bookings“ als goldene Überzeile.
 - Einzelbegleitung: „Mit was ich arbeite“, Gene Keys als goldene Überzeile.
-- Über mich: ohne Kontaktblock, weißer Abstand vor „Meine Vision“.
+- Über mich: ohne Kontaktblock, weißer Abstand vor „Meine Vision“. Mit „zehn Jahre selbstständig als Graphic Recorder und Facilitator“ und „Vater einer lebendigen Tochter, die mich immer wieder aufs Neue prüft“.
 
 **Termine**
 - Alle Termine in `tools/termine.json`. Danach `python3 tools/make-ics.py` ausführen: Das baut Karten, Kalenderdateien und Google-Daten.
@@ -43,34 +43,37 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - [ ] **Domain .de**: Bei Strato A-Einträge `185.199.108.153` (bis .111.153) und CNAME `www` → `koojaa92.github.io` setzen, dann Claude Bescheid geben. Danach: .space in Cloudflare per 301 auf .de umleiten, .de in der Search Console anlegen und dort „Adressänderung“ ausführen. Links bei Instagram, Eventfrog und jakob-kohlbrenner.de anpassen.
 - [ ] **Eventfrog-Beschreibung** mit dem neuen Text (Suchbegriffe, Website-Link) bei allen Events einsetzen. Website auch im Veranstalterprofil eintragen.
 - [ ] **Eventfrog Newsletter-Häkchen**: Nur bei Events ohne bisherige Verkäufe auf Plus umstellen (Gebühr an Käufer weitergeben), Ja/Nein-Feld freiwillig.
-- [ ] **Instagram-Bio** mit den drei Angeboten und Website-Link.
-- [ ] **Cloudflare prüfen**: DNS von essential-guidance.space, orange oder graue Wolke? Bei grau den Cloudflare-Satz in der Datenschutzerklärung streichen.
+- [ ] **Instagram-Bio** mit den drei Angeboten und Website-Link (wichtig).
+- [ ] **Cloudflare prüfen**: Im Cloudflare-Konto unter DNS bei essential-guidance.space nachsehen, ob neben den Einträgen eine orange Wolke („Proxied“) oder eine graue Wolke („DNS only“) steht. Orange heißt: Die Besucher laufen über Cloudflare, dann muss der Satz in der Datenschutzerklärung bleiben. Grau heißt: Cloudflare ist nur Adressbuch, dann kann der Satz raus. Screenshot an Claude genügt. Erledigt sich mit dem Wechsel auf .de, falls .space danach nur noch weiterleitet.
 - [ ] **Search Console**: Prüfung „validFrom“ abwarten. Bei Fehler einen Screenshot an Claude.
 
 ### Inhalte
 - [ ] **Einzelbegleitung-Seite**: Einstieg schärfen, das Live-Zeichnen an den Anfang. Claude schickt einen Textvorschlag.
-- [ ] **„Was ist Essential Guidance?“ (Startseite)**: Text ausbauen, gern doppelt so lang, als Essenz der ganzen Website. Claudes Vorschlag liegt vor, Feintuning offen.
+- [ ] **„Was ist Essential Guidance?“ (Startseite)**: Text ausbauen, als Essenz der ganzen Website. Claudes Vorschlag (6.10. erneut geschickt) wartet auf Jakobs Feedback:
+  > Essential steht für das Wesentliche, das in jedem Menschen schon da ist. Oft liegt es unter Schichten aus Prägungen und Mustern, die sich mit der Zeit darübergelegt haben. Guidance heißt für mich, Räume zu halten, in denen du deine eigene Richtung wieder spürst. Den Weg kennst du selbst. Ich sorge für den Boden: mit Präsenz, mit Kraft und Zartheit und mit der Bereitschaft, auch im Nichtwissen da zu bleiben. Drei Wege führen dorthin: die Bewegung im Essential Dance, die Vertiefung im Essenz Raum und das persönliche Gespräch in der Einzelbegleitung. Was sie verbindet: Wenn du dich zeigst und gesehen wirst, kann sich öffnen, was allein oft verborgen bleibt.
 - [ ] **Bild für „Was ist Essential Guidance?“** auswählen (Vorschläge: Keimling, Feldweg, Porträt). Abschnitt soll am Handy auf einen Bildschirm passen.
-- [ ] **Startseite Termine**: am Handy nur die nächsten drei zeigen, damit der Block auf einen Bildschirm passt (Vorschlag, noch nicht umgesetzt).
-- [ ] **Texte selbst durchlesen** und einigen Menschen für ein tiefes Feedback geben.
-- [ ] **Impressum**: Umsatzsteuer-Angabe liefern (Steuernummer oder USt-IdNr.). Der Platzhalter liegt im Code.
+- Entschieden: Die Startseite zeigt am Handy weiter alle Termine, damit der Essenz Raum immer sichtbar ist und man den Überblick behält.
+- Entschieden: Die Kachelbilder der Einzelbegleitung bleiben farbig (sie sind schon leicht entsättigt, der Regenbogen bei „Innere Anteile“ trägt Bedeutung). Eventuell sucht Jakob konsistentere Bilder.
+- [ ] **Texte selbst durchlesen** und Menschen, die sich mit Texten auskennen, für ein tiefes Feedback geben.
+- [ ] **Impressum**: Pflicht ist nur die Umsatzsteuer-Identifikationsnummer (USt-IdNr., beginnt mit DE), falls Jakob eine hat. Die normale Steuernummer gehört nicht ins Impressum. Ohne USt-IdNr. (z. B. als Kleinunternehmer) bleibt der Abschnitt einfach weg. Der Platzhalter liegt im Code.
 
 ### Termine 2027
 - [ ] Termine im Kalender aktuell halten (`tools/termine.json`).
 - [ ] Eventfrog-Events für 2027 anlegen und die Links in `tools/termine.json` eintragen lassen (Feld `tickets`).
 - [ ] Pausentage 2027 festlegen.
-- [ ] Weitere Essenz-Raum-Termine 2027 festlegen.
+- [ ] Weitere Essenz-Raum-Termine 2027 festlegen und bei Studio Pro Arte buchen. Überlegen, ob für den Essenz Raum zusätzlich Saal 2 gebucht wird.
 - [ ] Essenz Raum über Eventfrog verkaufen. Ab 50 € braucht das Plus. Danach die Website von Mail-Anmeldung auf Eventfrog umstellen.
 
 ### SEO und Auffindbarkeit
 - [ ] Search Console alle paar Wochen anschauen: „Seiten“ (indexiert?) und „Leistung“ (Suchbegriffe).
 - [ ] Bing Webmaster Tools anlegen (Import aus der Search Console), wichtig für ChatGPT und Copilot.
 - [ ] Google-Unternehmensprofil, Eintrag bei ecstaticdance.org, Studio Pro Arte, visit.freiburg.de (siehe unten).
+- [ ] Google-Unternehmensprofil ohne eigenen Ort: als „Unternehmen mit Einzugsgebiet“ anlegen (Einzugsgebiet z. B. Freiburg und Umgebung). Die Wohnadresse dient nur zur Bestätigung und wird ausgeblendet, öffentlich ist sie nicht sichtbar. Studio Pro Arte nicht als eigene Adresse angeben, nur in den Events und Beschreibungen nennen.
 
 ### Später
 - [ ] **Newsletter über Brevo** (erst nach Freigabe): Anmeldeformular mit Bestätigungsmail (Double-Opt-in), Abmeldelink in jeder Mail, Datenschutzerklärung anpassen.
 - [ ] **Fotoshooting Einzelbegleitung**: sechs Motive in einem Licht und einem Format (Präsenz, Zeichnen, Innere Anteile, Gene Keys, Tempo, Raum). Eine befreundete Person als Klient, schriftliche Einwilligung.
-- [ ] **Echtes Foto vom Essenz-Raum-Kreis**, damit sich das Bild klar vom Essential-Dance-Bild unterscheidet.
+- [ ] **Echtes Foto vom Essenz-Raum-Kreis** (wichtig), damit sich das Bild klar vom Essential-Dance-Bild unterscheidet.
 - [ ] **Printflyer Essenz Raum**.
 - [ ] **Logo**: eigenes Zeichen entwickeln. Der Schriftzug oben links nutzt bis dahin die Überschriften-Schrift Crimson Pro.
 
