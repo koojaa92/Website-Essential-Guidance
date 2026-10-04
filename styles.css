@@ -1323,3 +1323,6 @@ p,li,dd,summary{text-wrap:pretty}
 @media (max-width:700px){ .vision-bg{background:
   linear-gradient(180deg, rgba(15,31,56,.72) 0%, rgba(15,31,56,.72) 50%, rgba(20,36,63,.9) 75%),
   url(images/ueber-vision-berge.jpg) 65% 20% / cover no-repeat; background-color:var(--ink)} }
+
+/* Startseite Handy: Bild zeigt Kerze und Jakob, Orientierungszeile ohne Freiburg */
+@media (max-width:700px){ .hero:not(.hero-sub) .hero-media .hero-img{object-position:30% center} .nur-gross{display:none} }
