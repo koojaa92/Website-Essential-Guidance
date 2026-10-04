@@ -89,7 +89,7 @@ def karte(e, seite):
                 f'<div class="dcard-foot">{tickets(e)}<a class="dcard-link" href="{details}">Details</a></div>')
     else:
         if seite == 'ez':
-            body = (f'<div class="dcard-date">{datum(e)}</div><h3>Essenz Raum</h3><p>11&ndash;16 Uhr &middot; danach Tanzen 17&ndash;20 Uhr</p>'
+            body = (f'<div class="dcard-date">{datum(e)}</div><h3>Essenz Raum</h3><p>11&ndash;16 Uhr &middot; danach Tanzen 17&ndash;20&nbsp;Uhr</p>'
                     f'<p class="dcard-preis">90 &euro;</p><div class="dcard-foot">{anmeldung(e)}</div>')
         else:
             body = (f'<div class="dcard-date">{datum(e)}</div><h3>Essenz Raum</h3><p>11&ndash;16 Uhr</p>'

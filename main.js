@@ -189,3 +189,17 @@
   s.setAttribute('data-goatcounter', 'https://' + GC + '.goatcounter.com/count');
   document.head.appendChild(s);
 })();
+
+// Keine einzelnen Woerter in der letzten Zeile: die letzten beiden Woerter fest verbinden
+(function(){
+  var els = document.querySelectorAll('h1,h2,h3,p,dd,summary,.sect-eyebrow,.eyebrow,.hero-orient');
+  els.forEach(function(el){
+    if(el.textContent.trim().split(/\s+/).length < 4) return;
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), last = null;
+    while(walker.nextNode()){ if(walker.currentNode.data.trim()) last = walker.currentNode; }
+    if(!last) return;
+    var t = last.data.replace(/\s+$/, ''), i = t.lastIndexOf(' ');
+    var j = t.lastIndexOf(' ', i - 1), max = /^H[12]$/.test(el.tagName) ? 16 : 24;
+    if(i > 0 && t.length - j - 1 <= max) last.data = t.slice(0, i) + ' ' + t.slice(i + 1) + last.data.slice(t.length);
+  });
+})();
