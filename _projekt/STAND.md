@@ -49,8 +49,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 ### Inhalte
 - [ ] **Einzelbegleitung-Seite**: Einstieg schärfen, das Live-Zeichnen an den Anfang. Claude schickt einen Textvorschlag.
-- [ ] **„Was ist Essential Guidance?“ (Startseite)**: Text ausbauen, als Essenz der ganzen Website. Claudes Vorschlag (6.10. erneut geschickt) wartet auf Jakobs Feedback:
-  > Essential steht für das Wesentliche, das in jedem Menschen schon da ist. Oft liegt es unter Schichten aus Prägungen und Mustern, die sich mit der Zeit darübergelegt haben. Guidance heißt für mich, Räume zu halten, in denen du deine eigene Richtung wieder spürst. Den Weg kennst du selbst. Ich sorge für den Boden: mit Präsenz, mit Kraft und Zartheit und mit der Bereitschaft, auch im Nichtwissen da zu bleiben. Drei Wege führen dorthin: die Bewegung im Essential Dance, die Vertiefung im Essenz Raum und das persönliche Gespräch in der Einzelbegleitung. Was sie verbindet: Wenn du dich zeigst und gesehen wirst, kann sich öffnen, was allein oft verborgen bleibt.
+- Erledigt: Längerer Text „Was ist Essential Guidance?“ auf der Startseite (freigegeben am 6.10.).
 - [ ] **Bild für „Was ist Essential Guidance?“** auswählen (Vorschläge: Keimling, Feldweg, Porträt). Abschnitt soll am Handy auf einen Bildschirm passen.
 - Entschieden: Die Startseite zeigt am Handy weiter alle Termine, damit der Essenz Raum immer sichtbar ist und man den Überblick behält.
 - Entschieden: Die Kachelbilder der Einzelbegleitung bleiben farbig (sie sind schon leicht entsättigt, der Regenbogen bei „Innere Anteile“ trägt Bedeutung). Eventuell sucht Jakob konsistentere Bilder.
