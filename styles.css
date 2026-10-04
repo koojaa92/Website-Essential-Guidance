@@ -1299,7 +1299,6 @@ footer .fgrid nav a{white-space:nowrap}
 .hero-content .hero-orient{display:block; margin:.6rem 0 1.1rem; font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-soft); font-weight:600}
 @media (max-width:480px){ .hero-content .hero-orient{font-size:.7rem; letter-spacing:.06em} }
 /* Startseite: Was ist Essential Guidance */
-.was-ist a{color:inherit; text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:3px}
 
 /* Startseite: Sonnenfoto dezent hinter "Bleib in Verbindung" und Footer, durchgehend */
 .verbindung-bg{background:linear-gradient(rgba(20,36,63,.86),rgba(20,36,63,.9)), url(images/verbindung-sonne.jpg) center 40% / cover no-repeat; background-color:var(--ink)}
