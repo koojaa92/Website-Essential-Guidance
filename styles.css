@@ -1364,3 +1364,12 @@ h3 + p{margin-top:.45rem}
   #formate .format .pic{aspect-ratio:3/2; height:auto}
   #formate .format .close{display:none}
 }
+
+/* Startseite Handy: jedes Angebot fuellt einen Bildschirm, Inhalt mittig mit Weissraum oben und unten,
+   beim Scrollen rastet die Seite sanft an den Abschnitten ein */
+@media (max-width:700px){
+  html:has(#formate){scroll-snap-type:y proximity}
+  #formate .format{min-height:100svh; margin:0; display:flex; flex-direction:column; justify-content:center; gap:1.4rem; scroll-snap-align:center}
+  .hero:not(.hero-sub){scroll-snap-align:start}
+}
+@media (max-width:700px) and (max-height:760px){ #formate .format .pic{aspect-ratio:16/9} #formate .format{gap:1.1rem} }
