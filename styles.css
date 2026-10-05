@@ -1394,3 +1394,17 @@ h3 + p{margin-top:.45rem}
 /* Handy: Angebotsbilder eher hochkant (quadratisch), oben darf beim Scrollen leicht angeschnitten sein */
 @media (max-width:700px){ #formate .format .pic{aspect-ratio:1/1; object-position:center 30%} }
 @media (max-width:700px) and (max-height:760px){ #formate .format .pic{aspect-ratio:4/3} }
+/* Lesbarkeit: Fließtext größer und etwas kräftiger (Karla 400 statt 300) */
+body{font-size:18.5px; font-weight:400}
+@media (max-width:700px){ body{font-size:18px} }
+.hero .lead{font-size:1.25rem}
+#formate .format p:not(.claim){font-size:1.12rem}
+@media (min-width:900px){ #formate .format p:not(.claim){font-size:1.18rem} }
+.ueber-intro .tight p{font-size:1.14rem}
+.dwhat p, .stance p, .elems p, .trio p, .facts p, .termine-info p, .panel-grid p, .paket p, .step p,
+.karte p, .rahmen-item p, .zweiwege .weg p, .passen-fuss p, blockquote p, .quotes blockquote p,
+.factbox dl, .contact-list, .disclaimer{font-size:1.1rem}
+.dcard p, #dates-ed .dcard p{font-size:.95rem}
+.sc-block p{font-size:.92rem}
+.termine-hinweis{font-size:1rem} .mwst-note{font-size:.95rem} .gk-hinweis{font-size:.9rem} .dcard-preis{font-size:.85rem}
+.ueber-intro .tight p, .ueber-intro .tight p:first-child{font-size:1.14rem}
