@@ -1408,3 +1408,10 @@ body{font-size:18.5px; font-weight:400}
 .sc-block p{font-size:.92rem}
 .termine-hinweis{font-size:1rem} .mwst-note{font-size:.95rem} .gk-hinweis{font-size:.9rem} .dcard-preis{font-size:.85rem}
 .ueber-intro .tight p, .ueber-intro .tight p:first-child{font-size:1.14rem}
+/* Alles etwas größer: Grundgröße (rem) hoch, damit Überschriften, goldene Überzeilen und Text mitwachsen */
+html{font-size:17.5px}
+body{font-size:19.5px}
+@media (max-width:700px){ html{font-size:17px} body{font-size:19px} }
+.sect-eyebrow{font-size:.84rem}
+.subhero .eyebrow, .hero-content .eyebrow{font-size:.88rem}
+@media (max-width:480px){ #formate .sect-eyebrow{font-size:.76rem; letter-spacing:.05em} }
