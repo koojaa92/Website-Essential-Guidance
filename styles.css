@@ -1656,3 +1656,11 @@ body{font-size:19.5px}
 .pakete .paket p{margin-bottom:1.3rem}
 @media (min-width:900px){ .pakete .paket .preis small{display:block; min-height:2.6em} }
 .pakete .paket .more{white-space:nowrap} @media (min-width:900px){ .pakete .paket .more{font-size:.84rem; letter-spacing:.04em} }
+/* Essential Dance Desktop: Terminkarten-Bilder füllen den Bildschirm statt weißem Rand */
+@media (min-width:900px) and (min-height:620px){
+  #dates-ed .dcard-img{aspect-ratio:auto; height:clamp(4.5rem, calc(50vh - 17.2rem), 15rem); width:100%; object-fit:cover}
+  #termine.screen{padding-top:1.5rem; padding-bottom:1.5rem}
+}
+/* Einzelbegleitung: Einstieg mit Luft oben und unten */
+.eb-intro{padding-top:clamp(3.5rem,7vw,5.5rem); padding-bottom:clamp(3.5rem,7vw,5.5rem)}
+@media (max-width:700px){ section.eb-intro{padding-top:3.5rem; padding-bottom:3.5rem} }
