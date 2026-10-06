@@ -1,5 +1,6 @@
 # Hinweise für Änderungen an dieser Website
 
+- Design-Entscheidungen, die Jakob bewusst trifft, gelten und werden nie zurückgedreht.
 - Abstände zwischen den Bereichen (Sections) immer eng halten, nicht großzügig. Globale Regel am Ende von `styles.css`.
 - Bei Änderungen an `styles.css` oder `main.js` die Versionsnummer (`?v=...`) in allen HTML-Dateien hochzählen, sonst zeigen Browser die alte Datei.
 - Änderungen immer erst am Desktop (1280px) und Handy (390px) prüfen.
