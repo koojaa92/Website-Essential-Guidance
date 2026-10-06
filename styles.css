@@ -1452,3 +1452,23 @@ body{font-size:19.5px}
 /* Essenz Raum: "Der Tag" und "Was den Essenz Raum ausmacht" als ein blauer Block */
 #ez-tag > #ez-ausmacht{margin-top:clamp(4rem,9vw,7rem)}
 #ez-tag .trio p + p, section .trio p + p{margin-top:.9rem}
+/* Essenz Raum Desktop: Ablauf links, "Was den Essenz Raum ausmacht" rechts daneben, gleiche Höhe */
+@media (min-width:1100px){
+  #ez-tag{display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.1fr); column-gap:clamp(2.5rem,4vw,4.5rem); align-items:stretch;
+    padding-inline:max(1.5rem, calc((100% - 78rem) / 2))}
+  #ez-tag > .wrap{width:auto; max-width:none; margin:0}
+  #ez-tag > #ez-ausmacht{margin-top:0}
+  #ez-tag .ez-ablauf{display:block}
+  #ez-tag .arbeit-grid{display:flex; flex-direction:column; gap:1.3rem}
+  #ez-tag .arbeit-intro h2{font-size:clamp(2rem,3vw,2.6rem); margin-bottom:.6rem}
+  #ez-tag .arbeit-lead{max-width:none}
+  #ez-tag .arbeit-intro .arbeit-bild{flex:none; aspect-ratio:16/6; min-height:0; max-height:none; height:auto; margin-top:1.1rem; object-position:50% 45%}
+  #ez-tag .arbeit-cards{flex:1 1 auto; gap:1rem}
+  #ez-tag .arbeit-cards .karte{padding:1.3rem 1.4rem; min-height:0}
+  #ez-tag .arbeit-cards .karte h3{font-size:1.3rem}
+}
+@media (min-width:1100px){
+  #ez-tag .arbeit-intro{flex:1 1 auto; display:flex; flex-direction:column}
+  #ez-tag .arbeit-intro .arbeit-bild{flex:1 1 auto; aspect-ratio:auto; min-height:12rem; height:0}
+  #ez-tag .arbeit-cards{flex:none; grid-template-rows:auto}
+}
