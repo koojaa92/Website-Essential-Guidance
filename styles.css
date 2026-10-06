@@ -1646,3 +1646,4 @@ body{font-size:19.5px}
   .rs-grid > .rs-col + .rs-col{margin-top:clamp(4.5rem,14vw,6rem)}
 }
 @media (max-width:700px){ .ed-intro-block .gallery4 img[data-img="ed-i3"]{object-position:center 6%} }
+@media (min-width:900px){ #raeume + .vision-bg{margin-top:clamp(5rem,10vh,8rem)} }
