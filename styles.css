@@ -1609,3 +1609,30 @@ body{font-size:19.5px}
   .hero-sub.hero-voll .hero-content .backlink{margin-bottom:auto}
 }
 @media (max-width:700px){ #ez-ausmacht .arbeit-intro h2{font-size:clamp(1.3rem,6.6vw,1.9rem); white-space:nowrap} }
+/* Einstieg als eigener Bildschirm mit größerer Schrift (Essential Dance) */
+@media (min-width:900px) and (min-height:620px){
+  .intro-screen > .wrap{width:min(100% - 3rem, 76rem)}
+  .intro-screen .tight p{font-size:clamp(1rem,2.2vh,1.35rem); line-height:1.55}
+  .intro-screen .tight p + p{margin-top:.7em}
+  .intro-screen .factbox dl{font-size:clamp(1rem,2.3vh,1.35rem)}
+  .intro-screen .factbox-wrap .btn{font-size:clamp(.95rem,1.9vh,1.15rem)}
+}
+@media (min-width:701px){
+  .hero-sub.hero-voll h1{font-size:min(clamp(2.9rem,7.6vw,5.2rem), 10vh)}
+  .hero-sub.hero-voll .hero-content{padding-top:1.5rem}
+}
+/* Essential Dance Desktop: Einstieg + Galerie zusammen ein Bildschirm */
+@media (min-width:900px) and (min-height:620px){
+  .ed-intro-block{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:1.5rem 0; box-sizing:border-box}
+  .ed-intro-block > section{padding-top:0; padding-bottom:0}
+  .ed-intro-block > .pull-up{margin-top:clamp(1.5rem,4vh,3rem)}
+  .ed-intro-block > .pull-up > .wrap{width:min(100% - 3rem, 76rem)}
+  .ed-intro-block .gallery4 img{aspect-ratio:auto; height:clamp(9rem,26vh,17rem); width:100%; object-fit:cover}
+}
+@media (min-width:1000px){
+  .rs-grid{grid-template-columns:1fr 1fr; align-items:stretch}
+  .rs-grid .rs-col{display:flex; flex-direction:column}
+  .rs-grid .rs-col .tight{max-width:none !important}
+  .rs-grid .rs-col > .gallery4, .rs-grid .rs-col > .sc-consent, .rs-grid .rs-col > iframe{margin-top:1.4rem !important}
+  .rs-grid .rs-col > iframe.sc-solo{flex:1 1 auto; min-height:20rem}
+}
