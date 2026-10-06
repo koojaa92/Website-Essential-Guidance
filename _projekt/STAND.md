@@ -31,6 +31,9 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - Alle Termine in `tools/termine.json`. Danach `python3 tools/make-ics.py` ausführen: Das baut Karten, Kalenderdateien und Google-Daten.
 - 2026: bis 20.12. mit Eventfrog-Links. 2027: Essential Dance 17.1.–21.3. (ohne 28.3.), Essenz Raum 31.1. Dort steht „Tickets folgen“.
 
+**Linkseite (QR-Code / Instagram-Bio)**
+- `links.html`: versteckte Linkseite (noindex, nicht im Menü, nicht in der Sitemap) mit Terminen, den drei Angeboten, Telegram, SoundCloud, Instagram, E-Mail und Website. QR-Code: `_projekt/qr-links.png` und `.svg` (zeigt auf essential-guidance.space/links.html, funktioniert nach dem Domainwechsel über die Weiterleitung weiter).
+
 **Technik und SEO**
 - Google Search Console eingerichtet, Sitemap eingereicht, Seite ist bei Google indexiert (2.10.).
 - Event-Daten für Google mit validFrom ergänzt. Die Prüfung in der Search Console läuft seit 4.10.
