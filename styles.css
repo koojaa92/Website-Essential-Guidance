@@ -1415,3 +1415,37 @@ body{font-size:19.5px}
 .sect-eyebrow{font-size:.84rem}
 .subhero .eyebrow, .hero-content .eyebrow{font-size:.88rem}
 @media (max-width:480px){ #formate .sect-eyebrow{font-size:.76rem; letter-spacing:.05em} }
+/* Bildband direkt vor einem Abschnitt: Abschnitt 2px überlappen, damit keine helle Linie (Safari-Rundung) */
+.imgband + section{margin-top:-2px}
+/* Essential Dance: Der Raum und Mein Sound nebeneinander (Desktop) */
+@media (min-width:1000px){
+  .rs-grid{display:grid; grid-template-columns:1.15fr 1fr; gap:clamp(2.5rem,5vw,4.5rem); align-items:start}
+  .rs-grid .gallery4{grid-template-columns:1fr 1fr; gap:.7rem}
+  .rs-grid .gallery4.sq img{aspect-ratio:4/3}
+  .rs-grid .sc-solo, .rs-grid iframe{width:100%}
+}
+@media (max-width:999px){ .rs-grid > .rs-col + .rs-col{margin-top:clamp(3rem,8vw,4.5rem)} }
+/* Desktop: Abschnitte mit .screen füllen einen Bildschirm, Inhalt mittig; mit Bildband davor zusammen ein Bildschirm */
+@media (min-width:900px) and (min-height:620px){
+  section.screen{min-height:100vh; display:flex; flex-direction:column; justify-content:center; box-sizing:border-box}
+  section.screen > .wrap{width:min(100% - 2.5rem, 68rem)}
+  .imgband + section.screen{min-height:calc(100vh - min(24vw, 19rem))}
+}
+@media (min-width:1000px){
+  .rs-grid .gallery4{margin-top:1.4rem !important}
+  .rs-grid .gallery4.sq img{aspect-ratio:3/2}
+  #ablauf .steps{display:grid; grid-template-columns:1fr 1fr; column-gap:clamp(2rem,4vw,3.5rem)}
+}
+@media (min-width:900px){
+  #termine.screen{padding-top:2.4rem; padding-bottom:2.4rem}
+  #dates-ed .dcard-img{aspect-ratio:16/5}
+  #dates-ed .dcard-body{padding:.9rem 1.2rem 1rem}
+}
+@media (min-width:900px) and (min-height:620px){
+  .imgband{height:min(24vw, 19rem, 32vh)}
+  .imgband + section.screen{min-height:calc(100vh - min(24vw, 19rem, 32vh))}
+  section.screen{padding-top:2.2rem; padding-bottom:2.2rem}
+  #termine.screen{padding-top:1.8rem; padding-bottom:1.8rem}
+  #dates-ed .dcard-img{aspect-ratio:16/4}
+}
+@media (min-width:1000px){ #ablauf .steps .step:nth-last-child(2){border-bottom:1px solid var(--line)} }

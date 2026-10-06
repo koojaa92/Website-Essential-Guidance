@@ -36,6 +36,8 @@
 
   containers.forEach(function(container){
     var maxCount = container.getAttribute('data-max-count');
+    var maxDesk = container.getAttribute('data-max-count-desktop');
+    if(maxDesk && window.matchMedia('(min-width:900px)').matches) maxCount = maxDesk;
     var category = container.getAttribute('data-category'); // z.B. "raum" -- nur Termine dieser Kategorie
     var cards = Array.prototype.slice.call(container.querySelectorAll('.dcard[data-date]'));
 
