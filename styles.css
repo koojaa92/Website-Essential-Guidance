@@ -1602,3 +1602,10 @@ body{font-size:19.5px}
   #dates-ez .dcard-img{height:clamp(4.5rem, calc(100vh - 50rem), 14rem)}
   .ez-pair{padding:.3rem 0}
 }
+/* Essenz Raum Handy: Hero-Text tiefer im Bild, nichts unter der Safari-Leiste */
+@media (max-width:700px){
+  .hero-sub.hero-voll{display:flex; flex-direction:column; justify-content:flex-end}
+  .hero-sub.hero-voll .hero-content{padding-top:1rem; padding-bottom:6.5rem}
+  .hero-sub.hero-voll .hero-content .backlink{margin-bottom:auto}
+}
+@media (max-width:700px){ #ez-ausmacht .arbeit-intro h2{font-size:clamp(1.3rem,6.6vw,1.9rem); white-space:nowrap} }
