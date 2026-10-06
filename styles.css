@@ -1550,3 +1550,55 @@ body{font-size:19.5px}
 }
 @media (min-width:900px) and (min-height:620px){ .ez-intro-block > .imgband{height:22vh} .ez-intro-block > .ez-intro{padding:1.3rem 0} }
 .hero-voll .hero-content .eyebrow{color:var(--gold-soft); font-weight:600}
+/* Essenz Raum Desktop, Runde 3: größer, Icons mittig, Zeit unter dem Icon, Titel direkt neben dem Kreis, breiter */
+@media (min-width:1100px){
+  #ez-tag{padding-inline:max(1.5rem, calc((100% - 86rem) / 2)); column-gap:clamp(3rem,6vw,7rem)}
+  #ez-tag .step{grid-template-columns:clamp(5.4rem,9vh,6.6rem) 1fr; grid-template-areas:"num title" "time text"; column-gap:1rem; row-gap:.15rem; align-items:center}
+  #ez-tag .step > div:not(.num){display:contents}
+  #ez-tag .step > .num{grid-area:num; justify-self:center; align-items:center; justify-content:center}
+  #ez-tag .step .time{grid-area:time; justify-self:center; align-self:start; text-align:center; white-space:nowrap; font-size:clamp(.72rem,1.4vh,.9rem); letter-spacing:.06em}
+  #ez-tag .step h3{grid-area:title; align-self:center; font-size:clamp(1.2rem,2.7vh,1.6rem)}
+  #ez-tag .step p{grid-area:text; align-self:start; margin-top:0; font-size:clamp(1rem,2.15vh,1.3rem)}
+  #ez-tag .arbeit-cards .karte{border:1px solid rgba(201,162,92,.55)}
+  #ez-tag .arbeit-cards .karte h3{font-size:clamp(1.15rem,2.6vh,1.55rem)}
+  #ez-tag .arbeit-cards .karte p{font-size:clamp(.98rem,2.05vh,1.25rem)}
+  #ez-tag h2{font-size:clamp(2.2rem,5vh,3.3rem)}
+}
+@media (min-width:900px) and (min-height:620px){
+  .ez-intro .tight p{font-size:clamp(1.05rem,2.25vh,1.35rem); line-height:1.6}
+  .ez-intro .factbox dl{font-size:clamp(1.02rem,2.1vh,1.25rem)}
+  .ez-intro > .wrap{width:min(100% - 2.5rem, 76rem)}
+}
+@media (min-width:1100px){
+  #ez-tag .step{padding:clamp(.4rem,1vh,.8rem) 0}
+  #ez-tag .step h3{font-size:clamp(1.15rem,2.35vh,1.5rem)}
+  #ez-tag .step p{font-size:clamp(.98rem,1.9vh,1.2rem); line-height:1.5}
+  #ez-tag .step > .num{width:clamp(2.1rem,4vh,2.6rem); height:clamp(2.1rem,4vh,2.6rem)}
+  #ez-tag h2{font-size:clamp(2.1rem,4.4vh,3rem)}
+}
+@media (min-width:900px) and (min-height:620px){
+  .ez-intro .tight p{font-size:clamp(1.02rem,2.02vh,1.25rem); line-height:1.55}
+  .ez-intro .tight p + p{margin-top:.7em}
+}
+@media (min-width:1100px){
+  #ez-tag{padding-inline:max(2rem, calc((100% - 80rem) / 2))}
+  #ez-tag .step h3{font-size:clamp(1.02rem,2.35vh,1.5rem)}
+  #ez-tag .step p{font-size:clamp(.88rem,1.9vh,1.2rem)}
+  #ez-tag .arbeit-cards .karte p{font-size:clamp(.88rem,2.05vh,1.25rem)}
+  #ez-tag .arbeit-cards .karte h3{font-size:clamp(1.02rem,2.6vh,1.55rem)}
+}
+@media (min-width:900px) and (min-height:620px){
+  .ez-intro-block > .ez-intro > .wrap{width:min(100% - 3rem, 76rem)}
+  .ez-intro .tight p{font-size:clamp(1rem,2.35vh,1.4rem)}
+  .ez-intro .factbox dl{font-size:clamp(1rem,2.3vh,1.35rem)}
+  .ez-intro .factbox-wrap .btn{font-size:clamp(.95rem,1.9vh,1.15rem)}
+}
+@media (min-width:1100px) and (max-height:850px){ #ez-tag .step{padding:.3rem 0} #ez-tag{padding-top:1rem; padding-bottom:1rem} }
+@media (min-width:1000px) and (min-height:620px){
+  #dates-ez .dcard-img{aspect-ratio:auto; height:clamp(4.5rem,12vh,11rem); width:100%; object-fit:cover}
+  .ez-pair > .ez-termine{margin-top:clamp(2rem,5vh,4.5rem)}
+}
+@media (min-width:1000px) and (min-height:620px){
+  #dates-ez .dcard-img{height:clamp(4.5rem, calc(100vh - 50rem), 14rem)}
+  .ez-pair{padding:.3rem 0}
+}
