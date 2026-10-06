@@ -1693,3 +1693,17 @@ body{font-size:19.5px}
 }
 @media (min-width:1000px) and (min-height:620px){ #genekeys{padding-top:1.2rem; padding-bottom:1.2rem} }
 @media (min-width:900px){ section.eb-intro{padding-top:clamp(4rem,8vh,6rem); padding-bottom:clamp(4rem,8vh,6rem)} }
+/* Formen der Begleitung Desktop: größer lesbar, Inhalt mittig im Bergbild */
+@media (min-width:1000px) and (min-height:620px){
+  #formen{display:flex; flex-direction:column; justify-content:center}
+  #formen > .wrap{width:min(100% - 3rem, 80rem)}
+  #formen h2{font-size:clamp(2.2rem,5vh,3.4rem)}
+  #formen .paket .tag{font-size:clamp(.72rem,1.35vh,.9rem)}
+  #formen .paket h3{font-size:clamp(1.15rem,2.4vh,1.6rem)}
+  #formen .paket .preis{font-size:clamp(1.6rem,3.6vh,2.4rem)}
+  #formen .paket .preis small{font-size:clamp(.78rem,1.5vh,1rem)}
+  #formen .paket p{font-size:clamp(.92rem,2.05vh,1.3rem)}
+  #formen .panel-grid h4{font-size:clamp(.76rem,1.4vh,.95rem)}
+  #formen .panel-grid p{font-size:clamp(.9rem,1.95vh,1.25rem)}
+  #formen .mwst-note{font-size:clamp(.85rem,1.6vh,1.05rem)}
+}
