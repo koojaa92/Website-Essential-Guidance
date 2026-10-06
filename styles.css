@@ -1636,3 +1636,13 @@ body{font-size:19.5px}
   .rs-grid .rs-col > .gallery4, .rs-grid .rs-col > .sc-consent, .rs-grid .rs-col > iframe{margin-top:1.4rem !important}
   .rs-grid .rs-col > iframe.sc-solo{flex:1 1 auto; min-height:20rem}
 }
+/* Essential Dance Handy */
+.nur-klein{display:none}
+@media (max-width:700px){
+  .nur-klein{display:block}
+  .termine-mehr{margin-top:1.4rem}
+  .termine-mehr .btn{width:100%; justify-content:center; text-align:center}
+  .ed-intro-block .gallery4 img[data-img="ed-i3"]{object-position:center 22%}
+  .rs-grid > .rs-col + .rs-col{margin-top:clamp(4.5rem,14vw,6rem)}
+}
+@media (max-width:700px){ .ed-intro-block .gallery4 img[data-img="ed-i3"]{object-position:center 6%} }

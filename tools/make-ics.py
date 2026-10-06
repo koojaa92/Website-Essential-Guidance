@@ -83,7 +83,7 @@ def karte(e, seite):
         foot = f'<div class="dcard-foot"><a class="dcard-link" href="{h["url"]}" target="_blank" rel="noopener">{h["text"]} &rarr;</a></div>' if h else ''
         body = f'<div class="dcard-date">{datum(e)}</div><h3>Pause</h3><p>{text}</p>{foot}'
     elif art == 'dance':
-        preis = '<p class="dcard-preis">ab 15 &euro; VVK &middot; ab 20 &euro; Abendkasse</p>' if seite == 'ed' else ''
+        preis = '<p class="dcard-preis">ab&nbsp;15&nbsp;&euro; VVK &middot; ab&nbsp;20&nbsp;&euro; Abendkasse</p>' if seite == 'ed' else ''
         details = 'termine.html' if seite == 'ed' else 'essential-dance.html'
         body = (f'<div class="dcard-date">{datum(e)}</div><h3>Essential Dance</h3><p>17&ndash;20 Uhr</p>{preis}'
                 f'<div class="dcard-foot">{tickets(e)}<a class="dcard-link" href="{details}">Details</a></div>')
