@@ -1533,3 +1533,20 @@ body{font-size:19.5px}
 }
 @media (min-width:1000px) and (min-height:620px){ .ez-pair > .ez-termine{margin-top:clamp(2.6rem,7vh,5.5rem)} }
 @media (min-width:1000px) and (min-height:620px){ .ez-pair{padding:.6rem 0} }
+/* Essenz Raum: klare Führung, ein Bildschirm pro Schritt */
+.hero-voll + .hero-spacer{display:none}
+.hero-sub.hero-voll{min-height:calc(100vh - var(--kopf,73px)); min-height:calc(100svh - var(--kopf,73px))}
+@media (max-width:700px){
+  .hero-sub.hero-voll{min-height:calc(100lvh - var(--kopf,73px))}
+  .hero-sub.hero-voll .hero-content{padding-bottom:5.5rem}
+}
+.ez-intro{padding-top:clamp(2.5rem,6vw,4rem)}
+@media (min-width:900px) and (min-height:620px){
+  .ez-intro-block{min-height:100vh; display:flex; flex-direction:column}
+  .ez-intro-block > .ez-intro{flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; padding:2rem 0}
+  .ez-intro-block > .ez-intro > .wrap{width:min(100% - 2.5rem, 68rem)}
+  .ez-intro-block > .imgband{height:24vh; flex:none}
+  .ez-intro-block + #ez-tag{margin-top:0}
+}
+@media (min-width:900px) and (min-height:620px){ .ez-intro-block > .imgband{height:22vh} .ez-intro-block > .ez-intro{padding:1.3rem 0} }
+.hero-voll .hero-content .eyebrow{color:var(--gold-soft); font-weight:600}
