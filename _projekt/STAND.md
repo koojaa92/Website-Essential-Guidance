@@ -22,7 +22,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - Die drei Angebote füllen am Handy je einen Bildschirm. Am Desktop stehen sie als klare Blöcke mittig, die Nachbarn schauen schmal herein; Bild an Bildschirmhöhe gebunden, größere Schrift, sanftes Einrasten (6.10., Mittelweg; Regel am Ende von styles.css).
 
 **Unterseiten**
-- Essenz Raum: Reihenfolge Intro, Der Tag, „Wie ich den Raum halte“, Was ihn ausmacht, Termine (nur die nächsten drei), FAQ. Preis-Hinweis steht unter den Terminen. Im Hero „Workshop in kleiner Gruppe“, Ort mit Kartenlink.
+- Essenz Raum: Reihenfolge Intro, ein blauer Block aus „Der Tag“ und „Was den Essenz Raum ausmacht“ (Kartentexte aus Sicht der Lesenden), dann drei Spalten „Wie ich den Raum halte“ · „Was kannst du mitnehmen?“ · „Wann ist er nichts für dich?“, Termine (nur die nächsten drei), FAQ. Preis-Hinweis steht unter den Terminen. Im Hero „Workshop in kleiner Gruppe“, Ort mit Kartenlink.
 - Essential Dance: Preise „ab 15 € VVK · ab 20 € Abendkasse“, FAQs mit Suchbegriffen, „DJ Bookings“ als goldene Überzeile.
 - Einzelbegleitung: „Mit was ich arbeite“, Gene Keys als goldene Überzeile.
 - Über mich: ohne Kontaktblock, weißer Abstand vor „Meine Vision“. Mit „zehn Jahre selbstständig als Graphic Recorder und Facilitator“ und „Vater einer lebendigen Tochter, die mich immer wieder aufs Neue prüft“.

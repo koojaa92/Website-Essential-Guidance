@@ -1449,3 +1449,6 @@ body{font-size:19.5px}
   #dates-ed .dcard-img{aspect-ratio:16/4}
 }
 @media (min-width:1000px){ #ablauf .steps .step:nth-last-child(2){border-bottom:1px solid var(--line)} }
+/* Essenz Raum: "Der Tag" und "Was den Essenz Raum ausmacht" als ein blauer Block */
+#ez-tag > #ez-ausmacht{margin-top:clamp(4rem,9vw,7rem)}
+#ez-tag .trio p + p, section .trio p + p{margin-top:.9rem}
