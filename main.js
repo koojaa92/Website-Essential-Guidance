@@ -131,6 +131,12 @@
       }
     });
   });
+  // Desktop: "Eine Session" ist von Anfang an aufgeklappt, damit man sieht, dass sich Details öffnen lassen
+  if(window.matchMedia('(min-width:1000px)').matches){
+    var first = document.querySelector('.paket[data-panel="p2"]');
+    var fp = document.getElementById('p2');
+    if(first && fp){ first.classList.add('is-open'); first.setAttribute('aria-expanded','true'); fp.classList.add('is-open'); fp.style.animation='none'; }
+  }
 })();
 
 // Sanftes Einblenden beim Scrollen
