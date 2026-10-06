@@ -1664,3 +1664,25 @@ body{font-size:19.5px}
 /* Einzelbegleitung: Einstieg mit Luft oben und unten */
 .eb-intro{padding-top:clamp(3.5rem,7vw,5.5rem); padding-bottom:clamp(3.5rem,7vw,5.5rem)}
 @media (max-width:700px){ section.eb-intro{padding-top:3.5rem; padding-bottom:3.5rem} }
+/* Einzelbegleitung Desktop: Formen der Begleitung ein Bildschirm, Platz für die Details darunter */
+@media (min-width:1000px) and (min-height:620px){
+  #formen{min-height:100vh; box-sizing:border-box; padding-top:clamp(1.6rem,4vh,3rem); padding-bottom:1.6rem}
+  #formen h2{margin-bottom:0}
+  #formen .pakete{margin-top:1.2rem}
+  #formen .paket{padding:1.2rem 1.3rem 1.1rem}
+  #formen .paket p{font-size:clamp(.92rem,1.8vh,1.05rem); line-height:1.5}
+  #formen .paket-panel{margin-top:.2rem; padding:1rem 1.4rem 1.1rem}
+  #formen .paket-panel > h3{display:none}
+  #formen .panel-grid{margin-top:0; gap:1rem 2rem}
+  #formen .panel-grid p{font-size:clamp(.9rem,1.7vh,1rem); line-height:1.5}
+  #formen .panel-cta{margin-top:.9rem}
+  #formen .mwst-note{margin-top:1rem}
+}
+/* Mit was ich arbeite: sechs Kacheln auf einem Bildschirm */
+@media (min-width:1000px) and (min-height:620px){
+  .eb-arbeit{min-height:100vh; box-sizing:border-box; padding:1.6rem 0}
+  .eb-arbeit .trio6{margin-top:1.2rem; gap:1.4rem 2.2rem}
+  .eb-arbeit .trio-img{aspect-ratio:auto; height:clamp(7rem, calc(50vh - 19rem), 15rem); margin-bottom:.7rem}
+  .eb-arbeit .trio h3{font-size:clamp(1.1rem,2.2vh,1.4rem); margin-bottom:.3rem}
+  .eb-arbeit .trio p{font-size:clamp(.88rem,1.75vh,1.05rem); line-height:1.5}
+}
