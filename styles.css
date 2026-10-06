@@ -1518,3 +1518,18 @@ body{font-size:19.5px}
   .ez-trio .trio p + p{margin-top:.6rem}
 }
 @media (max-width:700px){ .imgband[data-img="ez-i6"]{height:62vw; object-position:center 50% !important} }
+/* Essenz Raum Desktop: Icons wieder mittig, Größen wachsen mit der Bildschirmhöhe */
+@media (min-width:1100px){
+  #ez-tag .step > .num{display:flex; width:clamp(2.1rem,4.4vh,2.8rem); height:clamp(2.1rem,4.4vh,2.8rem)}
+  #ez-tag .step{grid-template-columns:clamp(2.1rem,4.4vh,2.8rem) 1fr; padding:clamp(.5rem,1.25vh,1.1rem) 0}
+  #ez-tag h2{font-size:clamp(2rem,4.6vh,3rem)}
+  #ez-tag .step .time{font-size:clamp(.78rem,1.55vh,.95rem)}
+  #ez-tag .step h3{font-size:clamp(1.1rem,2.5vh,1.45rem)}
+  #ez-tag .step p{font-size:clamp(.95rem,2.05vh,1.2rem)}
+  #ez-tag .arbeit-cards .karte h3{font-size:clamp(1.1rem,2.4vh,1.4rem)}
+  #ez-tag .arbeit-cards .karte p{font-size:clamp(.92rem,1.95vh,1.15rem)}
+  #ez-tag .arbeit-cards .karte{padding:clamp(.9rem,2vh,1.5rem) clamp(1rem,2vh,1.6rem)}
+  #ez-tag .arbeit-cards{gap:clamp(.7rem,1.6vh,1.2rem)}
+}
+@media (min-width:1000px) and (min-height:620px){ .ez-pair > .ez-termine{margin-top:clamp(2.6rem,7vh,5.5rem)} }
+@media (min-width:1000px) and (min-height:620px){ .ez-pair{padding:.6rem 0} }
