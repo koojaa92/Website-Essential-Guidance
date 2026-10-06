@@ -1,6 +1,6 @@
 # Essential Guidance – Projektstand und offene Punkte
 
-Stand: 6. Oktober 2026. Live: https://essential-guidance.space (Branch `main`, GitHub Pages).
+Stand: 6. Oktober 2026 (Mittag). Live: https://essential-guidance.space (Branch `main`, GitHub Pages).
 Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 
