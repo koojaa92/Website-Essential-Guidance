@@ -1648,3 +1648,11 @@ body{font-size:19.5px}
 @media (max-width:700px){ .ed-intro-block .gallery4 img[data-img="ed-i3"]{object-position:center 6%} }
 @media (min-width:900px){ #raeume + .vision-bg{margin-top:clamp(5rem,10vh,8rem)} }
 .hero-voll .lead b{font-weight:600; color:#fff}
+/* Einzelbegleitung: Paketkarten gleich aufgebaut, Details-Buttons unten auf einer Höhe und größer */
+.pakete .paket{display:flex; flex-direction:column}
+.pakete .paket .more{margin-top:auto; padding-top:1.3rem; align-self:flex-start}
+.pakete .paket .more{display:inline-flex; align-items:center; gap:.4rem; font-size:.92rem; font-weight:600; letter-spacing:.06em;
+  border:1px solid currentColor; border-radius:999px; padding:.55rem 1.1rem; margin-top:auto}
+.pakete .paket p{margin-bottom:1.3rem}
+@media (min-width:900px){ .pakete .paket .preis small{display:block; min-height:2.6em} }
+.pakete .paket .more{white-space:nowrap} @media (min-width:900px){ .pakete .paket .more{font-size:.84rem; letter-spacing:.04em} }
