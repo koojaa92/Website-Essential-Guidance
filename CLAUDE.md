@@ -1,6 +1,7 @@
 # Hinweise für Änderungen an dieser Website
 
 - Design-Entscheidungen, die Jakob bewusst trifft, gelten und werden nie zurückgedreht.
+- Design-Skills (`.claude/skills/frontend-design`, `.claude/skills/impeccable`) nur auf ausdrückliche Anfrage nutzen. Ergebnisse sind Vorschläge; nichts wird ohne Jakobs Ok umgesetzt. Bewusste Entscheidungen (goldene Überzeilen in Großbuchstaben, Mittelpunkte wie „Tanz · Workshops“, Crimson Pro + Karla, Blau-Gold-Palette, ein Bildschirm pro Abschnitt) gelten als Brief und werden nicht als „KI-Muster“ zurückgebaut. Impeccable ohne Hooks: keine `.claude/settings.json`-Hooks und kein `/impeccable hooks on`. DESIGN.md liegt in `_projekt/DESIGN.md`.
 - Abstände zwischen den Bereichen (Sections) immer eng halten, nicht großzügig. Globale Regel am Ende von `styles.css`.
 - Bei Änderungen an `styles.css` oder `main.js` die Versionsnummer (`?v=...`) in allen HTML-Dateien hochzählen, sonst zeigen Browser die alte Datei.
 - Änderungen immer erst am Desktop (1280px) und Handy (390px) prüfen.
