@@ -55,6 +55,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - [ ] **Einzelbegleitung-Seite**: Einstieg schärfen, das Live-Zeichnen an den Anfang. Claude schickt einen Textvorschlag.
 - Erledigt: Längerer Text „Was ist Essential Guidance?“ auf der Startseite (freigegeben am 6.10.).
 - [ ] **Bild für „Was ist Essential Guidance?“** auswählen (Vorschläge: Keimling, Feldweg, Porträt). Abschnitt soll am Handy auf einen Bildschirm passen.
+- Entschieden (7.10., nach Impeccable-Critique): Keine Preise auf der Startseite. „Was ist Essential Guidance?“ bleibt bewusst textlastig. Sechs Termine auf der Startseite (Hauptfunktion). Kein Erstbesucher-Hinweis nötig (Publikum kennt Tanz). Footer-Ort ohne Straße, weil Studio Pro Arte nicht Jakobs Adresse ist.
 - Entschieden: Die Startseite zeigt am Handy weiter alle Termine, damit der Essenz Raum immer sichtbar ist und man den Überblick behält.
 - Entschieden: Die Kachelbilder der Einzelbegleitung bleiben farbig (sie sind schon leicht entsättigt, der Regenbogen bei „Innere Anteile“ trägt Bedeutung). Eventuell sucht Jakob konsistentere Bilder.
 - Erledigt (6.10.): Über-mich-Überschrift „Die Essenz zu erforschen ist mein Weg.“
