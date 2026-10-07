@@ -1724,3 +1724,18 @@ body{font-size:19.5px}
   .hero:not(.hero-sub) .hero-badge{position:absolute; top:1.1rem; left:1.25rem; right:1.25rem; margin:0; z-index:2}
 }
 @media (max-width:700px){ .hero:not(.hero-sub) .hero-content{padding-bottom:9rem} }
+
+/* Kritik-Runde: Kontrast, Lesbarkeit, Menü-X */
+.dcard-flag, .dcard .dcard-flag{color:#14243F}
+@media (max-width:620px){
+  .dcard-date{font-size:.78rem; letter-spacing:.07em}
+  #dates-ed .dcard-date{font-size:.78rem}
+  /* Essenz-Raum-Bild nach links schieben, damit der Schriftzug im Bild nicht mit dem Datum kollidiert */
+  .dcard.raum .dcard-img{object-position:12% center}
+}
+.hero-content .btn:not(.ghost){background:#BC9455; border-color:#BC9455; color:var(--ink)}
+.hero-content .btn:not(.ghost):hover, .hero-content .btn:not(.ghost):focus-visible{background:var(--gold); border-color:var(--gold); color:var(--ink)}
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after{transition:transform .25s ease, background .2s, top .25s ease}
+.menu-toggle.offen span{background:transparent}
+.menu-toggle.offen span::before{top:0; transform:rotate(45deg)}
+.menu-toggle.offen span::after{top:0; transform:rotate(-45deg)}

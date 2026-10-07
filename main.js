@@ -81,11 +81,19 @@
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.getElementById('mainnav');
   if(!toggle || !nav) return;
+  // Offen wird das Menü-Symbol zum X
+  function setze(auf){
+    nav.classList.toggle('open', auf);
+    toggle.classList.toggle('offen', auf);
+    toggle.setAttribute('aria-expanded', auf ? 'true' : 'false');
+    toggle.setAttribute('aria-label', auf ? 'Menü schließen' : 'Menü öffnen');
+  }
+  toggle.setAttribute('aria-expanded', 'false');
   toggle.addEventListener('click', function(){
-    nav.classList.toggle('open');
+    setze(!nav.classList.contains('open'));
   });
   nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ nav.classList.remove('open'); });
+    a.addEventListener('click', function(){ setze(false); });
   });
 })();
 

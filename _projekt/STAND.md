@@ -41,9 +41,15 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - Statistik: GoatCounter (cookielos), https://essentialgoat.goatcounter.com
 - jakob-kohlbrenner.de verlinkt auf die neue Seite.
 
+**Entscheidungen aus der Design-Kritik (7.10.)**
+- Startseite ohne Preise, sechs Termine, keine Erstbesucher-Zeile; „Was ist Essential Guidance?“ bleibt bewusst textlastig.
+- Fußzeile ohne Straßenadresse (Studio Pro Arte ist nicht Jakobs Adresse).
+- Umgesetzt: Ticket-Pillen mit dunkler Schrift, größere Datumszeile am Handy, Hero-Button „Termine ansehen“ in Gold, Essenz-Raum-Kartenbild am Handy nach links verschoben, Menü wird offen zum X, goldene Schlusszeile beim Essenz Raum auf der Startseite.
+
 ## Offene Punkte
 
 ### Bald
+- [ ] **Echte Fotos** für Essential Dance und Essenz Raum (liefert Jakob). Ziel: beide Formate in Farbe und Bildwelt klar unterscheidbar.
 - [ ] **Domain .de**: Bei Strato A-Einträge `185.199.108.153` (bis .111.153) und CNAME `www` → `koojaa92.github.io` setzen, dann Claude Bescheid geben. Danach: .space in Cloudflare per 301 auf .de umleiten, .de in der Search Console anlegen und dort „Adressänderung“ ausführen. Links bei Instagram, Eventfrog und jakob-kohlbrenner.de anpassen.
 - [ ] **Eventfrog-Beschreibung** mit dem neuen Text (Suchbegriffe, Website-Link) bei allen Events einsetzen. Website auch im Veranstalterprofil eintragen.
 - [ ] **Eventfrog Newsletter-Häkchen**: Nur bei Events ohne bisherige Verkäufe auf Plus umstellen (Gebühr an Käufer weitergeben), Ja/Nein-Feld freiwillig.
