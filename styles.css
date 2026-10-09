@@ -1812,3 +1812,17 @@ body{font-size:19.5px}
   #raeume .karte h3{font-size:1.25rem; margin-bottom:.45rem}
   #raeume .karte p{font-size:.96rem; line-height:1.55}
 }
+/* Termine-Seite (Desktop): kompaktere Karten, damit mehr Termine auf einen Blick passen */
+@media (min-width:900px){
+  #dates-all .dates-jahr, #dates-all{gap:1rem}
+  #dates-all .dates-jahr .dates, #dates-all.dates{grid-template-columns:repeat(4,1fr)}
+  #dates-all .dcard-img{aspect-ratio:16/8}
+  #dates-all .dcard-big{font-size:clamp(.8rem,1.1vw,1.05rem)}
+  #dates-all .dcard-body{padding:.8rem 1rem .9rem}
+  #dates-all .dcard-date{font-size:.62rem; margin-bottom:.2rem}
+  #dates-all .dcard h3{font-size:1.05rem; margin-bottom:.1rem}
+  #dates-all .dcard p{font-size:.85rem}
+  #dates-all .dcard-foot{padding-top:.55rem; margin-top:.3rem}
+  #dates-all .dcard-flag{font-size:.62rem; padding:.24rem .6rem}
+  #dates-all .dcard-link{font-size:.72rem; padding:.24rem .75rem}
+}
