@@ -1844,3 +1844,10 @@ section.was-ist + #termine{padding-top:clamp(3rem,6vw,5rem)}
   .hero:not(.hero-sub) .hero-content{padding-bottom:6rem}
   .hero:not(.hero-sub) .hero-content .lead{font-size:.92rem; margin-bottom:1.1rem}
 }
+/* Startseite Handy: Überschrift, goldene Zeile, Text und Buttons als ein kompakter Block unten im Bild */
+@media (max-width:700px){
+  .hero:not(.hero-sub) h1{margin-bottom:0}
+  .hero:not(.hero-sub) .hero-orient{margin-top:1rem; margin-bottom:0}
+  .hero:not(.hero-sub) .hero-content .lead{margin-top:.75rem; margin-bottom:1.35rem}
+  .hero:not(.hero-sub) .actions{margin-top:0}
+}
