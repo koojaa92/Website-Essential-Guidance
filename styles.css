@@ -1851,3 +1851,11 @@ section.was-ist + #termine{padding-top:clamp(3rem,6vw,5rem)}
   .hero:not(.hero-sub) .hero-content .lead{margin-top:.75rem; margin-bottom:1.35rem}
   .hero:not(.hero-sub) .actions{margin-top:0}
 }
+/* Desktop „Bleib in Verbindung“: Kartentext kleiner, Karten weniger blockig */
+@media (min-width:900px){
+  #kontakt .zweiwege .weg{padding:1.6rem 1.7rem}
+  #kontakt .zweiwege .weg h3{font-size:1.05rem}
+  #kontakt .zweiwege .weg p{font-size:.86rem; line-height:1.6}
+  #kontakt .weg-fuss .btn{font-size:.8rem; padding-top:.55rem; padding-bottom:.55rem}
+}
+@media (min-width:900px){ .verbindung-bg > #kontakt > .wrap{width:min(100% - 5rem, 68rem)} }
