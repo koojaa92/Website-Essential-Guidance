@@ -1837,3 +1837,10 @@ section.was-ist + #termine{padding-top:clamp(3rem,6vw,5rem)}
 @media (min-width:900px){
   section.was-ist{min-height:100vh; display:flex; flex-direction:column; justify-content:center; box-sizing:border-box; padding-top:3rem; padding-bottom:3rem}
 }
+/* Startseite Desktop: etwas weniger Weiß zwischen Startbild und „Was ist Essential Guidance?“ */
+@media (min-width:900px){ .hero-spacer{height:clamp(1.5rem,3vw,3rem)} section.was-ist{padding-top:1rem; padding-bottom:6rem} }
+/* Startseite Handy: Text und Buttons tiefer, Fließtext etwas kleiner, mehr Bild sichtbar */
+@media (max-width:700px){
+  .hero:not(.hero-sub) .hero-content{padding-bottom:6rem}
+  .hero:not(.hero-sub) .hero-content .lead{font-size:.92rem; margin-bottom:1.1rem}
+}
