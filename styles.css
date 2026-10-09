@@ -1806,3 +1806,9 @@ body{font-size:19.5px}
 }
 /* Einzelbegleitung „Mit was ich arbeite“: Bilder weniger länglich (16:9) */
 @media (min-width:900px){ .eb-arbeit .trio-img{height:auto; aspect-ratio:16/9} }
+/* Über mich, „Was meine Räume ausmacht“: Kästen enden auf Höhe des Bilds */
+@media (min-width:900px){
+  #raeume .karte{padding:1.3rem 1.4rem}
+  #raeume .karte h3{font-size:1.25rem; margin-bottom:.45rem}
+  #raeume .karte p{font-size:.96rem; line-height:1.55}
+}
