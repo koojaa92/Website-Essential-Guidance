@@ -1826,3 +1826,14 @@ body{font-size:19.5px}
   #dates-all .dcard-flag{font-size:.62rem; padding:.24rem .6rem}
   #dates-all .dcard-link{font-size:.72rem; padding:.24rem .75rem}
 }
+/* Startseite „Was ist Essential Guidance?“: Regenbogen unten, weißer Schleier von oben (ganz weiß) nach unten (durchscheinend) */
+section.was-ist{
+  background:linear-gradient(to bottom, #fff 0%, rgba(255,255,255,.95) 30%, rgba(255,255,255,.6) 65%, rgba(255,255,255,.12) 100%),
+    url(images/was-regenbogen.jpg) center bottom / cover no-repeat;
+  background-color:#fff;
+  padding-bottom:clamp(4rem,10vw,7rem);
+}
+section.was-ist + #termine{padding-top:clamp(3rem,6vw,5rem)}
+@media (min-width:900px){
+  section.was-ist{min-height:100vh; display:flex; flex-direction:column; justify-content:center; box-sizing:border-box; padding-top:3rem; padding-bottom:3rem}
+}
