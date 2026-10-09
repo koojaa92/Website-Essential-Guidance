@@ -1788,3 +1788,21 @@ body{font-size:19.5px}
   #genekeys > .wrap{width:min(100% - 5rem, 72rem)}
   #formen > .wrap{width:min(100% - 5rem, 80rem)}
 }
+/* Essenz Raum: Drei Spalten + Termine brauchen oben Luft, seit die Schrift größer ist */
+@media (min-width:1000px) and (min-height:620px){
+  .ez-pair{padding:clamp(48px,8vh,90px) 0 clamp(36px,5vh,64px)}
+}
+/* Desktop: Fuß und „Bleib in Verbindung“ ruhiger, nicht mit voller Größe mitwachsen */
+@media (min-width:900px){
+  footer{padding:2.6rem 0 2rem; font-size:.8rem}
+  footer h3{font-size:1.2rem; margin-bottom:.6rem}
+  footer .fgrid nav a{font-size:.8rem; margin-bottom:.4rem}
+  footer .foot-contact{font-size:.8rem}
+  footer .foot-contact b{font-size:.66rem !important}
+  footer .foot-social a{width:1.75rem; height:1.75rem}
+  footer .foot-social svg{width:.9rem; height:.9rem}
+  .bottom-bar, .bottom-bar .legal-link{font-size:.72rem}
+  #kontakt .weg-fuss .btn{font-size:.85rem; padding-top:.65rem; padding-bottom:.65rem}
+}
+/* Einzelbegleitung „Mit was ich arbeite“: Bilder weniger länglich (16:9) */
+@media (min-width:900px){ .eb-arbeit .trio-img{height:auto; aspect-ratio:16/9} }
