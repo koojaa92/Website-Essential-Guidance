@@ -49,6 +49,14 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 ## Offene Punkte
 
+### Als Nächstes (Jakob, Stand 13.10.)
+1. [ ] **Bing Webmaster Tools** einrichten (Anleitung im Chat vom 13.10.: Import aus der Search Console, Sitemap prüfen, drei URLs übermitteln).
+2. [ ] **Cloudflare**: „AI Crawl Control“ ansehen (Screenshot an Claude) und „Crawler Hints“ einschalten.
+3. [ ] **Google-Unternehmensprofil** anlegen (als Anbieter mit Einzugsgebiet, siehe unten).
+4. [ ] **Brevo-Newsletter** einrichten (Double-Opt-in, Datenschutz anpassen, siehe „Später“).
+5. [ ] **Domain .de** umziehen (Schritte siehe „Bald“), dazu optional essential-dance.de als Weiterleitung.
+
+
 ### Bald
 - [ ] **Echte Fotos** für Essential Dance und Essenz Raum (liefert Jakob). Ziel: beide Formate in Farbe und Bildwelt klar unterscheidbar.
 - [ ] **Domain .de**: Bei Strato A-Einträge `185.199.108.153` (bis .111.153) und CNAME `www` → `koojaa92.github.io` setzen, dann Claude Bescheid geben. Danach: .space in Cloudflare per 301 auf .de umleiten, .de in der Search Console anlegen und dort „Adressänderung“ ausführen. Links bei Instagram, Eventfrog und jakob-kohlbrenner.de anpassen.
