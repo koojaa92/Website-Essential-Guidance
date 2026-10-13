@@ -55,8 +55,24 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - [ ] **Eventfrog-Beschreibung** mit dem neuen Text (Suchbegriffe, Website-Link) bei allen Events einsetzen. Website auch im Veranstalterprofil eintragen.
 - [ ] **Eventfrog Newsletter-Häkchen**: Nur bei Events ohne bisherige Verkäufe auf Plus umstellen (Gebühr an Käufer weitergeben), Ja/Nein-Feld freiwillig.
 - [ ] **Instagram-Bio** mit den drei Angeboten und Website-Link (wichtig).
-- [ ] **Cloudflare prüfen**: Im Cloudflare-Konto unter DNS bei essential-guidance.space nachsehen, ob neben den Einträgen eine orange Wolke („Proxied“) oder eine graue Wolke („DNS only“) steht. Orange heißt: Die Besucher laufen über Cloudflare, dann muss der Satz in der Datenschutzerklärung bleiben. Grau heißt: Cloudflare ist nur Adressbuch, dann kann der Satz raus. Screenshot an Claude genügt. Erledigt sich mit dem Wechsel auf .de, falls .space danach nur noch weiterleitet.
+- [x] **Cloudflare geprüft (13.10.)**: Die Seite läuft über Cloudflare (Proxy aktiv, Antworten kommen von „server: cloudflare“). Der Cloudflare-Satz in der Datenschutzerklärung bleibt also drin.
 - [ ] **Search Console**: Prüfung „validFrom“ abwarten. Bei Fehler einen Screenshot an Claude.
+
+### Stand Größen und Layout (9.–13.10.)
+- Desktop: ganze Website in gleicher Proportion größer (Grundgröße wächst mit Bildschirm, max. ca. +30 %). Kopfzeile, Fuß und Abstände zwischen Abschnitten bleiben bewusst kleiner/eng. Handy unverändert, außer Startbild (Textblock kompakt und tief im Bild).
+- Startseite: Regenbogenbild unter „Was ist Essential Guidance?“ mit weißem Verlauf (Jakob gefällt es). Termine-Seite: vier Karten pro Reihe.
+- [ ] **Entscheidung offen**: Am Desktop ragen Essenz Raum („Der Tag“), „Formen der Begleitung“ und Gene Keys über einen Bildschirm hinaus. Vorschlag: Bilder und Innenabstände verkleinern, Gene Keys scrollen lassen.
+- [ ] **Entscheidung offen**: Größere Handy-Terminkarten (Vorschau in `_projekt/vorschau-handy-termine.png`).
+- [ ] Höher aufgelöstes Original des Regenbogenfotos (jetzt nur 1052 × 848 px) – falls vorhanden, an Claude.
+
+### Gefunden werden: Stand 13.10.
+- Search Console: Sitemap ok (8 Seiten). Indexiert: Startseite, Essential Dance, Über mich, Einzelbegleitung, Impressum. Für Essenz Raum, Termine, Einzelbegleitung am 13.10. „Indexierung beantragt“. In ca. 1 Woche bei Google `site:essential-guidance.space` prüfen.
+- Ziel-Suchbegriff: **„Essential Dance“** (eigener Name, dort ist Jakob der einzige echte Anbieter). „Ecstatic Dance Freiburg“ ist Name und Domain eines anderen Anbieters, dort nicht um Platz 1 kämpfen.
+- [ ] **Website (Claude, wartet auf Ok)**: Titel der Essential-Dance-Seite kürzen auf „Essential Dance · Freies Tanzen sonntags in Freiburg“ (Google hat den langen Titel umgeschrieben und dabei „Essential Dance“ weggelassen); „Essential Dance“ als Hauptüberschrift im Code (optisch gleich); Marke in den Google-Daten mit Eventfrog, Instagram, SoundCloud verknüpfen (Link zum Eventfrog-Veranstalterprofil fehlt noch).
+- [ ] **Bing Webmaster Tools**: bing.com/webmasters, „Aus Google Search Console importieren“.
+- [ ] **Name überall gleich „Essential Dance“ mit Link**: Eventfrog-Veranstalter und alle Events, Instagram-Namensfeld „Essential Dance · Jakob Kohlbrenner“ plus Link, SoundCloud, Telegram, ecstaticdance.org, Studio Pro Arte.
+- [ ] **Domain essential-dance.de** ist frei (13.10.), ebenso essential-dance-freiburg.de. Bei Strato registrieren und nur als Weiterleitung auf die Essential-Dance-Seite nutzen, keine zweite Website. essentialdance.de (ohne Bindestrich) ist geparkt/vergeben, ignorieren.
+- [ ] Nach 3–4 Wochen in der Search Console unter „Leistung“ die echten Suchbegriffe ansehen, dann über weitere Begriffe entscheiden („Tanzabend Freiburg“, „Tanzen ohne Partner“).
 
 ### Inhalte
 - [ ] **Einzelbegleitung-Seite**: Einstieg schärfen, das Live-Zeichnen an den Anfang. Claude schickt einen Textvorschlag.
