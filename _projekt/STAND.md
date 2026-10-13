@@ -52,7 +52,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 ### Bald
 - [ ] **Echte Fotos** für Essential Dance und Essenz Raum (liefert Jakob). Ziel: beide Formate in Farbe und Bildwelt klar unterscheidbar.
 - [ ] **Domain .de**: Bei Strato A-Einträge `185.199.108.153` (bis .111.153) und CNAME `www` → `koojaa92.github.io` setzen, dann Claude Bescheid geben. Danach: .space in Cloudflare per 301 auf .de umleiten, .de in der Search Console anlegen und dort „Adressänderung“ ausführen. Links bei Instagram, Eventfrog und jakob-kohlbrenner.de anpassen.
-- [ ] **Eventfrog-Beschreibung** mit dem neuen Text (Suchbegriffe, Website-Link) bei allen Events einsetzen. Website auch im Veranstalterprofil eintragen.
+- [x] Eventfrog: Website-Link ist in den Events eingetragen (13.10.). Jakob lässt es so.
 - [ ] **Eventfrog Newsletter-Häkchen**: Nur bei Events ohne bisherige Verkäufe auf Plus umstellen (Gebühr an Käufer weitergeben), Ja/Nein-Feld freiwillig.
 - [ ] **Instagram-Bio** mit den drei Angeboten und Website-Link (wichtig).
 - [x] **Cloudflare geprüft (13.10.)**: Die Seite läuft über Cloudflare (Proxy aktiv, Antworten kommen von „server: cloudflare“). Der Cloudflare-Satz in der Datenschutzerklärung bleibt also drin.
@@ -69,8 +69,9 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - Search Console: Sitemap ok (8 Seiten). Indexiert: Startseite, Essential Dance, Über mich, Einzelbegleitung, Impressum. Für Essenz Raum, Termine, Einzelbegleitung am 13.10. „Indexierung beantragt“. In ca. 1 Woche bei Google `site:essential-guidance.space` prüfen.
 - Ziel-Suchbegriff: **„Essential Dance“** (eigener Name, dort ist Jakob der einzige echte Anbieter). „Ecstatic Dance Freiburg“ ist Name und Domain eines anderen Anbieters, dort nicht um Platz 1 kämpfen.
 - [x] **Website (13.10.)**: Titel „Essential Dance · Freies Tanzen sonntags in Freiburg“, „Essential Dance“ in der Hauptüberschrift (für Google, optisch gleich), Marke mit Instagram, SoundCloud, Telegram verknüpft. Eventfrog hat keine eigene Veranstalter-Profilseite; dort steht als Veranstalter „Jakob Kohlbrenner“ mit Website-Link.
-- [ ] Eventfrog: bei jedem Event unter „Kontakt und Links“ als Webseite `https://essential-guidance.space/essential-dance.html` eintragen (statt http://…). Veranstalter-/Bankadresse bleibt mit echtem Namen, nicht ändern.
-- [ ] **Bing Webmaster Tools**: bing.com/webmasters, „Aus Google Search Console importieren“.
+- [ ] **Bing Webmaster Tools**: bing.com/webmasters, „Aus Google Search Console importieren“, danach Sitemap prüfen und Startseite per „URL-Übermittlung“ einreichen.
+- [ ] **Cloudflare**: „AI Crawl Control“ prüfen (KI-Such-Crawler zulassen) und unter Caching → Konfiguration „Crawler Hints“ einschalten (meldet Änderungen automatisch an Bing).
+- llms.txt um Kurz-FAQ für KI-Suche ergänzt (13.10.), u. a. „sonntags frei tanzen“, „Ecstatic Dance am Sonntag“, „Conscious Dance“.
 - [ ] **Name überall gleich „Essential Dance“ mit Link**: Eventfrog-Veranstalter und alle Events, Instagram-Namensfeld „Essential Dance · Jakob Kohlbrenner“ plus Link, SoundCloud, Telegram, ecstaticdance.org, Studio Pro Arte.
 - [ ] **Domain essential-dance.de** ist frei (13.10.), ebenso essential-dance-freiburg.de. Bei Strato registrieren und nur als Weiterleitung auf die Essential-Dance-Seite nutzen, keine zweite Website. essentialdance.de (ohne Bindestrich) ist geparkt/vergeben, ignorieren.
 - [ ] Nach 3–4 Wochen in der Search Console unter „Leistung“ die echten Suchbegriffe ansehen, dann über weitere Begriffe entscheiden („Tanzabend Freiburg“, „Tanzen ohne Partner“).
@@ -96,7 +97,6 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 ### SEO und Auffindbarkeit
 - [ ] Search Console alle paar Wochen anschauen: „Seiten“ (indexiert?) und „Leistung“ (Suchbegriffe).
-- [ ] Bing Webmaster Tools anlegen (Import aus der Search Console), wichtig für ChatGPT und Copilot.
 - [ ] Google-Unternehmensprofil, Eintrag bei ecstaticdance.org, Studio Pro Arte, visit.freiburg.de (siehe unten).
 - [ ] Google-Unternehmensprofil ohne eigenen Ort: als „Unternehmen mit Einzugsgebiet“ anlegen (Einzugsgebiet z. B. Freiburg und Umgebung). Die Wohnadresse dient nur zur Bestätigung und wird ausgeblendet, öffentlich ist sie nicht sichtbar. Studio Pro Arte nicht als eigene Adresse angeben, nur in den Events und Beschreibungen nennen.
 
