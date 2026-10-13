@@ -51,7 +51,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 ### Als Nächstes (Jakob, Stand 13.10.)
 1. [x] **Bing Webmaster Tools** eingerichtet (13.10.). Noch: Sitemap einreichen und drei URLs übermitteln, falls nicht geschehen.
-2. [x] **Cloudflare AI Crawl Control geprüft (13.10.)**: KI-Crawler (Anthropic, OpenAI, Google, Amazon, Apple) kommen durch, 221 von 225 Anfragen erfolgreich, nichts blockiert. Nichts ändern. [ ] Noch offen: Caching → Configuration → „Crawler Hints“ einschalten.
+2. [x] **Cloudflare AI Crawl Control geprüft (13.10.)**: KI-Crawler (Anthropic, OpenAI, Google, Amazon, Apple) kommen durch, 221 von 225 Anfragen erfolgreich, nichts blockiert. Nichts ändern. „Crawler Hints“ eingeschaltet (13.10.).
 3. [ ] **Google-Unternehmensprofil** anlegen (als Anbieter mit Einzugsgebiet, siehe unten).
 4. [ ] **Brevo-Newsletter** einrichten (Double-Opt-in, Datenschutz anpassen, siehe „Später“).
 5. [ ] **Domain .de** umziehen (Schritte siehe „Bald“), dazu optional essential-dance.de als Weiterleitung.
