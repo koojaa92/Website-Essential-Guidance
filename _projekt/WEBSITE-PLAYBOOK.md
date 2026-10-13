@@ -24,12 +24,12 @@ Gelernt aus dem Projekt essential-guidance.space (Herbst 2026). Gedacht als Star
 | **Claude (Chat mit Artefakt)** | Erster visueller Entwurf, Look & Feel finden | Gut zum Starten. Für eine echte, wachsende Website zu wenig, dann umziehen. |
 | **GitHub** (Repo) | Speichert den Code, jede Änderung als Version | Für kostenloses GitHub Pages muss das Repo **öffentlich** sein. Nichts Geheimes ins Repo legen. |
 | **Claude Code (Cloud)** | Baut, prüft (Screenshots) und stellt live | Arbeitet auf einem Entwicklungszweig und schiebt nach `main`. `main` ist live. |
-| **GitHub Pages** | Hosting, kostenlos | Live ist der Branch `main`. Ordner mit Unterstrich (`_projekt/`) werden nicht veröffentlicht, ideal für interne Notizen. |
+| **GitHub Pages** | Hosting, kostenlos | Live ist der Branch `main`. Ordner mit Unterstrich (`_projekt/`) erscheinen nicht auf der Website, **sind im öffentlichen Repo aber trotzdem für alle lesbar**. Interne Notizen ja, Privates nie. |
 | **Domain** (Cloudflare oder Strato) | Eigene Adresse | **Domain am besten direkt bei Cloudflare kaufen**: Kauf, DNS und Weiterleitungen sind dann an einem Ort. Bei Strato dauert die Freischaltung, und DNS liegt woanders. |
 | **Cloudflare DNS** | Domain zeigt auf GitHub Pages | Vier A-Einträge `185.199.108–111.153` plus CNAME `www` → `<user>.github.io`, dazu die Datei `CNAME` im Repo. Mit und ohne www testen. „Cloudflare Pages“ wird **nicht** gebraucht, das hat viel Verwirrung gekostet. |
 | **Google Docs** (Connector) | Texte gegenlesen, mit anderen teilen | Claude kann das Doc lesen und schreiben. Gut für Gegenleser ohne Technik. |
 | **GoatCounter** | Besucherstatistik ohne Cookies | Kein Cookie-Banner nötig. In der Datenschutzerklärung erwähnen. |
-| **Google Search Console / Bing Webmaster** | Gefunden werden | Sitemap einreichen. Bing ist wichtig, weil ChatGPT und Copilot den Bing-Index nutzen. |
+| **Google Search Console / Bing Webmaster** | Gefunden werden | Sitemap einreichen. Bing ist wichtig, weil ChatGPT und Copilot den Bing-Index nutzen. Der Bing-Import aus der Search Console scheitert manchmal, dann manuell per Meta-Tag bestätigen (Abschnitt 13). |
 | **Eventfrog** (o. Ä.) | Tickets | Website verlinkt pro Termin auf das Ticket. Kein eigenes Bezahlsystem bauen. |
 | **Telegram / SoundCloud / Instagram** | Kanäle | Verlinken statt einbetten, wo es geht. Eingebettete Player brauchen einen Datenschutzhinweis. |
 | **Newsletter-Tool (Brevo)** | Später | Erst einrichten, wenn wirklich Newsletter verschickt werden. Bis dahin genügt ein Mail-Link „Newsletter-Anmeldung“. |
@@ -62,7 +62,7 @@ Gelernt aus dem Projekt essential-guidance.space (Herbst 2026). Gedacht als Star
 - Feedback per Handy-Screenshot (Abschnitt 9). Kleine Runden, sofort live.
 
 **Phase 6: Technik, SEO, Recht**
-- Strukturierte Daten, Sitemap, `llms.txt`, Search Console, Impressum, Datenschutz (Abschnitte 7, 8, 10).
+- Strukturierte Daten, Sitemap, `llms.txt`, Search Console, Bing, Cloudflare-Einstellungen, Impressum, Datenschutz. Als Checkliste in Abschnitt 13.
 
 **Phase 7: Pflege**
 - Termine über eine Datei plus Skript. Offene Punkte in `STAND.md`. Gegenleser über das Google Doc.
@@ -338,6 +338,79 @@ Stand: [Datum]. Live: [URL].
 - „Schreib alles in die To-do-Liste, ich mache später weiter.“
 - „Gleiche das Google Doc mit dem aktuellen Stand der Website ab.“
 - „Zeig mir drei Schriften in Originalgröße auf der Seite nebeneinander, nummeriert.“
+
+---
+
+## 13. Technische Checkliste: von null bis gefunden
+
+Zum Abhaken in jedem neuen Projekt. Reihenfolge = Reihenfolge der Arbeit.
+
+### 13.1 Aufsetzen
+- [ ] GitHub-Repo anlegen, GitHub Pages auf Branch `main`, Datei `CNAME` mit der Domain.
+- [ ] Domain: DNS bei Cloudflare. Vier A-Einträge `185.199.108.153` bis `185.199.111.153`, CNAME `www` → `<user>.github.io`.
+- [ ] Mit und ohne `www`, mit `http://` und `https://` testen: Alle vier Varianten müssen auf **eine** Adresse landen.
+- [ ] Cloudflare → SSL/TLS → Edge Certificates → **„Always Use HTTPS“ an**. Sonst ist jede Seite für Google doppelt da (`http` und `https`), und die Search Console zeigt viele „nicht indexierte“ Seiten.
+- [ ] **HSTS nicht einschalten**, solange ein Domainwechsel denkbar ist. Schwer rückgängig zu machen.
+- [ ] `CLAUDE.md` (Regeln) und `_projekt/STAND.md` (Stand, To-dos) anlegen.
+- [ ] `.gitignore` für Werkzeug-Ordner. Test-Screenshots nur im Scratchpad speichern, nie im Repo-Ordner. Sie landen sonst öffentlich auf der Website (ist hier passiert).
+
+### 13.2 Jede Seite
+- [ ] `<title>` kurz (unter ca. 60 Zeichen), **Markenname vorne**: „Essential Dance · Freies Tanzen sonntags in Freiburg“. Lange Titel schreibt Google um und lässt dabei mitunter genau den Namen weg.
+- [ ] `<meta name="description">` mit Ort, Zeit, Nutzen (ca. 150 Zeichen).
+- [ ] `<link rel="canonical">` mit der https-Adresse ohne www.
+- [ ] Genau eine `<h1>`, die den Namen des Angebots enthält. Ist die sichtbare Überschrift ein poetischer Satz, den Namen davor als `<span class="sr-only">Name: </span>` ergänzen (optisch unverändert, Screenreader und Google lesen ihn).
+- [ ] Open-Graph-Tags (Titel, Beschreibung, Bild) für schöne Vorschauen in Messengern.
+- [ ] Bilder mit sprechenden `alt`-Texten (Ort, Angebot, was zu sehen ist).
+
+### 13.3 Daten für Maschinen
+- [ ] JSON-LD: Organization (Dachmarke), Person, Service pro Angebot mit Preis, Event pro Termin (mit `validFrom` beim Angebot), FAQPage.
+- [ ] Marke mit `sameAs` auf Instagram, SoundCloud, Telegram usw. verknüpfen. So erkennt Google, dass alles zusammengehört.
+- [ ] JSON-LD nach jeder Änderung auf gültiges JSON prüfen.
+- [ ] `sitemap.xml` mit allen echten Seiten (keine noindex-Seiten), `lastmod` bei größeren Änderungen aktualisieren.
+- [ ] `robots.txt`: `Allow: /` plus Sitemap-Zeile.
+- [ ] `llms.txt`: Kurzbeschreibung für KI-Systeme, mit Abschnitt „Häufige Fragen, kurz beantwortet“ in der Sprache, in der Menschen KI-Assistenten fragen („Wo kann man in Freiburg sonntags frei tanzen?“). Nur wahre, sichtbare Fakten, keine versteckten Keyword-Listen: Google wertet das als Täuschung, KI-Systeme ignorieren es.
+- [ ] Versteckte Linkseiten (Linktree-Ersatz) mit `noindex` und nicht in die Sitemap.
+
+### 13.4 Google Search Console
+- [ ] Domain bestätigen, `sitemap.xml` einreichen. Status muss „Erfolgreich“ zeigen.
+- [ ] Nach ein paar Tagen „Seiten“ → „Daten zu indexierten Seiten ansehen“: Stehen dort `http://`-Adressen, fehlt die https-Weiterleitung (13.1).
+- [ ] „Gefunden – zurzeit nicht indexiert“ ist bei neuen Domains normal. Wichtigste Seiten oben in „URL prüfen“ eingeben und **„Indexierung beantragen“** (nur wenige pro Tag möglich).
+- [ ] Nach einer Woche bei Google `site:domain` eingeben und zählen.
+- [ ] Nach 3–4 Wochen „Leistung“: Mit welchen Suchbegriffen wird man wirklich gefunden? Erst dann weitere Begriffe angehen.
+
+### 13.5 Bing Webmaster Tools (wichtig für ChatGPT und Copilot)
+- [ ] bing.com/webmasters, mit Google anmelden, „Aus Google Search Console importieren“.
+- [ ] **Scheitert der Import** („Site addition unsuccessful“): Adresse `https://domain/` manuell eingeben → „Hinzufügen“ → Bestätigungsmethode **„HTML-Meta-Tag“** → den Code (`<meta name="msvalidate.01" content="…">`) an Claude geben, Claude baut ihn in die Startseite ein, dann in Bing „Überprüfen“. Alternative: CNAME-Eintrag bei Cloudflare.
+- [ ] Sitemap einreichen, wichtigste Seiten unter „URL-Übermittlung“ einreichen.
+
+### 13.6 Cloudflare für Suchmaschinen und KI
+- [ ] **AI Crawl Control** prüfen: Such-Crawler von ChatGPT, Claude, Perplexity zulassen, sonst taucht man in KI-Antworten nicht auf. Reine Trainings-Crawler nach Geschmack blockieren.
+- [ ] Caching → Konfiguration → **„Crawler Hints“ an**: meldet Änderungen automatisch an Bing (IndexNow).
+- [ ] Test, ob Crawler durchkommen: `curl -A "Mozilla/5.0 (compatible; GPTBot/1.0)" https://domain/` muss 200 liefern. Einschränkung: Cloudflare erkennt echte Crawler an ihrer Herkunft, ein bestandener Test ist also nur ein erster Hinweis. Die Einstellung in AI Crawl Control ansehen.
+
+### 13.7 Gefunden werden (außerhalb der Website, wirkt am stärksten)
+- [ ] **Eigenen Namen besetzen, nicht fremde.** Ziel-Suchbegriff ist der eigene Angebotsname („Essential Dance“). Gegen den Markennamen eines anderen Anbieters („Ecstatic Dance Freiburg“, der seit Jahren so heißt und die passende Domain hat) gewinnt man nicht, und man soll es auch nicht versuchen.
+- [ ] Name überall gleich schreiben und überall auf dieselbe Seite verlinken: Ticketing (Eventfrog: unter „Kontakt und Links“, nicht in der Rechnungsadresse), Instagram (Namensfeld + Link), SoundCloud, Telegram.
+- [ ] Wenige gute Links von passenden Seiten: Fachverzeichnis (ecstaticdance.org), Veranstaltungsort, Kooperationspartner, regionale Kalender.
+- [ ] Google-Unternehmensprofil (auch ohne öffentliche Adresse, als Anbieter mit Einzugsgebiet).
+- [ ] Realistische Erwartung: eigener Name + Stadt nach 1–4 Wochen auf Platz 1, eigener Name allein lokal nach Wochen bis Monaten, allgemeine Begriffe nur über Links von außen.
+
+### 13.8 Domains
+- [ ] Verfügbarkeit von .de-Domains prüfen: `https://rdap.denic.de/domain/name.de` („No such domain“ = frei). Für andere Endungen: `https://dns.google/resolve?name=…&type=NS`.
+- [ ] Markennamen-Domain (z. B. essential-dance.de) günstig sichern und **nur als Weiterleitung** nutzen. Keine zweite Website: Sie teilt Pflege und Google-Stärke.
+- [ ] Beim Domainwechsel: alle Dateien (HTML, sitemap, robots, llms.txt, Skripte, CNAME) umstellen, alte Domain per 301 weiterleiten, in der Search Console „Adressänderung“ ausführen, Links in allen Profilen anpassen.
+
+### 13.9 Sicherheit und Arbeitsweise
+- [ ] Repo ist öffentlich: keine Passwörter, Kontodaten, Privatadressen, Gesundheitsthemen in Dateien. So etwas nur im Chat. Vor dem Abschluss einmal danach suchen lassen.
+- [ ] Alles Wichtige steht im Repo (Code, `CLAUDE.md`, `STAND.md`, Playbook). Ein verlorener Chat kostet nichts.
+- [ ] **Ein Chat pro größerem Thema** (Design, Google, Termine, Texte). Lange Chats werden automatisch zusammengefasst und verlieren Details. Die Kontextanzeige (der kleine Kreis) zeigt, wie voll der Chat ist. Neuer Chat startet mit: „Lies `CLAUDE.md` und `_projekt/STAND.md`.“
+
+### 13.10 Schriftgröße und Proportion (Learning aus der Spätphase)
+- Ältere Menschen brauchen größere Schrift. Am Desktop am einfachsten über die **Grundgröße**: `html{font-size:clamp(17.5px, min(1.56vw, 2.5vh), 22.75px)}`. Alles in `rem` wächst dann gleichmäßig mit, wie beim Browser-Zoom.
+- Dabei **bewusst festhalten** (in px): Kopfzeile, Fußzeile, Abstände zwischen Abschnitten. Sonst wirken sie wuchtig.
+- Container-Breiten mitprüfen: Mit größerer Grundgröße werden `rem`-Breiten breiter. Seitenränder (z. B. `100% - 5rem`) festlegen, damit nichts bis an den Rand läuft.
+- Am Handy reicht die bisherige Größe meist, dort gibt es weniger Spielraum. Einzelne Elemente (Terminkarten) gezielt vergrößern.
+- Abschnitte, die genau einen Bildschirm füllen sollen, nach der Vergrößerung bei 1280×800 und 1512×945 nachmessen.
 
 ---
 
