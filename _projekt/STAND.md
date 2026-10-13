@@ -40,6 +40,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - Strukturierte Daten: Organisation, Person, Essential Dance, Events, FAQs. llms.txt für KI-Systeme.
 - Statistik: GoatCounter (cookielos), https://essentialgoat.goatcounter.com
 - jakob-kohlbrenner.de verlinkt auf die neue Seite.
+- Cloudflare „Always Use HTTPS“ eingeschaltet (13.10.): http und www leiten per 301 auf https://essential-guidance.space weiter. HSTS bewusst aus (wegen späterem Wechsel auf .de).
 
 **Entscheidungen aus der Design-Kritik (7.10.)**
 - Startseite ohne Preise, sechs Termine, keine Erstbesucher-Zeile; „Was ist Essential Guidance?“ bleibt bewusst textlastig.
