@@ -50,7 +50,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 ## Offene Punkte
 
 ### Als Nächstes (Jakob, Stand 13.10.)
-1. [ ] **Bing Webmaster Tools** einrichten (Anleitung im Chat vom 13.10.: Import aus der Search Console, Sitemap prüfen, drei URLs übermitteln).
+1. [x] **Bing Webmaster Tools** eingerichtet (13.10.). Noch: Sitemap einreichen und drei URLs übermitteln, falls nicht geschehen.
 2. [ ] **Cloudflare**: „AI Crawl Control“ ansehen (Screenshot an Claude) und „Crawler Hints“ einschalten.
 3. [ ] **Google-Unternehmensprofil** anlegen (als Anbieter mit Einzugsgebiet, siehe unten).
 4. [ ] **Brevo-Newsletter** einrichten (Double-Opt-in, Datenschutz anpassen, siehe „Später“).
