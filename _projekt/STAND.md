@@ -51,7 +51,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 ### Als Nächstes (Jakob, Stand 13.10.)
 1. [x] **Bing Webmaster Tools** eingerichtet (13.10.). Noch: Sitemap einreichen und drei URLs übermitteln, falls nicht geschehen.
-2. [ ] **Cloudflare**: „AI Crawl Control“ ansehen (Screenshot an Claude) und „Crawler Hints“ einschalten.
+2. [x] **Cloudflare AI Crawl Control geprüft (13.10.)**: KI-Crawler (Anthropic, OpenAI, Google, Amazon, Apple) kommen durch, 221 von 225 Anfragen erfolgreich, nichts blockiert. Nichts ändern. [ ] Noch offen: Caching → Configuration → „Crawler Hints“ einschalten.
 3. [ ] **Google-Unternehmensprofil** anlegen (als Anbieter mit Einzugsgebiet, siehe unten).
 4. [ ] **Brevo-Newsletter** einrichten (Double-Opt-in, Datenschutz anpassen, siehe „Später“).
 5. [ ] **Domain .de** umziehen (Schritte siehe „Bald“), dazu optional essential-dance.de als Weiterleitung.
@@ -78,7 +78,6 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - Ziel-Suchbegriff: **„Essential Dance“** (eigener Name, dort ist Jakob der einzige echte Anbieter). „Ecstatic Dance Freiburg“ ist Name und Domain eines anderen Anbieters, dort nicht um Platz 1 kämpfen.
 - [x] **Website (13.10.)**: Titel „Essential Dance · Freies Tanzen sonntags in Freiburg“, „Essential Dance“ in der Hauptüberschrift (für Google, optisch gleich), Marke mit Instagram, SoundCloud, Telegram verknüpft. Eventfrog hat keine eigene Veranstalter-Profilseite; dort steht als Veranstalter „Jakob Kohlbrenner“ mit Website-Link.
 - [ ] **Bing Webmaster Tools**: bing.com/webmasters, „Aus Google Search Console importieren“, danach Sitemap prüfen und Startseite per „URL-Übermittlung“ einreichen.
-- [ ] **Cloudflare**: „AI Crawl Control“ prüfen (KI-Such-Crawler zulassen) und unter Caching → Konfiguration „Crawler Hints“ einschalten (meldet Änderungen automatisch an Bing).
 - llms.txt um Kurz-FAQ für KI-Suche ergänzt (13.10.), u. a. „sonntags frei tanzen“, „Ecstatic Dance am Sonntag“, „Conscious Dance“.
 - [ ] **Name überall gleich „Essential Dance“ mit Link**: Eventfrog-Veranstalter und alle Events, Instagram-Namensfeld „Essential Dance · Jakob Kohlbrenner“ plus Link, SoundCloud, Telegram, ecstaticdance.org, Studio Pro Arte.
 - [ ] **Domain essential-dance.de** ist frei (13.10.), ebenso essential-dance-freiburg.de. Bei Strato registrieren und nur als Weiterleitung auf die Essential-Dance-Seite nutzen, keine zweite Website. essentialdance.de (ohne Bindestrich) ist geparkt/vergeben, ignorieren.
