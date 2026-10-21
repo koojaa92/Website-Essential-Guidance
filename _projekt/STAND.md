@@ -32,7 +32,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - 2026: bis 20.12. mit Eventfrog-Links. 2027: Essential Dance 17.1.–21.3. (ohne 28.3.), Essenz Raum 31.1. Dort steht „Tickets folgen“.
 
 **Linkseite (QR-Code / Instagram-Bio)**
-- `links.html` (= /links, 21.10. neu): schlichte Flyer-Linkseite „Essential Dance“ (noindex, nicht im Menü, nicht in der Sitemap) mit vier Buttons: Termine & Infos, Telegram-Gruppe (t.me/essentialdancee), SoundCloud, Website. Bewusst ohne Impressum-Zeile (Jakobs Entscheidung). QR-Code: `_projekt/qr-links.png` und `.svg` (zeigt auf /links.html, funktioniert weiter).
+- `links.html` (= /links, 21.10. neu): schlichte Flyer-Linkseite „Essential Dance“ (Unterzeile „Freies Tanzen mit KOJA · sonntags“, KOJA = Jakobs DJ-Name) (noindex, nicht im Menü, nicht in der Sitemap) mit vier Buttons: Termine & Infos, Telegram-Gruppe (t.me/essentialdancee), SoundCloud, Website. Bewusst ohne Impressum-Zeile (Jakobs Entscheidung). QR-Code: `_projekt/qr-links.png` und `.svg` (zeigt auf /links.html, funktioniert weiter).
 
 **Technik und SEO**
 - Google Search Console eingerichtet, Sitemap eingereicht, Seite ist bei Google indexiert (2.10.).
