@@ -47,7 +47,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - Fußzeile ohne Straßenadresse (Studio Pro Arte ist nicht Jakobs Adresse).
 - Umgesetzt: Ticket-Pillen mit dunkler Schrift, größere Datumszeile am Handy, Hero-Button „Termine ansehen“ in Gold, Essenz-Raum-Kartenbild am Handy nach links verschoben, Menü wird offen zum X, goldene Schlusszeile beim Essenz Raum auf der Startseite.
 
-- Essenz Raum Preis (4.11.): 70, 80 oder 90 € als Optionen (Infobox, Terminkarten, Kalenderdateien, Google-Daten mit drei Angeboten, llms.txt). So auch auf dem Flyer.
+- Essenz Raum Preis (4.11.): „70 | 80 | 90 €“ als Optionen (Schreibweise mit senkrechten Strichen, nicht „oder“) (Infobox, Terminkarten, Kalenderdateien, Google-Daten mit drei Angeboten, llms.txt). So auch auf dem Flyer.
 
 ## Offene Punkte
 
