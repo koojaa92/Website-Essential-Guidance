@@ -90,7 +90,7 @@ def karte(e, seite):
     else:
         if seite == 'ez':
             body = (f'<div class="dcard-date">{datum(e)}</div><h3>Essenz Raum</h3><p>11&ndash;16 Uhr &middot; danach Tanzen 17&ndash;20&nbsp;Uhr</p>'
-                    f'<p class="dcard-preis">90 &euro;</p><div class="dcard-foot">{anmeldung(e)}</div>')
+                    f'<p class="dcard-preis">70, 80 oder 90&nbsp;&euro;</p><div class="dcard-foot">{anmeldung(e)}</div>')
         else:
             body = (f'<div class="dcard-date">{datum(e)}</div><h3>Essenz Raum</h3><p>11&ndash;16 Uhr</p>'
                     f'<div class="dcard-foot">{anmeldung(e)}<a class="dcard-link" href="essenzraum.html">Details</a></div>')
@@ -126,7 +126,7 @@ for e in TERMINE:
     elif e['art'] == 'raum':
         er.append(('er-'+day, day, '1100', '1600', 'Essenz Raum',
           'Ein Tag in kleiner Gruppe, 11-16 Uhr. Im Anschluss Tanzen (Essential Dance) 17-20 Uhr. '
-          '90 €, Mittagessen und Essential Dance am Abend inklusive. Anmeldung per E-Mail an essential-guidance@posteo.de.'))
+          '70, 80 oder 90 €, Mittagessen und Essential Dance am Abend inklusive. Anmeldung per E-Mail an essential-guidance@posteo.de.'))
 for fn, name, ev in (('essential-dance.ics','Essential Dance Freiburg',ed),('essenzraum.ics','Essenz Raum Freiburg',er)):
     open(fn,'w',encoding='utf-8',newline='').write(cal(name, ev))
     print(fn, len(ev), 'Termine')
@@ -151,8 +151,8 @@ def ev_ld(day, kind):
             'startDate': day + 'T11:00:00+' + tz(day), 'endDate': day + 'T16:00:00+' + tz(day),
             'eventStatus': 'https://schema.org/EventScheduled', 'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
             'location': PLACE, 'image': SITE + '/images/img-262a22e84b99.jpg', 'organizer': ORG,
-            'offers': {'@type': 'Offer', 'price': '90', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock', 'validFrom': '2026-10-01T00:00:00+02:00',
-                       'url': SITE + '/essenzraum.html'}}
+            'offers': [{'@type': 'Offer', 'price': p, 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock', 'validFrom': '2026-10-01T00:00:00+02:00',
+                        'url': SITE + '/essenzraum.html'} for p in ('70', '80', '90')]}
 def tz(day):  # Sommerzeit bis letzter Sonntag im Oktober
     d = dt.date.fromisoformat(day)
     def last_sun(m): x = dt.date(d.year, m, 31); return x - dt.timedelta(days=(x.weekday() + 1) % 7)
