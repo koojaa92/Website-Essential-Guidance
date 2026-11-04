@@ -51,6 +51,13 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 ## Offene Punkte
 
+### Neue To-dos (4.11.)
+1. [ ] **Abstände prüfen**, besonders an den Übergängen von dunklen zu hellen Abschnitten (dunkel → weiß und umgekehrt), auf allen Seiten, Desktop und Handy. Claude macht einen Rundgang mit Screenshots und schlägt Korrekturen vor.
+2. [ ] **Über mich, Hero-Bild** durch ein Bergwanderungs-Foto ersetzen (siehe „Inhalte“), nicht dasselbe Bild wie beim Tanzen.
+3. [ ] **Kleine Formulierungen** hier und da: Jakob sammelt Stellen (Screenshot plus gewünschter Wortlaut), Claude setzt um.
+4. [ ] **Termine 2027** eintragen und aktualisieren: Essential Dance, Essenz Raum, Pausen, Eventfrog-Links (`tools/termine.json`, dann `python3 tools/make-ics.py`).
+5. [ ] **Perspektivisch Einzelbegleitung stärker auf Gene Keys ausrichten**, als Alleinstellungsmerkmal (USP). Erst Positionierung klären (Gespräch/Interview), dann Textvorschlag für Seite, Startseiten-Block, Titel und llms.txt.
+
 ### Als Nächstes (Jakob, Stand 13.10.)
 1. [x] **Bing Webmaster Tools** eingerichtet (13.10.). Noch: Sitemap einreichen und drei URLs übermitteln, falls nicht geschehen.
 2. [x] **Cloudflare AI Crawl Control geprüft (13.10.)**: KI-Crawler (Anthropic, OpenAI, Google, Amazon, Apple) kommen durch, 221 von 225 Anfragen erfolgreich, nichts blockiert. Nichts ändern. „Crawler Hints“ eingeschaltet (13.10.).
@@ -79,7 +86,6 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 - Search Console: Sitemap ok (8 Seiten). Indexiert: Startseite, Essential Dance, Über mich, Einzelbegleitung, Impressum. Für Essenz Raum, Termine, Einzelbegleitung am 13.10. „Indexierung beantragt“. In ca. 1 Woche bei Google `site:essential-guidance.space` prüfen.
 - Ziel-Suchbegriff: **„Essential Dance“** (eigener Name, dort ist Jakob der einzige echte Anbieter). „Ecstatic Dance Freiburg“ ist Name und Domain eines anderen Anbieters, dort nicht um Platz 1 kämpfen.
 - [x] **Website (13.10.)**: Titel „Essential Dance · Freies Tanzen sonntags in Freiburg“, „Essential Dance“ in der Hauptüberschrift (für Google, optisch gleich), Marke mit Instagram, SoundCloud, Telegram verknüpft. Eventfrog hat keine eigene Veranstalter-Profilseite; dort steht als Veranstalter „Jakob Kohlbrenner“ mit Website-Link.
-- [ ] **Bing Webmaster Tools**: bing.com/webmasters, „Aus Google Search Console importieren“, danach Sitemap prüfen und Startseite per „URL-Übermittlung“ einreichen.
 - llms.txt um Kurz-FAQ für KI-Suche ergänzt (13.10.), u. a. „sonntags frei tanzen“, „Ecstatic Dance am Sonntag“, „Conscious Dance“.
 - [ ] **Name überall gleich „Essential Dance“ mit Link**: Eventfrog-Veranstalter und alle Events, Instagram-Namensfeld „Essential Dance · Jakob Kohlbrenner“ plus Link, SoundCloud, Telegram, ecstaticdance.org, Studio Pro Arte.
 - [ ] **Domain essential-dance.de** ist frei (13.10.), ebenso essential-dance-freiburg.de. Bei Strato registrieren und nur als Weiterleitung auf die Essential-Dance-Seite nutzen, keine zweite Website. essentialdance.de (ohne Bindestrich) ist geparkt/vergeben, ignorieren.
@@ -88,12 +94,12 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 ### Inhalte
 - [ ] **Einzelbegleitung-Seite**: Einstieg schärfen, das Live-Zeichnen an den Anfang. Claude schickt einen Textvorschlag.
 - Erledigt: Längerer Text „Was ist Essential Guidance?“ auf der Startseite (freigegeben am 6.10.).
-- [ ] **Bild für „Was ist Essential Guidance?“** auswählen (Vorschläge: Keimling, Feldweg, Porträt). Abschnitt soll am Handy auf einen Bildschirm passen.
+- [x] Bild für „Was ist Essential Guidance?“: Regenbogen mit weißem Verlauf (Okt.).
 - Entschieden (7.10., nach Impeccable-Critique): Keine Preise auf der Startseite. „Was ist Essential Guidance?“ bleibt bewusst textlastig. Sechs Termine auf der Startseite (Hauptfunktion). Kein Erstbesucher-Hinweis nötig (Publikum kennt Tanz). Footer-Ort ohne Straße, weil Studio Pro Arte nicht Jakobs Adresse ist.
 - Entschieden: Die Startseite zeigt am Handy weiter alle Termine, damit der Essenz Raum immer sichtbar ist und man den Überblick behält.
 - Entschieden: Die Kachelbilder der Einzelbegleitung bleiben farbig (sie sind schon leicht entsättigt, der Regenbogen bei „Innere Anteile“ trägt Bedeutung). Eventuell sucht Jakob konsistentere Bilder.
 - Erledigt (6.10.): Über-mich-Überschrift „Die Essenz zu erforschen ist mein Weg.“
-- [ ] **Über mich, Hero-Bild**: ein Bild, auf dem Jakob mit Menschen im Kontext zu sehen ist (nicht tanzend), zum Beispiel beim Halten eines Kreises oder beim Graphic Recording. Jakob sucht ein eigenes Foto. Kein Tanzbild, nicht das Graphic-Recording-Foto. Sonst aus dem Fotoshooting.
+- [ ] **Über mich, Hero-Bild**: ersetzen durch ein Foto von Jakob bei einer Wanderung in den Bergen (liefert Jakob). Es darf nicht dasselbe Bild wie beim Tanzen sein.
 - [ ] **Texte selbst durchlesen** und Menschen, die sich mit Texten auskennen, für ein tiefes Feedback geben.
 - [ ] **Impressum**: Pflicht ist nur die Umsatzsteuer-Identifikationsnummer (USt-IdNr., beginnt mit DE), falls Jakob eine hat. Die normale Steuernummer gehört nicht ins Impressum. Ohne USt-IdNr. (z. B. als Kleinunternehmer) bleibt der Abschnitt einfach weg. Der Platzhalter liegt im Code.
 
