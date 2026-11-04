@@ -57,6 +57,12 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 3. [ ] **Kleine Formulierungen** hier und da: Jakob sammelt Stellen (Screenshot plus gewünschter Wortlaut), Claude setzt um.
 4. [ ] **Termine 2027** eintragen und aktualisieren: Essential Dance, Essenz Raum, Pausen, Eventfrog-Links (`tools/termine.json`, dann `python3 tools/make-ics.py`).
 5. [ ] **Perspektivisch Einzelbegleitung stärker auf Gene Keys ausrichten**, als Alleinstellungsmerkmal (USP). Erst Positionierung klären (Gespräch/Interview), dann Textvorschlag für Seite, Startseiten-Block, Titel und llms.txt.
+6. [ ] **FAQ überarbeiten** (alle Seiten). Sichtbare FAQ und FAQPage-JSON-LD im `<head>` immer gemeinsam ändern.
+
+### Search Console, Stand 4.11. (zum Vergleich in 4 Wochen)
+- Seit Start (ca. 5 Wochen): 19 Klicks, 111 Impressionen, Klickrate 17,1 %, durchschnittliche Position 13,8.
+- Suchbegriffe: „freies tanzen freiburg“ 30 Impr./1 Klick (wichtigstes zweites Kernwort neben „Essential Dance“), „essential dance“ 5/0, „pro arte freiburg“ 5/0, „studio pro arte“ 2/0, „ecstatic dance freiburg“ 2/0.
+- Seiten: Essential Dance 94 Impr./7 Klicks, Startseite 25/7, Über mich 18/4. Essenz Raum noch ohne Impressionen; Google hat die Seite am 13.10. gecrawlt, die Event-Daten sind gültig (4 Termine). „performer“ bei Essenz-Raum-Events am 4.11. ergänzt.
 
 ### Als Nächstes (Jakob, Stand 13.10.)
 1. [x] **Bing Webmaster Tools** eingerichtet (13.10.). Noch: Sitemap einreichen und drei URLs übermitteln, falls nicht geschehen.
