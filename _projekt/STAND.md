@@ -56,6 +56,7 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 2. [ ] **Über mich, Hero-Bild** durch ein Bergwanderungs-Foto ersetzen (siehe „Inhalte“), nicht dasselbe Bild wie beim Tanzen.
 3. [ ] **Kleine Formulierungen** hier und da: Jakob sammelt Stellen (Screenshot plus gewünschter Wortlaut), Claude setzt um.
 4. [ ] **Termine 2027** eintragen und aktualisieren: Essential Dance, Essenz Raum, Pausen, Eventfrog-Links (`tools/termine.json`, dann `python3 tools/make-ics.py`).
+7. [ ] **Eventfrog-Text überarbeiten** (nächste Sitzung): Entwurf in `_projekt/EVENTFROG-TEXT.md` ist Jakob zu nüchtern. Ziel: stimmiger und schöner, in Jakobs Ton, mit der Atmosphäre des Abends. Titel bleibt „Essential Dance – freies Tanzen sonntags in Freiburg“. Betonen, was ihn unterscheidet: Sonntag 17–20 Uhr, Studio Pro Arte mit Altären, Musik von DJ KOJA, Verbindung zum Essenz Raum. Uhrzeiten bei Eventfrog angleichen (17–20 Uhr).
 5. [ ] **Perspektivisch Einzelbegleitung stärker auf Gene Keys ausrichten**, als Alleinstellungsmerkmal (USP). Erst Positionierung klären (Gespräch/Interview), dann Textvorschlag für Seite, Startseiten-Block, Titel und llms.txt.
 6. [ ] **FAQ überarbeiten** (alle Seiten). Sichtbare FAQ und FAQPage-JSON-LD im `<head>` immer gemeinsam ändern.
 
