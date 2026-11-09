@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ED Visual">
+<meta name="theme-color" content="#000000">
+<title>Essential Dance – Visual</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; -webkit-user-select: none; user-select: none; }
+  canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  body.quiet { cursor: none; }
+  #ui {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    padding: 28px calc(16px + env(safe-area-inset-right)) calc(16px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left));
+    display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; justify-content: center;
+    font: 14px/1.2 system-ui, -apple-system, sans-serif; color: #e2e0da;
+    background: linear-gradient(transparent, rgba(0,0,0,.8));
+    transition: opacity .6s;
+  }
+  #ui.hide { opacity: 0; pointer-events: none; }
+  #ui button, #ui select {
+    font: inherit; color: inherit; background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.24); border-radius: 999px;
+    padding: 9px 16px; min-height: 40px;
+  }
+  #ui button:active { background: rgba(255,255,255,.2); }
+  #ui label { display: flex; align-items: center; gap: 8px; }
+  #ui input[type=range] { width: 130px; accent-color: #e8b469; }
+  #bar { position: fixed; left: 0; bottom: 0; height: 2px; width: 0; background: rgba(255,255,255,.5); transition: opacity .6s; }
+  #bar.hide { opacity: 0; }
+  #msg { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; color: #aaa; font: 16px system-ui, sans-serif; padding: 24px; text-align: center; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="msg">Dieses Gerät kann das Bild leider nicht darstellen (WebGL fehlt).</div>
+<div id="bar"></div>
+<div id="ui">
+  <button id="restart" type="button">Neustart</button>
+  <select id="dur" aria-label="Dauer">
+    <option value="120">2 Minuten</option>
+    <option value="600">10 Minuten</option>
+    <option value="7200">2 Stunden</option>
+  </select>
+  <button id="mic" type="button">Mikrofon</button>
+  <label>Helligkeit <input id="bright" type="range" min="20" max="100" value="80"></label>
+  <button id="fs" type="button">Vollbild</button>
+</div>
+
+<script id="fsrc" type="x-shader/x-fragment">
+precision highp float;
+uniform vec2  uRes;
+uniform float uT;      // Fließzeit Wolken
+uniform float uTf;     // Fließzeit Feuer
+uniform float uE;      // Energie 0..1
+uniform float uM;      // Gesamthelligkeit
+uniform float uPulse;  // Klangimpuls 0..1
+uniform vec3  uTop;    // Himmelsfarbe oben
+uniform vec3  uHor;    // Farbe am Horizont
+uniform vec3  uAcc;    // Lichtfarbe
+uniform vec2  uSun;    // Ort des Lichts
+
+float hash(vec2 p){
+  p = fract(p * vec2(123.34, 456.21));
+  p += dot(p, p + 45.32);
+  return fract(p.x * p.y);
+}
+float noise(vec2 p){
+  vec2 i = floor(p), f = fract(p);
+  vec2 u = f * f * (3.0 - 2.0 * f);
+  return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x),
+             mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y);
+}
+float fbm(vec2 p){
+  float a = 0.5, s = 0.0;
+  mat2 m = mat2(1.6, 1.2, -1.2, 1.6);
+  for (int i = 0; i < 5; i++) { s += a * noise(p); p = m * p; a *= 0.5; }
+  return s;
+}
+float fbm3(vec2 p){
+  float a = 0.5, s = 0.0;
+  mat2 m = mat2(1.6, 1.2, -1.2, 1.6);
+  for (int i = 0; i < 3; i++) { s += a * noise(p); p = m * p; a *= 0.5; }
+  return s / 0.875;
+}
+
+void main(){
+  vec2 uv = (gl_FragCoord.xy - 0.5 * uRes) / uRes.y;
+  float e = uE, t = uT;
+  float fire = smoothstep(0.42, 0.95, e);
+
+  // Wolkenfeld
+  vec2 p = uv * mix(1.15, 1.9, e) + vec2(11.3, 4.6);
+  float warp = 1.4 + 2.2 * e;
+  vec2 q = vec2(fbm(p + vec2(0.0, t * 0.12)),
+                fbm(p + vec2(5.2, 1.3) - vec2(t * 0.10, 0.0)));
+  vec2 r = vec2(fbm(p + warp * q + vec2(1.7, 9.2) + t * 0.07),
+                fbm(p + warp * q + vec2(8.3, 2.8) - t * 0.06));
+  float f = fbm(p + warp * r);
+
+  // Himmel: Verlauf vom Horizont nach oben, leicht bewegt
+  float gy = smoothstep(-0.36, 0.50, uv.y + (q.x - 0.5) * 0.28);
+  vec3 col = mix(uHor, uTop, gy);
+
+  // Licht hinter allem
+  vec2 sd = uv - uSun;
+  float glow = exp(-dot(sd, sd) * mix(5.5, 2.6, e));
+  col += uAcc * glow * (0.50 + 0.40 * uPulse);
+
+  // Wolken: zum Licht hin hell, abgewandt dunkel
+  float d = smoothstep(0.38, 0.72, f);
+  float lit = clamp(glow * 1.3 + (r.x - 0.38) * 1.1, 0.0, 1.0);
+  vec3 cl = mix(uTop * 0.30, mix(uHor, uAcc, 0.65), lit);
+  col = mix(col, cl, d * 0.78);
+
+  // Berg in drei Schichten, davor und dazwischen Feuer
+  for (int i = 0; i < 3; i++) {
+    float fi = float(i);
+    float x = uv.x * (1.1 + fi * 0.6) + fi * 17.3 + t * 0.008 * (fi + 1.0);
+    float h = -0.17 - fi * 0.085 + (fbm3(vec2(x * 1.4, fi * 3.7)) - 0.5) * (0.30 - fi * 0.05);
+    if (i == 0) h += 0.21 * exp(-pow((uv.x - 0.10) * 2.1, 2.0));
+    float lick = fbm3(vec2(uv.x * 5.0 + fi * 4.0, uv.y * 3.0 - uTf * (1.0 + fi * 0.3)));
+    float y = uv.y - (lick - 0.5) * 0.20 * fire;
+    float soft = 0.014 + 0.035 * fire;
+    float m = smoothstep(h + soft, h - soft, y);
+    vec3 rc = mix(uHor, uTop, 0.55) * (0.50 - fi * 0.17);
+    col = mix(col, rc, m * 0.88);
+
+    if (i == 0) {
+      // Feuer steigt hinter dem vorderen Gelände auf
+      float above = uv.y + 0.30;
+      vec2 fp = vec2(uv.x * 2.2 + (q.x - 0.5) * 1.3, uv.y * 1.35 - uTf * 0.9);
+      float fl = fbm(fp + r * 0.8);
+      float tongue = smoothstep(0.42, 0.80, fl + 0.30 - above * mix(1.5, 0.62, fire));
+      vec3 fc = mix(vec3(0.95, 0.16, 0.42), vec3(1.0, 0.60, 0.14), smoothstep(0.35, 0.75, fl));
+      fc = mix(fc, vec3(1.0, 0.92, 0.62), tongue * tongue * 0.55);
+      col += fc * tongue * fire * (0.80 + 0.45 * uPulse);
+    }
+  }
+
+  // weicher Rand, damit das Beamer-Rechteck an der Wand verschwindet
+  vec2 n = gl_FragCoord.xy / uRes * 2.0 - 1.0;
+  float vig = (1.0 - pow(abs(n.x), 5.0)) * (1.0 - pow(abs(n.y), 5.0));
+  col *= smoothstep(0.0, 0.9, vig) * uM;
+
+  col = 1.0 - exp(-col * 1.35);
+  col += (hash(gl_FragCoord.xy + fract(t) * 91.7) - 0.5) / 255.0;
+  gl_FragColor = vec4(col, 1.0);
+}
+</script>
+
+<script>
+(function () {
+  var canvas = document.getElementById('c');
+  var gl = canvas.getContext('webgl', { antialias: false, alpha: false, powerPreference: 'high-performance' });
+  if (!gl) { document.getElementById('msg').style.display = 'flex'; return; }
+
+  function compile(type, src) {
+    var s = gl.createShader(type);
+    gl.shaderSource(s, src); gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { console.error(gl.getShaderInfoLog(s)); }
+    return s;
+  }
+  var prog = gl.createProgram();
+  gl.attachShader(prog, compile(gl.VERTEX_SHADER, 'attribute vec2 a; void main(){ gl_Position = vec4(a, 0.0, 1.0); }'));
+  gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, document.getElementById('fsrc').textContent));
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+    console.error(gl.getProgramInfoLog(prog));
+    document.getElementById('msg').style.display = 'flex'; return;
+  }
+  gl.useProgram(prog);
+  var buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+  var loc = gl.getAttribLocation(prog, 'a');
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  var U = {};
+  ['uRes', 'uT', 'uTf', 'uE', 'uM', 'uPulse', 'uTop', 'uHor', 'uAcc', 'uSun'].forEach(function (k) { U[k] = gl.getUniformLocation(prog, k); });
+
+  function resize() {
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    var s = Math.min(window.devicePixelRatio || 1, 2) * 0.6;
+    var m = Math.max(w, h) * s;
+    if (m > 1280) s *= 1280 / m;
+    var cw = Math.max(2, Math.round(w * s)), ch = Math.max(2, Math.round(h * s));
+    if (canvas.width !== cw || canvas.height !== ch) { canvas.width = cw; canvas.height = ch; }
+    gl.viewport(0, 0, cw, ch);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  /* Der Bogen: acht Phasen über die ganze Dauer.
+     p = Anteil der Gesamtzeit, e = Energie, top/hor/acc = Farben, sun = Höhe des Lichts */
+  var PH = [
+    { p: 0.00, e: 0.02, top: [0.03, 0.04, 0.12], hor: [0.10, 0.10, 0.22], acc: [0.45, 0.42, 0.60], sun: -0.34 }, // Dämmerung
+    { p: 0.10, e: 0.12, top: [0.05, 0.10, 0.24], hor: [0.20, 0.30, 0.38], acc: [0.75, 0.80, 0.75], sun: -0.22 }, // Ankommen
+    { p: 0.25, e: 0.50, top: [0.06, 0.22, 0.26], hor: [0.45, 0.55, 0.25], acc: [1.00, 0.85, 0.45], sun: 0.00 },  // Aufbau, grün-gold
+    { p: 0.38, e: 0.86, top: [0.30, 0.06, 0.28], hor: [0.95, 0.40, 0.15], acc: [1.00, 0.75, 0.30], sun: 0.12 },  // erste Welle, Feuer
+    { p: 0.50, e: 0.22, top: [0.16, 0.12, 0.36], hor: [0.80, 0.42, 0.30], acc: [0.95, 0.75, 0.60], sun: -0.06 }, // Abendhimmel
+    { p: 0.56, e: 0.14, top: [0.06, 0.08, 0.30], hor: [0.32, 0.26, 0.62], acc: [0.70, 0.65, 0.95], sun: -0.20 }, // Tal, blau-violett
+    { p: 0.67, e: 0.52, top: [0.05, 0.20, 0.30], hor: [0.30, 0.60, 0.35], acc: [0.95, 0.95, 0.50], sun: 0.02 },  // zweiter Aufbau
+    { p: 0.79, e: 1.00, top: [0.40, 0.05, 0.35], hor: [1.00, 0.35, 0.30], acc: [1.00, 0.85, 0.35], sun: 0.16 },  // zweite Welle, wild
+    { p: 0.90, e: 0.38, top: [0.35, 0.30, 0.35], hor: [0.95, 0.55, 0.25], acc: [1.00, 0.85, 0.60], sun: -0.04 }, // Sonnenuntergang
+    { p: 1.00, e: 0.03, top: [0.20, 0.18, 0.20], hor: [0.45, 0.30, 0.22], acc: [0.80, 0.70, 0.55], sun: -0.30 }  // Glut, Stille
+  ];
+  function ss(a, b, x) { var k = Math.min(1, Math.max(0, (x - a) / (b - a))); return k * k * (3 - 2 * k); }
+  function mixv(a, b, k) { return [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k]; }
+  function at(p) {
+    var i = 1;
+    while (i < PH.length - 1 && p > PH[i].p) i++;
+    var a = PH[i - 1], b = PH[i], k = ss(a.p, b.p, p);
+    return { e: a.e + (b.e - a.e) * k, top: mixv(a.top, b.top, k), hor: mixv(a.hor, b.hor, k), acc: mixv(a.acc, b.acc, k), sun: a.sun + (b.sun - a.sun) * k };
+  }
+
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+                set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  var durSel = document.getElementById('dur'), bright = document.getElementById('bright');
+  if (store.get('ed-dur')) durSel.value = store.get('ed-dur');
+  if (store.get('ed-bright')) bright.value = store.get('ed-bright');
+
+  var dur = +durSel.value || 120, elapsed = 0, flowT = 37.0, fireT = 0, eSmooth = 0.02, last = null, frozen = false;
+  var bar = document.getElementById('bar');
+
+  // Klang: nur der Bass als sanfter Impuls
+  var analyser = null, bins = null, bassAvg = 0, bassMax = 0.05, pulse = 0;
+  function hear(dt) {
+    if (!analyser) { pulse = 0; return; }
+    analyser.getByteFrequencyData(bins);
+    var s = 0; for (var i = 1; i <= 5; i++) s += bins[i];
+    var bass = s / (5 * 255);
+    bassAvg += (bass - bassAvg) * Math.min(1, dt * 0.8);
+    var hit = Math.max(0, bass - bassAvg);
+    bassMax = Math.max(bassMax * (1 - dt * 0.05), hit, 0.03);
+    pulse = Math.max(pulse * Math.pow(0.02, dt), Math.min(1, hit / bassMax));
+  }
+
+  function frame(now) {
+    requestAnimationFrame(frame);
+    if (last === null) last = now;
+    var dt = Math.min(0.1, (now - last) / 1000); last = now;
+    if (frozen) dt = 0;
+    elapsed += dt;
+    var p = Math.min(1, elapsed / dur);
+    var s = at(p);
+    eSmooth += (s.e - eSmooth) * Math.min(1, dt * 1.5);
+    var e = eSmooth;
+    hear(dt);
+    flowT += dt * (0.30 + 3.4 * Math.pow(e, 1.5));
+    fireT += dt * (0.35 + 2.4 * e);
+    var master = ss(0, 0.03, p) * (1 - 0.6 * ss(0.96, 1, p)) * (bright.value / 100) * (0.62 + 0.38 * e);
+    resize();
+    gl.uniform2f(U.uRes, canvas.width, canvas.height);
+    gl.uniform1f(U.uT, flowT);
+    gl.uniform1f(U.uTf, fireT);
+    gl.uniform1f(U.uE, e);
+    gl.uniform1f(U.uM, master);
+    gl.uniform1f(U.uPulse, pulse);
+    gl.uniform3fv(U.uTop, s.top);
+    gl.uniform3fv(U.uHor, s.hor);
+    gl.uniform3fv(U.uAcc, s.acc);
+    gl.uniform2f(U.uSun, 0.10 + 0.22 * Math.sin(flowT * 0.02), s.sun);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    bar.style.width = p * 100 + '%';
+  }
+  requestAnimationFrame(frame);
+
+  // Bedienung
+  var ui = document.getElementById('ui'), hideTimer = null;
+  function wake() {
+    ui.classList.remove('hide'); bar.classList.remove('hide'); document.body.classList.remove('quiet');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function () {
+      ui.classList.add('hide'); bar.classList.add('hide'); document.body.classList.add('quiet');
+    }, 4000);
+  }
+  ['pointerdown', 'pointermove', 'keydown'].forEach(function (ev) { window.addEventListener(ev, wake); });
+  wake();
+
+  var lock = null;
+  function keepAwake() {
+    try {
+      if (navigator.wakeLock && !lock) {
+        navigator.wakeLock.request('screen').then(function (l) {
+          lock = l; l.addEventListener('release', function () { lock = null; });
+        }).catch(function () {});
+      }
+    } catch (err) {}
+  }
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) { last = null; keepAwake(); } });
+  window.addEventListener('pointerdown', keepAwake);
+
+  function restart() { elapsed = 0; eSmooth = 0.02; keepAwake(); }
+  document.getElementById('restart').addEventListener('click', restart);
+  durSel.addEventListener('change', function () { dur = +durSel.value; store.set('ed-dur', durSel.value); restart(); });
+  bright.addEventListener('input', function () { store.set('ed-bright', bright.value); });
+
+  var micBtn = document.getElementById('mic');
+  micBtn.addEventListener('click', function () {
+    if (analyser) return;
+    try {
+      navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } })
+        .then(function (stream) {
+          var AC = window.AudioContext || window.webkitAudioContext;
+          var ctx = new AC();
+          var a = ctx.createAnalyser(); a.fftSize = 1024; a.smoothingTimeConstant = 0.5;
+          ctx.createMediaStreamSource(stream).connect(a);
+          bins = new Uint8Array(a.frequencyBinCount); analyser = a;
+          micBtn.textContent = 'Mikrofon an';
+        })
+        .catch(function () { micBtn.textContent = 'Mikrofon hier nicht verfügbar'; });
+    } catch (err) { micBtn.textContent = 'Mikrofon hier nicht verfügbar'; }
+  });
+
+  document.getElementById('fs').addEventListener('click', function () {
+    try {
+      var d = document, el = d.documentElement;
+      if (d.fullscreenElement || d.webkitFullscreenElement) {
+        (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+      } else {
+        var req = el.requestFullscreen || el.webkitRequestFullscreen;
+        if (req) { var r = req.call(el); if (r && r.catch) r.catch(function () {}); }
+      }
+    } catch (err) {}
+  });
+  window.addEventListener('keydown', function (ev) {
+    if (ev.key === 'f' || ev.key === 'F') document.getElementById('fs').click();
+    if (ev.key === ' ') { frozen = !frozen; ev.preventDefault(); }
+  });
+
+  // nur zum Prüfen einzelner Momente
+  window.__vis = { at: function (p, tt) { frozen = true; elapsed = p * dur; eSmooth = at(p).e; flowT = tt; fireT = tt * 0.7; } };
+})();
+</script>
+</body>
+</html>

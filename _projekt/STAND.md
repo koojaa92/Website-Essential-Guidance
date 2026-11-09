@@ -49,6 +49,8 @@ Technische Regeln für Änderungen stehen in `CLAUDE.md`.
 
 - Essenz Raum Preis (4.11.): „70 | 80 | 90 €“ als Optionen (Schreibweise mit senkrechten Strichen, nicht „oder“) (Infobox, Terminkarten, Kalenderdateien, Google-Daten mit drei Angeboten, llms.txt). So auch auf dem Flyer.
 
+- `/visuals/` (9.11.): eigenständige Visual-Seite für den Beamer beim Essential Dance (`visuals/index.html`, unverändert von Jakob, noindex). Nicht in Menü oder Sitemap, kein Website-CSS/JS. Website-Regeln und Audits gelten dafür nicht.
+
 ## Offene Punkte
 
 ### Neue To-dos (4.11.)
